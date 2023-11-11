@@ -18,8 +18,8 @@ import org.springframework.cloud.loadbalancer.core.ReactorServiceInstanceLoadBal
 import org.springframework.cloud.loadbalancer.core.SelectedInstanceCallback;
 import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.env.EnvConstant;
 
 import lombok.extern.slf4j.Slf4j;
@@ -77,7 +77,7 @@ public class CanaryLoadBalancer implements ReactorServiceInstanceLoadBalancer {
         if (StringUtils.isBlank(canaryHeader)) {
             filterInstances = instances.stream()
                 .filter(serviceInstance -> StringUtils.isBlank(serviceInstance.getMetadata()
-                    .get(TcpCloudConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME)))
+                    .get(SipaBootConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME)))
                 .collect(Collectors.toList());
 
             if (CollectionUtils.isEmpty(filterInstances)) {
@@ -92,7 +92,7 @@ public class CanaryLoadBalancer implements ReactorServiceInstanceLoadBalancer {
         } else {
             filterInstances = instances.stream()
                 .filter(serviceInstance -> StringUtils.isNotBlank(serviceInstance.getMetadata()
-                    .get(TcpCloudConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME)))
+                    .get(SipaBootConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME)))
                 .collect(Collectors.toList());
 
             if (CollectionUtils.isEmpty(filterInstances)) {

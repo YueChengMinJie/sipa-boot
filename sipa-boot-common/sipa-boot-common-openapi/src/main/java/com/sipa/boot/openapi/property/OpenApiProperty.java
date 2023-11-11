@@ -2,7 +2,7 @@ package com.sipa.boot.openapi.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import lombok.Data;
  * @date 2022/12/23
  */
 @Data
-@ConfigurationProperties(prefix = TcpCloudConstant.OpenApi.PREFIX)
+@ConfigurationProperties(prefix = SipaBootConstant.OpenApi.PREFIX)
 public class OpenApiProperty {
     /**
      * 描述

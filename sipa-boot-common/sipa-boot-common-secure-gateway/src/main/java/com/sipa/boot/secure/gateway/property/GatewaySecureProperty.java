@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 import com.google.common.collect.Maps;
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -17,7 +17,7 @@ import lombok.Data;
  */
 @Data
 @RefreshScope
-@ConfigurationProperties(prefix = TcpCloudConstant.Gateway.SECURE)
+@ConfigurationProperties(prefix = SipaBootConstant.Gateway.SECURE)
 public class GatewaySecureProperty {
     /**
      * 登陆认证，针对前中后台，暂时没有用到

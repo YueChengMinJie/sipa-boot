@@ -19,8 +19,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 
 import com.alibaba.ttl.threadpool.TtlExecutors;
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.core.env.EnvProvider;
 
@@ -273,6 +273,6 @@ public class SipaUtil {
     }
 
     public static String getHostInContainer() {
-        return SystemUtil.get(EnvConstant.HOSTNAME_NAME.toUpperCase(), TcpCloudConstant.Core.UNKNOWN);
+        return SystemUtil.get(EnvConstant.HOSTNAME_NAME.toUpperCase(), SipaBootConstant.Core.UNKNOWN);
     }
 }

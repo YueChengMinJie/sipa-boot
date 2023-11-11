@@ -11,8 +11,8 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.alibaba.cloud.nacos.NacosDiscoveryProperties;
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.env.EnvConstant;
 
 /**
@@ -42,9 +42,9 @@ public class NacosMetadataApplicationContextInitializer
 
         Properties properties = System.getProperties();
         for (String key : properties.stringPropertyNames()) {
-            if (StringUtils.startsWithIgnoreCase(key, TcpCloudConstant.Core.SIPA_NACOS_PREFIX)) {
+            if (StringUtils.startsWithIgnoreCase(key, SipaBootConstant.Core.SIPA_NACOS_PREFIX)) {
                 String value = properties.getProperty(key);
-                metadata.put(key, StringUtils.isEmpty(value) ? TcpCloudConstant.Core.UNKNOWN : value);
+                metadata.put(key, StringUtils.isEmpty(value) ? SipaBootConstant.Core.UNKNOWN : value);
             }
         }
 
@@ -52,7 +52,7 @@ public class NacosMetadataApplicationContextInitializer
         if (MapUtils.isNotEmpty(envs)) {
             String canaryValue = envs.get(EnvConstant.CANARY_NAME.toUpperCase());
             if (StringUtils.isNotBlank(canaryValue)) {
-                metadata.put(TcpCloudConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME,
+                metadata.put(SipaBootConstant.Core.SIPA_NACOS_PREFIX + EnvConstant.CANARY_NAME,
                     SipaConstant.StringBoolean.TRUE);
             }
         }

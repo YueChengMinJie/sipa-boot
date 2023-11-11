@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
  * @date 2022/12/23
  */
 @Data
-@ConfigurationProperties(prefix = TcpCloudConstant.ArkHost.PREFIX)
+@ConfigurationProperties(prefix = SipaBootConstant.ArkHost.PREFIX)
 public class ArkHostProperty {
     /**
      * 扩展点列表

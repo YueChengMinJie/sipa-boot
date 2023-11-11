@@ -2,7 +2,6 @@ package com.sipa.boot.cache;
 
 import org.springframework.boot.autoconfigure.cache.RedisCacheManagerBuilderCustomizer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +14,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import com.google.common.base.Charsets;
 import com.sipa.boot.cache.property.CacheProperty;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.property.YamlPropertySourceFactory;
 
 import lombok.AllArgsConstructor;
@@ -30,8 +28,6 @@ import lombok.AllArgsConstructor;
 @ConditionalOnClass(CacheProperty.class)
 @EnableConfigurationProperties(CacheProperty.class)
 @PropertySource(value = "classpath:cache.yml", factory = YamlPropertySourceFactory.class)
-@ConditionalOnProperty(prefix = TcpCloudConstant.Cache.PREFIX, value = TcpCloudConstant.Cache.ENABLED_KEY,
-    havingValue = TcpCloudConstant.Cache.ENABLED_VALUE)
 public class CacheAutoConfiguration {
     private final CacheProperty cacheProperty;
 

@@ -3,7 +3,7 @@ package com.sipa.boot.secure.gateway.property;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @RefreshScope
-@ConfigurationProperties(prefix = TcpCloudConstant.Gateway.PATTERN)
+@ConfigurationProperties(prefix = SipaBootConstant.Gateway.PATTERN)
 public class GatewayPatternProperty {
     private String authPattern = "";
 

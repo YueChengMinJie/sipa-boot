@@ -2,8 +2,7 @@ package com.sipa.boot.core.app;
 
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,12 +20,6 @@ public class SipaApplication4Java extends SipaApplication {
     }
 
     private static void setJavaProperty() {
-        System.setProperty(
-            TcpCloudConstant.Feign.PREFIX + SipaConstant.Symbol.POINT + TcpCloudConstant.Feign.ENABLED_KEY,
-            TcpCloudConstant.Feign.ENABLED_VALUE);
-        System.setProperty(TcpCloudConstant.Core.LIQUIBASE_KEY, TcpCloudConstant.Core.LIQUIBASE_VALUE);
-        System.setProperty(
-            TcpCloudConstant.Cache.PREFIX + SipaConstant.Symbol.POINT + TcpCloudConstant.Cache.ENABLED_KEY,
-            TcpCloudConstant.Cache.ENABLED_VALUE);
+        System.setProperty(SipaBootConstant.Core.LIQUIBASE_KEY, SipaBootConstant.Core.LIQUIBASE_VALUE);
     }
 }

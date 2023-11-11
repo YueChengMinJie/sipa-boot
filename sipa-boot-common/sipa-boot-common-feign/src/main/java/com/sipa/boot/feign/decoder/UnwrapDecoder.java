@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 public class UnwrapDecoder implements Decoder {
-    private static final int KOTLIN_SUCCESS_CODE = 0;
+    private static final int SUCCESS_CODE = 0;
 
     private final ObjectMapper objectMapper;
 
@@ -35,15 +35,15 @@ public class UnwrapDecoder implements Decoder {
     @Nullable
     public Object decode(Response response, Type type) throws IOException, FeignException {
         Reader reader = response.body().asReader(Charset.defaultCharset());
-        ResponseWrapper<?> rw = objectMapper.readValue(reader, ResponseWrapper.class);
+        ResponseWrapper<?> rw = this.objectMapper.readValue(reader, ResponseWrapper.class);
         Request request = response.request();
-        if (checkWrapper(rw)) {
+        if (this.checkWrapper(rw)) {
             int code = rw.getCode();
-            if (code == KOTLIN_SUCCESS_CODE) {
+            if (code == SUCCESS_CODE) {
                 Object data = rw.getData();
-                if (checkData(data)) {
+                if (this.checkData(data)) {
                     JavaType javaType = TypeFactory.defaultInstance().constructType(type);
-                    return objectMapper.convertValue(data, javaType);
+                    return this.objectMapper.convertValue(data, javaType);
                 } else {
                     return null;
                 }

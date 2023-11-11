@@ -4,7 +4,7 @@ import java.time.Duration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
  * @date 2019-01-22
  */
 @Data
-@ConfigurationProperties(prefix = TcpCloudConstant.Cache.PREFIX)
+@ConfigurationProperties(prefix = SipaBootConstant.Cache.PREFIX)
 public class CacheProperty {
     /**
      * 缓存过期时间。默认缓存永30天过期。

@@ -2,7 +2,7 @@ package com.sipa.boot.core.app;
 
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +20,6 @@ public class SipaApplication4ArkBiz extends SipaApplication4Java {
     }
 
     private static void setJavaProperty(String appName) {
-        System.setProperty(TcpCloudConstant.Core.SPRING_JMX_DEFAULT_DOMAIN_KEY, appName + System.currentTimeMillis());
+        System.setProperty(SipaBootConstant.Core.SPRING_JMX_DEFAULT_DOMAIN_KEY, appName + System.currentTimeMillis());
     }
 }

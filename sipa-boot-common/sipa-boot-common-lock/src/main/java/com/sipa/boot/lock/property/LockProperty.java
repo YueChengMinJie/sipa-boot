@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.pool2.impl.DefaultEvictionPolicy;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import cn.hutool.extra.spring.SpringUtil;
 import lombok.Data;
@@ -16,7 +16,7 @@ import lombok.Data;
  * @date 2022/12/23
  */
 @Data
-@ConfigurationProperties(prefix = TcpCloudConstant.Lock.PREFIX)
+@ConfigurationProperties(prefix = SipaBootConstant.Lock.PREFIX)
 public class LockProperty {
     /**
      * etcd配置

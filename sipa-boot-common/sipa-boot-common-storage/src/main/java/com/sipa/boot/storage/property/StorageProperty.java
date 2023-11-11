@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -16,7 +16,7 @@ import lombok.Data;
  * @date 2022/12/23
  */
 @Data
-@ConfigurationProperties(prefix = TcpCloudConstant.Storage.PREFIX)
+@ConfigurationProperties(prefix = SipaBootConstant.Storage.PREFIX)
 public class StorageProperty {
     /**
      * 默认存储平台，默认为阿里云

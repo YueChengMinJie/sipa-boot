@@ -9,8 +9,8 @@ import org.springframework.core.env.*;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.core.env.EnvProvider;
 
@@ -44,7 +44,7 @@ public class SipaApplication {
 
     protected static void setProperty(String appName) {
         // property name
-        System.setProperty(TcpCloudConstant.Core.SPRING_APPLICATION_NAME_KEY, appName);
+        System.setProperty(SipaBootConstant.Core.SPRING_APPLICATION_NAME_KEY, appName);
         // rocketmq client
         System.setProperty("rocketmq.client.logFileMaxIndex", "20");
         System.setProperty("rocketmq.client.logFileMaxSize", "67108864");
@@ -53,7 +53,7 @@ public class SipaApplication {
 
     public static SpringApplicationBuilder createSpringApplicationBuilder(String appName, Class<?> source,
         String... args) {
-        Assert.hasText(appName, TcpCloudConstant.Core.SPRING_APPLICATION_NAME_KEY + "不能为空");
+        Assert.hasText(appName, SipaBootConstant.Core.SPRING_APPLICATION_NAME_KEY + "不能为空");
 
         // 读取环境变量，使用spring boot的规则
         ConfigurableEnvironment environment = new StandardEnvironment();
@@ -115,28 +115,28 @@ public class SipaApplication {
     protected static void setAllProperty(String appName, String profile) {
         Properties props = System.getProperties();
         // spring
-        setPropIfNotExist(props, TcpCloudConstant.Core.SPRING_PROFILES_ACTIVE_KEY, profile);
-        setPropIfNotExist(props, TcpCloudConstant.Core.ALLOW_BEAN_DEFINITION_OVERRIDING_KEY,
-            TcpCloudConstant.Core.ALLOW_BEAN_DEFINITION_OVERRIDING_VALUE);
-        setPropIfNotExist(props, TcpCloudConstant.Core.ALLOW_CIRCULAR_REFERENCES_KEY,
-            TcpCloudConstant.Core.ALLOW_CIRCULAR_REFERENCES_VALUE);
+        setPropIfNotExist(props, SipaBootConstant.Core.SPRING_PROFILES_ACTIVE_KEY, profile);
+        setPropIfNotExist(props, SipaBootConstant.Core.ALLOW_BEAN_DEFINITION_OVERRIDING_KEY,
+            SipaBootConstant.Core.ALLOW_BEAN_DEFINITION_OVERRIDING_VALUE);
+        setPropIfNotExist(props, SipaBootConstant.Core.ALLOW_CIRCULAR_REFERENCES_KEY,
+            SipaBootConstant.Core.ALLOW_CIRCULAR_REFERENCES_VALUE);
         // springdoc
         if (profile.equals(EnvConstant.ENV_FAT) || profile.equals(EnvConstant.ENV_PROD)) {
-            setPropIfNotExist(props, TcpCloudConstant.Core.SPRINGDOC_KEY, TcpCloudConstant.Core.SPRINGDOC_VALUE);
+            setPropIfNotExist(props, SipaBootConstant.Core.SPRINGDOC_KEY, SipaBootConstant.Core.SPRINGDOC_VALUE);
         }
         // custom
-        setPropIfNotExist(props, TcpCloudConstant.Core.SIPA_APP_KEY, appName);
-        setPropIfNotExist(props, TcpCloudConstant.Core.SIPA_APP_VERSION_KEY, getVersion());
-        setPropIfNotExist(props, TcpCloudConstant.Core.SIPA_ENV_KEY, profile);
+        setPropIfNotExist(props, SipaBootConstant.Core.SIPA_APP_KEY, appName);
+        setPropIfNotExist(props, SipaBootConstant.Core.SIPA_APP_VERSION_KEY, getVersion());
+        setPropIfNotExist(props, SipaBootConstant.Core.SIPA_ENV_KEY, profile);
     }
 
     private static String getVersion() {
-        String version = SystemUtil.get(TcpCloudConstant.Core.SIPA_APP_VERSION_ENV_KEY, StrUtil.EMPTY);
+        String version = SystemUtil.get(SipaBootConstant.Core.SIPA_APP_VERSION_ENV_KEY, StrUtil.EMPTY);
         if (StrUtil.isNotBlank(version)) {
             String[] split = version.split(SipaConstant.Symbol.COLON);
             version = split[split.length - 1];
         } else {
-            version = TcpCloudConstant.Core.UNKNOWN;
+            version = SipaBootConstant.Core.UNKNOWN;
         }
         return version;
     }

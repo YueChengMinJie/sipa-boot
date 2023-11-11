@@ -2,7 +2,7 @@ package com.sipa.boot.core.app;
 
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +20,7 @@ public class SipaApplication4ArkHost extends SipaApplication4Java {
     }
 
     private static void setJavaProperty() {
-        System.setProperty(TcpCloudConstant.Core.SOFA_ARK_HOST_KEY, TcpCloudConstant.Core.SOFA_ARK_HOST_VALUE);
-        System.setProperty(TcpCloudConstant.Core.NETTY_KEY, TcpCloudConstant.Core.NETTY_VALUE);
+        System.setProperty(SipaBootConstant.Core.SOFA_ARK_HOST_KEY, SipaBootConstant.Core.SOFA_ARK_HOST_VALUE);
+        System.setProperty(SipaBootConstant.Core.NETTY_KEY, SipaBootConstant.Core.NETTY_VALUE);
     }
 }

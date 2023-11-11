@@ -3,7 +3,7 @@ package com.sipa.boot.secure.server.property;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
-import com.sipa.boot.core.constant.TcpCloudConstant;
+import com.sipa.boot.core.constant.SipaBootConstant;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @RefreshScope
-@ConfigurationProperties(prefix = TcpCloudConstant.SecureServer.PATTERN)
+@ConfigurationProperties(prefix = SipaBootConstant.SecureServer.PATTERN)
 public class SecureServerProperty {
     private String authPattern = "/**";
 

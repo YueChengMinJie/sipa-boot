@@ -9,7 +9,6 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.AnnotatedParameterProcessor;
@@ -27,7 +26,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.format.support.FormattingConversionService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sipa.boot.core.constant.TcpCloudConstant;
 import com.sipa.boot.core.property.YamlPropertySourceFactory;
 import com.sipa.boot.feign.decoder.UnwrapDecoder;
 import com.sipa.boot.feign.decoder.UnwrapDecoderPro;
@@ -55,8 +53,6 @@ import lombok.extern.slf4j.Slf4j;
 @ConditionalOnClass({FeignProperty.class, UnwrapDecoder.class})
 @PropertySource(value = "classpath:feign.yml", factory = YamlPropertySourceFactory.class)
 @EnableFeignClients(basePackages = {"com.hm", "com.hmev"}) // todo by caszhou 业务配置应该与框架解耦
-@ConditionalOnProperty(prefix = TcpCloudConstant.Feign.PREFIX, value = TcpCloudConstant.Feign.ENABLED_KEY,
-    havingValue = TcpCloudConstant.Feign.ENABLED_VALUE)
 public class FeignAutoConfiguration {
     @Autowired
     private ObjectMapper objectMapper;

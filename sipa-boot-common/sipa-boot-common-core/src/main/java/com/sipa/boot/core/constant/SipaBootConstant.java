@@ -4,7 +4,7 @@ package com.sipa.boot.core.constant;
  * @author caszhou
  * @date 2023/6/17
  */
-public interface TcpCloudConstant {
+public interface SipaBootConstant {
     String TCP_CLOUD_PREFIX = "sipa-boot.";
 
     String BCP_PREFIX = "hm-bcp-";
@@ -63,10 +63,6 @@ public interface TcpCloudConstant {
 
     interface Feign {
         String PREFIX = TCP_CLOUD_PREFIX + "feign";
-
-        String ENABLED_KEY = "enabled";
-
-        String ENABLED_VALUE = "true";
     }
 
     interface Es {
