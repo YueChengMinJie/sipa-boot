@@ -73,7 +73,7 @@
         <aliyun-sdk-oss.version>3.16.3</aliyun-sdk-oss.version>
         <esdk-obs-java.version>3.23.3.1</esdk-obs-java.version>
         <google-cloud-storage.version>2.22.2</google-cloud-storage.version>
-        <xxl-job-core.version>2.3.1</xxl-job-core.version>
+        <xxl-job-core.version>2.4.0</xxl-job-core.version>
         <groboutils-core.version>5</groboutils-core.version>
         <liteflow-spring-boot-starter.version>2.11.0</liteflow-spring-boot-starter.version>
         <mica-auto.version>2.3.2</mica-auto.version>
