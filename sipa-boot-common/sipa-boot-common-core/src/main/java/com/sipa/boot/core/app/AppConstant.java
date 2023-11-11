@@ -23,7 +23,9 @@ public interface AppConstant {
         String LIQUIBASE_NAME = "liquibase-web-server";
     }
 
-    interface FBP {
+    interface FP {}
+
+    interface BP {
         String AMS_NAME = "ams-service-server";
     }
 

@@ -20,5 +20,10 @@
             <groupId>com.sipa.boot</groupId>
             <artifactId>sipa-boot-common-storage</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+        </dependency>
     </dependencies>
 </project>
