@@ -1,0 +1,75 @@
+#
+# -------------------------------------------
+# SERVER配置
+# -------------------------------------------
+#
+server:
+  port: 8700
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  datasource:
+    url: >-
+      jdbc:mysql://mysql-dev.sz-hm.cn:3306/sipa_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useInformationSchema=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: mysql@admin
+  redis:
+    host: redis-dev.sz-hm.cn
+    port: 6379
+    database: 0
+    password: redis@admin
+  cloud:
+    stream:
+      rocketmq:
+        bindings:
+          input1:
+            consumer:
+              orderly: 'true'
+          input2:
+            consumer:
+              orderly: 'false'
+              tags: tagStr
+      bindings:
+        output:
+          destination: test-topic
+        input1:
+          destination: test-topic
+          group: test-group1
+        input2:
+          destination: test-topic
+          group: test-group2
+          consumer:
+            concurrency: '16'
+        input3:
+          destination: jiangsu_bank_trade_notify
+          group: GID_jiangsu_bank_trade_notify6
+          consumer:
+            concurrency: '1'
+#
+# -------------------------------------------
+# SIPA-BOOT配置
+# -------------------------------------------
+#
+sipa-boot:
+  lock:
+    redis:
+      host: redis-dev.sz-hm.cn
+      port: 6379
+      database: 0
+      password: redis@admin
+  openapi:
+    desc: SIPA测试工程
+    version: v1.0.0
+  storage:
+    minio:
+      - enable-storage: true
+        access-key: todo
+        secret-key: todo
+        endpoint: todo
+        bucket-name: dev
+        domain: todo
+  xxljob:
+    admin-addresses: 'http://xxljob-dev.sz-hm.cn:8080/xxl-job-admin'

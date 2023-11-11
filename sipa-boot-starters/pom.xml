@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sipa.boot</groupId>
+        <artifactId>sipa-boot-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../sipa-boot-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>sipa-boot-starters</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Scale :: Industry :: Platform :: Architecture :: Boot :: Starters</name>
+
+    <modules>
+        <module>sipa-boot-async-starter</module>
+        <module>sipa-boot-cache-starter</module>
+        <module>sipa-boot-es-starter</module>
+        <module>sipa-boot-extension-starter</module>
+        <module>sipa-boot-extension-with-ark-starter</module>
+        <module>sipa-boot-feign-starter</module>
+        <module>sipa-boot-flow-starter</module>
+        <module>sipa-boot-gateway-starter</module>
+        <module>sipa-boot-geetest-starter</module>
+        <module>sipa-boot-lb-starter</module>
+        <module>sipa-boot-lock-starter</module>
+        <module>sipa-boot-mongodb-starter</module>
+        <module>sipa-boot-mvc-starter</module>
+        <module>sipa-boot-mybatis-starter</module>
+        <module>sipa-boot-nacos-starter</module>
+        <module>sipa-boot-openapi-starter</module>
+        <module>sipa-boot-rest-starter</module>
+        <module>sipa-boot-retry-starter</module>
+        <module>sipa-boot-rocketmq-starter</module>
+        <module>sipa-boot-seata-starter</module>
+        <module>sipa-boot-secure-gateway-starter</module>
+        <module>sipa-boot-secure-server-starter</module>
+        <module>sipa-boot-secure-ssr-starter</module>
+        <module>sipa-boot-sofa-biz-starter</module>
+        <module>sipa-boot-sofa-host-starter</module>
+        <module>sipa-boot-sofa-plugin-starter</module>
+        <module>sipa-boot-starter</module>
+        <module>sipa-boot-state-machine-starter</module>
+        <module>sipa-boot-storage-starter</module>
+        <module>sipa-boot-test-container-starter</module>
+        <module>sipa-boot-wx-ma-starter</module>
+        <module>sipa-boot-wx-mp-starter</module>
+        <module>sipa-boot-xxljob-starter</module>
+    </modules>
+</project>

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+echo $branch_name
+
+if [[ ! $branch_name =~ ^(bugfix|feature|release|hotfix)\/.*|(master)|(fat)|(dev)|(.*-dev) ]]; then
+  echo "GL-HOOK-ERR: Branches must begin with these types: bugfix/ feature/ release/ hotfix/"
+  exit 1
+fi
+
+exit 0

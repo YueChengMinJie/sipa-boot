@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.13</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.sipa.boot</groupId>
+    <artifactId>sipa-boot</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Scale :: Industry :: Platform :: Architecture :: Boot</name>
+    <description>基于spring boot、spring cloud和sofa boot的研发框架，实践简洁架构和方便集成SIPA中间件</description>
+
+    <modules>
+        <module>sipa-boot-autoconfigure</module>
+        <module>sipa-boot-common</module>
+        <module>sipa-boot-dependencies</module>
+        <module>sipa-boot-parent</module>
+        <module>sipa-boot-sdk</module>
+        <module>sipa-boot-starters</module>
+        <module>sipa-boot-test</module>
+    </modules>
+
+    <scm>
+        <connection>scm:${project.scm.type}:${project.scm.path}</connection>
+        <developerConnection>scm:${project.scm.type}:${project.scm.path}</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>deployRelease</id>
+            <url>http://nexus.sz-hm.cn/repository/maven-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>deploySnapshot</id>
+            <url>http://nexus.sz-hm.cn/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <java.version>11</java.version>
+
+        <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
+        <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
+        <p3c-pmd.version>2.1.1.5x</p3c-pmd.version>
+        <spotless-maven-plugin.version>2.36.0</spotless-maven-plugin.version>
+        <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
+
+        <project.scm.type>git</project.scm.type>
+        <project.scm.path>
+            git@192.168.0.62:platform/tcp/sipa/sipa-boot.git
+        </project.scm.path>
+
+        <distribution.public>http://nexus.sz-hm.cn/repository/maven-public/</distribution.public>
+        <distribution.release>http://nexus.sz-hm.cn/repository/maven-releases/</distribution.release>
+        <distribution.snapshot>http://nexus.sz-hm.cn/repository/maven-snapshots/</distribution.snapshot>
+    </properties>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>${distribution.release}</url>
+        </repository>
+
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>${distribution.snapshot}</url>
+        </repository>
+
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>public</id>
+            <name>Company Repository</name>
+            <url>${distribution.public}</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>public</id>
+            <url>${distribution.public}</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <tagBase>${project.scm.path}</tagBase>
+                        <scmCommentPrefix>[maven-release]</scmCommentPrefix>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <additionalJOptions>
+                            <additionalJOption>-Xdoclint:none</additionalJOption>
+                        </additionalJOptions>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                    <configuration>
+                        <rulesets>
+                            <ruleset>rulesets/java/ali-comment.xml</ruleset>
+                            <ruleset>rulesets/java/ali-concurrent.xml</ruleset>
+                            <ruleset>rulesets/java/ali-constant.xml</ruleset>
+                            <ruleset>rulesets/java/ali-exception.xml</ruleset>
+                            <ruleset>rulesets/java/ali-flowcontrol.xml</ruleset>
+                            <ruleset>rulesets/java/ali-naming.xml</ruleset>
+                            <ruleset>rulesets/java/ali-oop.xml</ruleset>
+                            <ruleset>rulesets/java/ali-orm.xml</ruleset>
+                            <ruleset>rulesets/java/ali-other.xml</ruleset>
+                            <ruleset>rulesets/java/ali-set.xml</ruleset>
+                        </rulesets>
+                        <printFailingErrors>true</printFailingErrors>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.xenoamess.p3c</groupId>
+                            <artifactId>p3c-pmd</artifactId>
+                            <version>${p3c-pmd.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>${spotless-maven-plugin.version}</version>
+                    <configuration>
+                        <formats>
+                            <format>
+                                <includes>
+                                    <include>*.java</include>
+                                </includes>
+                                <trimTrailingWhitespace/>
+                                <endWithNewline/>
+                                <indent>
+                                    <tabs>true</tabs>
+                                    <spacesPerTab>4</spacesPerTab>
+                                </indent>
+                            </format>
+                        </formats>
+                        <java>
+                            <includes>
+                                <include>src/main/java/**/*.java</include>
+                                <include>src/test/java/**/*.java</include>
+                            </includes>
+                            <removeUnusedImports/>
+                            <eclipse>
+                                <version>4.13</version>
+                                <!-- todo -->
+                                <file>http://minio.sz-hm.cn:9001/api/v1/buckets/dev/objects/download?prefix=ZWNsaXBzZV9mb3JtYXR0ZXIueG1s</file>
+                            </eclipse>
+                        </java>
+                        <pom>
+                            <includes>
+                                <include>pom.xml</include>
+                            </includes>
+                            <sortPom>
+                                <expandEmptyElements>false</expandEmptyElements>
+                                <nrOfIndentSpace>4</nrOfIndentSpace>
+                            </sortPom>
+                        </pom>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>${dependency-check-maven.version}</version>
+                    <configuration>
+                        <skipSystemScope>true</skipSystemScope>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,33 @@
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  application:
+    name: sipa-boot-test
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  cloud:
+    nacos:
+      config:
+        group: EAST_CHINA_2
+        file-extension: yaml
+        namespace: local
+        server-addr: nacos-dev.sz-hm.cn:8848
+        extension-configs:
+          - data-id: sipa-boot.yaml
+            group: CORE
+            refresh: true
+      discovery:
+        namespace: local
+        server-addr: nacos-dev.sz-hm.cn:8848
+#
+# -------------------------------------------
+# SIPA-BOOT配置
+# -------------------------------------------
+#
+sipa-boot:
+  feign:
+    enabled: true

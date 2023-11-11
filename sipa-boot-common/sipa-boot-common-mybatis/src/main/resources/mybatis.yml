@@ -1,0 +1,43 @@
+#
+# -------------------------------------------
+# DATASOURCE配置
+# -------------------------------------------
+#
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initialSize: 1
+      minIdle: 1
+      maxActive: 100
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 30000
+      minEvictableIdleTimeMillis: 300000
+      maxEvictableIdleTimeMillis: 900000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+      filters: stat
+#
+# -------------------------------------------
+# MYBATIS-PLUS配置
+# -------------------------------------------
+#
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.hm*.**.po.**
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    log-impl: com.sipa.boot.mybatis.log.CustomSlf4jImpl
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    banner: false
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-value: 1
+      logic-not-delete-value: 0

@@ -1,0 +1,16 @@
+${AnsiColor.BRIGHT_CYAN}
+ $$$$$$\  $$$$$$\ $$$$$$$\   $$$$$$\
+$$  __$$\ \_$$  _|$$  __$$\ $$  __$$\
+$$ /  \__|  $$ |  $$ |  $$ |$$ /  $$ |
+\$$$$$$\    $$ |  $$$$$$$  |$$$$$$$$ |
+ \____$$\   $$ |  $$  ____/ $$  __$$ |
+$$\   $$ |  $$ |  $$ |      $$ |  $$ |
+\$$$$$$  |$$$$$$\ $$ |      $$ |  $$ |
+ \______/ \______|\__|      \__|  \__|
+${AnsiColor.BRIGHT_RED}
+Spring Application Name: ${spring.application.name}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+Spring Cloud Version: 2021.0.5
+Spring Cloud Alibaba Version: 2021.0.5.0
+SIPA Version: 1.0.0
+Powered By HMEV Group

@@ -1,0 +1,24 @@
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  cloud:
+    loadbalancer:
+      cache:
+        ttl: 2s
+#
+# -------------------------------------------
+# FEIGN配置
+# -------------------------------------------
+#
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+        connectTimeout: 5000
+        readTimeout: 30000
+  httpclient:
+    enabled: true

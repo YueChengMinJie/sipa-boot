@@ -1,0 +1,11 @@
+#!/bin/bash
+
+commit_message=$(awk '{printf("%s",$0)}' $1)
+echo $commit_message
+
+if [[ ! $commit_message =~ ^(chore|ci|docs|feat|feature|fix|perf|refactor|revert|style|test)(\(.+\)?((\s)|(:\s)))?(\s.*)?|^(Merge.* \w+)|^(Revert.* \w+) ]]; then
+  echo "GL-HOOK-ERR: Commit Message Specifications: -type-(-scope-)(-breaking-!): -description-"
+  exit 1
+fi
+
+exit 0

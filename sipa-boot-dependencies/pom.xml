@@ -1,0 +1,1514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sipa.boot</groupId>
+        <artifactId>sipa-boot</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>sipa-boot-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Scale :: Industry :: Platform :: Architecture :: Boot :: Dependencies</name>
+
+    <properties>
+        <!-- 一方库 -->
+        <sipa-boot-dependencies.version>1.0.0-SNAPSHOT</sipa-boot-dependencies.version>
+        <!-- 二方库 -->
+
+        <!-- 三方库 -->
+        <spring-cloud-dependencies.version>2021.0.5</spring-cloud-dependencies.version>
+        <spring-cloud-alibaba-dependencies.version>2021.0.5.0</spring-cloud-alibaba-dependencies.version>
+        <sofa.ark.version>2.1.3</sofa.ark.version>
+        <sofa.lookout.version>1.6.1</sofa.lookout.version>
+        <sofa.boot.version>3.18.0.2</sofa.boot.version>
+        <lombok.version>1.18.26</lombok.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <commons-cli.version>1.5.0</commons-cli.version>
+        <hutool-all.version>5.8.16</hutool-all.version>
+        <jsoup.version>1.15.4</jsoup.version>
+        <fastjson2.version>2.0.27</fastjson2.version>
+        <poi.version>5.2.3</poi.version>
+        <beetl.version>3.15.4.RELEASE</beetl.version>
+        <dom4j.version>2.1.4</dom4j.version>
+        <jsqlparser.version>4.3</jsqlparser.version>
+        <javaparser-symbol-solver-core.version>3.25.3</javaparser-symbol-solver-core.version>
+        <easypoi.version>4.4.0</easypoi.version>
+        <pdfbox.version>3.0.0-RC1</pdfbox.version>
+        <itextpdf.version>5.5.13.3</itextpdf.version>
+        <juel.version>2.2.7</juel.version>
+        <swagger-annotations-v3.version>2.2.0</swagger-annotations-v3.version>
+        <springdoc-openapi-ui.version>1.6.8</springdoc-openapi-ui.version>
+        <springdoc-openapi-webflux-ui.version>1.6.8</springdoc-openapi-webflux-ui.version>
+        <alibabacloud-dysmsapi20170525.version>2.0.23</alibabacloud-dysmsapi20170525.version>
+        <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.5.3.1</mybatis-plus-generator.version>
+        <dynamic-datasource-spring-boot-starter.version>3.6.1</dynamic-datasource-spring-boot-starter.version>
+        <druid-spring-boot-starter.version>1.2.18</druid-spring-boot-starter.version>
+        <spring-boot-starter-data-solr.version>2.4.13</spring-boot-starter-data-solr.version>
+        <protostuff.version>1.8.0</protostuff.version>
+        <guava.version>31.1-jre</guava.version>
+        <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
+        <redisson.version>3.16.8</redisson.version>
+        <activiti-spring.version>6.0.0</activiti-spring.version>
+        <orika-core.verson>1.5.4</orika-core.verson>
+        <weixin-java.version>4.5.0</weixin-java.version>
+        <sa-token.verion>1.34.0</sa-token.verion>
+        <tika-core.version>2.8.0</tika-core.version>
+        <thumbnailator.version>0.4.19</thumbnailator.version>
+        <sardine.version>5.10</sardine.version>
+        <jsch.version>0.1.55</jsch.version>
+        <commons-net.version>3.9.0</commons-net.version>
+        <aws-java-sdk-s3.version>1.12.477</aws-java-sdk-s3.version>
+        <minio.version>8.5.3</minio.version>
+        <com.upyun.java-sdk.version>4.2.3</com.upyun.java-sdk.version>
+        <bce-java-sdk.version>0.10.218</bce-java-sdk.version>
+        <cos_api.version>5.6.147</cos_api.version>
+        <qiniu-java-sdk.version>7.13.1</qiniu-java-sdk.version>
+        <aliyun-sdk-oss.version>3.16.3</aliyun-sdk-oss.version>
+        <esdk-obs-java.version>3.23.3.1</esdk-obs-java.version>
+        <google-cloud-storage.version>2.22.2</google-cloud-storage.version>
+        <xxl-job-core.version>2.3.1</xxl-job-core.version>
+        <groboutils-core.version>5</groboutils-core.version>
+        <liteflow-spring-boot-starter.version>2.11.0</liteflow-spring-boot-starter.version>
+        <mica-auto.version>2.3.2</mica-auto.version>
+        <!-- plugin -->
+        <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
+        <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
+        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
+        <jib.skip.build>true</jib.skip.build>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- sofa ark -->
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-all</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-spi</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-archive</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-common</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-tools</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-api</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-container</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>web-ark-plugin</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <!-- sofa lookout -->
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-api</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-client</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-common</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-core</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-ext-jvm</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-ext-os</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-dropwizard</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-prometheus</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-reg-server</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <!-- sofa boot -->
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>healthcheck-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>startup-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>runtime-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>runtime-sofa-boot-plugin</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>test-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>isle-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>rpc-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>tracer-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>log-sofa-boot-starter</artifactId>
+                <version>${sofa.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-springboot-starter</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-ark-compatible-springboot2</artifactId>
+                <version>${sofa.ark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sofa.lookout</groupId>
+                <artifactId>lookout-sofa-boot-starter</artifactId>
+                <version>${sofa.lookout.version}</version>
+            </dependency>
+
+            <!-- basic -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-cli</groupId>
+                <artifactId>commons-cli</artifactId>
+                <version>${commons-cli.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl</artifactId>
+                <version>${beetl.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.javaparser</groupId>
+                <artifactId>javaparser-symbol-solver-core</artifactId>
+                <version>${javaparser-symbol-solver-core.version}</version>
+            </dependency>
+
+            <!--excel操作 -->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-web</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-annotation</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+
+            <!-- pdf -->
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox</artifactId>
+                <version>${pdfbox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itextpdf</artifactId>
+                <version>${itextpdf.version}</version>
+            </dependency>
+
+            <!-- juel -->
+            <dependency>
+                <groupId>de.odysseus.juel</groupId>
+                <artifactId>juel-impl</artifactId>
+                <version>${juel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.odysseus.juel</groupId>
+                <artifactId>juel-api</artifactId>
+                <version>${juel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.odysseus.juel</groupId>
+                <artifactId>juel-spi</artifactId>
+                <version>${juel.version}</version>
+            </dependency>
+
+            <!-- springdoc-openapi -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations-v3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-webflux-ui</artifactId>
+                <version>${springdoc-openapi-webflux-ui.version}</version>
+            </dependency>
+
+            <!-- sms -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>alibabacloud-dysmsapi20170525</artifactId>
+                <version>${alibabacloud-dysmsapi20170525.version}</version>
+            </dependency>
+
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-typehandlers-jsr310</artifactId>
+                <version>${mybatis-typehandlers-jsr310.version}</version>
+            </dependency>
+
+            <!-- mybatis plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-core</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <!-- dynamic datasource -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!-- druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!-- solr -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-solr</artifactId>
+                <version>${spring-boot-starter-data-solr.version}</version>
+            </dependency>
+
+            <!-- protostuff -->
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- ttl -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <!-- redisson -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- activiti -->
+            <dependency>
+                <groupId>org.activiti</groupId>
+                <artifactId>activiti-spring</artifactId>
+                <version>${activiti-spring.version}</version>
+            </dependency>
+
+            <!-- orika -->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika-core.verson}</version>
+            </dependency>
+
+            <!-- weixin -->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-miniapp</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-pay</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-open</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-cp</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+
+            <!-- sa -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot-starter</artifactId>
+                <version>${sa-token.verion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-reactor-spring-boot-starter</artifactId>
+                <version>${sa-token.verion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dao-redis-jackson</artifactId>
+                <version>${sa-token.verion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-jwt</artifactId>
+                <version>${sa-token.verion}</version>
+            </dependency>
+
+            <!-- oss -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.lookfirst</groupId>
+                <artifactId>sardine</artifactId>
+                <version>${sardine.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jsch</artifactId>
+                <version>${jsch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>${aws-java-sdk-s3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.upyun</groupId>
+                <artifactId>java-sdk</artifactId>
+                <version>${com.upyun.java-sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baidubce</groupId>
+                <artifactId>bce-java-sdk</artifactId>
+                <version>${bce-java-sdk.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.qcloud</groupId>
+                <artifactId>cos_api</artifactId>
+                <version>${cos_api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>${qiniu-java-sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.huaweicloud</groupId>
+                <artifactId>esdk-obs-java</artifactId>
+                <version>${esdk-obs-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>google-cloud-storage</artifactId>
+                <version>${google-cloud-storage.version}</version>
+            </dependency>
+
+            <!-- xxljob -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job-core.version}</version>
+            </dependency>
+
+            <!-- groboutils -->
+            <dependency>
+                <groupId>net.sourceforge.groboutils</groupId>
+                <artifactId>groboutils-core</artifactId>
+                <version>${groboutils-core.version}</version>
+            </dependency>
+
+            <!-- liteflow -->
+            <dependency>
+                <groupId>com.yomahub</groupId>
+                <artifactId>liteflow-spring-boot-starter</artifactId>
+                <version>${liteflow-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!-- mica -->
+            <dependency>
+                <groupId>net.dreamlu</groupId>
+                <artifactId>mica-auto</artifactId>
+                <version>${mica-auto.version}</version>
+            </dependency>
+
+            <!-- common -->
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-ark-biz</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-ark-host</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-ark-plugin</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-async</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-cache</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-core</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-es</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-extension</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-extension-with-ark</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-feign</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-flow</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-gateway</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-geetest</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-lb</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-lock</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-mongodb</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-mvc</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-mybatis</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-nacos</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-openapi</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-rest</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-retry</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-rocketmq</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-seata</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-secure</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-secure-gateway</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-secure-server</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-secure-ssr</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-state-machine</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-storage</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-test-container</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-wx-ma</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-wx-mp</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-xxljob</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <!-- starter -->
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-autoconfigure</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-async-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-cache-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-es-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-extension-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-extension-with-ark-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-feign-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-flow-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-gateway-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-geetest-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-lb-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-lock-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-mongodb-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-mvc-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-mybatis-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-nacos-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-openapi-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-rest-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-retry-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-rocketmq-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-seata-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-secure-gateway-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-secure-server-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-secure-ssr-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sofa-biz-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sofa-host-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sofa-plugin-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-state-machine-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-storage-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-test-container-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-wx-ma-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-wx-mp-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-xxljob-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <!-- sdk -->
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sdk-api</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sdk-cp</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sdk-gateway</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sdk-server</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-maven-plugin.version}</version>
+                    <configuration>
+                        <generateBackupPoms>false</generateBackupPoms>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>add-source</id>
+                            <goals>
+                                <goal>add-source</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <sources>
+                                    <source>src/main/java</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>add-test-source</id>
+                            <goals>
+                                <goal>add-test-source</goal>
+                            </goals>
+                            <phase>generate-test-sources</phase>
+                            <configuration>
+                                <sources>
+                                    <source>src/test/java</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>appassembler-maven-plugin</artifactId>
+                    <version>${appassembler-maven-plugin.version}</version>
+                    <configuration>
+                        <repositoryLayout>flat</repositoryLayout>
+                        <repositoryName>lib</repositoryName>
+                        <configurationDirectory>conf</configurationDirectory>
+                        <copyConfigurationDirectory>true</copyConfigurationDirectory>
+                        <configurationSourceDirectory>src/main/resources</configurationSourceDirectory>
+                        <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+                        <target>${project.build.directory}</target>
+                        <daemons>
+                            <daemon>
+                                <id>${project.name}</id>
+                                <mainClass>${project.runtime.main_class}</mainClass>
+                                <platforms>
+                                    <platform>jsw</platform>
+                                </platforms>
+                                <wrapperLogFile>logs/${project.name}.log</wrapperLogFile>
+                                <generatorConfigurations>
+                                    <generatorConfiguration>
+                                        <generator>jsw</generator>
+                                        <includes>
+                                            <include>macosx-universal-64</include>
+                                            <include>linux-x86-32</include>
+                                            <include>linux-x86-64</include>
+                                            <include>windows-x86-32</include>
+                                            <include>windows-x86-64</include>
+                                        </includes>
+                                        <configuration>
+                                            <property>
+                                                <name>configuration.directory.in.classpath.first</name>
+                                                <value>conf</value>
+                                            </property>
+                                            <property>
+                                                <name>set.default.REPO_DIR</name>
+                                                <value>lib</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.ping.timeout</name>
+                                                <value>300</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.ping.timeout.action</name>
+                                                <value>DUMP,RESTART</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.startup.timeout</name>
+                                                <value>300</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.console.loglevel</name>
+                                                <value>INFO</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.logfile.loglevel</name>
+                                                <value>warn</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.logfile.maxsize</name>
+                                                <value>50m</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.logfile.maxfiles</name>
+                                                <value>10</value>
+                                            </property>
+                                            <property>
+                                                <name>wrapper.pidfile</name>
+                                                <value>../..</value>
+                                            </property>
+                                        </configuration>
+                                    </generatorConfiguration>
+                                </generatorConfigurations>
+                                <jvmSettings>
+                                    <initialMemorySize>${project.runtime.mem_init}</initialMemorySize>
+                                    <maxMemorySize>${project.runtime.mem_max}</maxMemorySize>
+                                    <extraArguments>
+                                        <extraArgument>-server</extraArgument>
+                                        <extraArgument>-Dapplication.name=${project.artifactId}</extraArgument>
+                                        <extraArgument>-Dapplication.version=${project.version}</extraArgument>
+                                        <extraArgument>-Dfile.encoding=utf-8</extraArgument>
+                                        <extraArgument>-Duser.timezone=Aisa/Shanghai</extraArgument>
+                                        <extraArgument>-Dspring.profiles.active=${SERVICE_ENV}</extraArgument>
+                                        <extraArgument>-Denv=${SERVICE_ENV}</extraArgument>
+                                    </extraArguments>
+                                </jvmSettings>
+                            </daemon>
+                        </daemons>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>generate-jsw-scripts</id>
+                            <goals>
+                                <goal>generate-daemons</goal>
+                                <goal>create-repository</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <descriptors>
+                            <descriptor>assembly/assembly.xml</descriptor>
+                        </descriptors>
+                        <finalName>${project.artifactId}</finalName>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <forkMode>once</forkMode>
+                        <argLine>-Dfile.encoding=UTF-8</argLine>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-maven</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <requireMavenVersion>
+                                        <version>3.0</version>
+                                    </requireMavenVersion>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <delimiters>
+                            <delimiter>${*}</delimiter>
+                            <delimiter>@</delimiter>
+                        </delimiters>
+                        <useDefaultDelimiters>false</useDefaultDelimiters>
+                        <!-- 过滤后缀为pem、pfx的证书文件 -->
+                        <nonFilteredFileExtensions>
+                            <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>p12</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                    <version>${flatten-maven-plugin.version}</version>
+                    <configuration>
+                        <updatePomFile>true</updatePomFile>
+                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>flatten</id>
+                            <goals>
+                                <goal>flatten</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                        </execution>
+                        <execution>
+                            <id>flatten.clean</id>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                            <phase>clean</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>${jib-maven-plugin.version}</version>
+                    <configuration>
+                        <skip>${jib.skip.build}</skip>
+                        <from>
+                            <image>registry://harbor.sz-hm.cn:8888/hmev/openjdk11:1.0.0</image>
+                        </from>
+                        <to>
+                            <image>harbor.sz-hm.cn:8888/hmev/${project.artifactId}</image>
+                            <tags>
+                                <tag>v${project.version}</tag>
+                            </tags>
+                        </to>
+                        <container>
+                            <volumes>
+                                <volume>/tmp</volume>
+                            </volumes>
+                            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                            <mainClass>${jib.main.class}</mainClass>
+                            <entrypoint>
+                                <shell>/bin/sh</shell>
+                                <option>-c</option>
+                                <arg>exec java $JAVA_OPTS -cp $( cat /app/jib-classpath-file ) $( cat /app/jib-main-class-file )</arg>
+                            </entrypoint>
+                        </container>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>repackage</id>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <mainClass>${start-class}</mainClass>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                            <exclude>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-devtools</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.alipay.sofa</groupId>
+                    <artifactId>sofa-ark-maven-plugin</artifactId>
+                    <version>${sofa.ark.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-cli</id>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

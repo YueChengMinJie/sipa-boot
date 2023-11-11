@@ -1,0 +1,32 @@
+# EnableAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sipa.boot.ark.ArkHostAutoConfiguration,\
+com.sipa.boot.cache.RedisAutoConfiguration,\
+com.sipa.boot.cache.CacheAutoConfiguration,\
+com.sipa.boot.core.CoreAutoConfiguration,\
+com.sipa.boot.es.ElasticSearchAutoConfiguration,\
+com.sipa.boot.extension.ExtensionAutoConfiguration,\
+com.sipa.boot.feign.FeignAllAutoConfiguration,\
+com.sipa.boot.feign.FeignAutoConfiguration,\
+com.sipa.boot.gateway.GatewayAutoConfiguration,\
+com.sipa.boot.geetest.GeetestAutoConfiguration,\
+com.sipa.boot.lb.LoadBalancerAutoConfiguration,\
+com.sipa.boot.lock.LockAutoConfiguration,\
+com.sipa.boot.mvc.MvcAutoConfiguration,\
+com.sipa.boot.mybatis.MybatisAutoConfiguration,\
+com.sipa.boot.nacos.NacosAutoConfiguration,\
+com.sipa.boot.openapi.OpenApiAutoConfiguration,\
+com.sipa.boot.rest.RestAutoConfiguration,\
+com.sipa.boot.rocketmq.RocketMQAutoConfiguration,\
+com.sipa.boot.secure.SecureAutoConfiguration,\
+com.sipa.boot.secure.SecureGatewayAutoConfiguration,\
+com.sipa.boot.secure.SecureServerAutoConfiguration,\
+com.sipa.boot.secure.SecureSsrAutoConfiguration,\
+com.sipa.boot.storage.StorageAutoConfiguration,\
+com.sipa.boot.testcontainer.TestContainerAutoConfiguration,\
+com.sipa.boot.wxma.WxMaAutoConfiguration,\
+com.sipa.boot.wxmp.WxMpAutoConfiguration,\
+com.sipa.boot.xxljob.XxljobAutoConfiguration
+# EnvironmentPostProcessor
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.sipa.boot.core.env.EnvironmentCustomizer

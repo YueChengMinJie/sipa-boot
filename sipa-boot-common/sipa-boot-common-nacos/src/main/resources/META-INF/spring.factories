@@ -1,0 +1,4 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.sipa.boot.nacos.env.NacosEnvProcessor
+org.springframework.context.ApplicationContextInitializer=\
+com.sipa.boot.nacos.env.NacosMetadataApplicationContextInitializer

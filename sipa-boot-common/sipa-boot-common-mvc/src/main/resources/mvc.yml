@@ -1,0 +1,9 @@
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /statics/**

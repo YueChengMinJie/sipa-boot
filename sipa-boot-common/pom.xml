@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sipa.boot</groupId>
+        <artifactId>sipa-boot-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../sipa-boot-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>sipa-boot-common</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Scale :: Industry :: Platform :: Architecture :: Boot :: Common</name>
+
+    <modules>
+        <module>sipa-boot-common-ark-biz</module>
+        <module>sipa-boot-common-ark-host</module>
+        <module>sipa-boot-common-ark-plugin</module>
+        <module>sipa-boot-common-async</module>
+        <module>sipa-boot-common-cache</module>
+        <module>sipa-boot-common-core</module>
+        <module>sipa-boot-common-es</module>
+        <module>sipa-boot-common-extension</module>
+        <module>sipa-boot-common-extension-with-ark</module>
+        <module>sipa-boot-common-feign</module>
+        <module>sipa-boot-common-flow</module>
+        <module>sipa-boot-common-gateway</module>
+        <module>sipa-boot-common-geetest</module>
+        <module>sipa-boot-common-lb</module>
+        <module>sipa-boot-common-lock</module>
+        <module>sipa-boot-common-mvc</module>
+        <module>sipa-boot-common-mongodb</module>
+        <module>sipa-boot-common-mybatis</module>
+        <module>sipa-boot-common-nacos</module>
+        <module>sipa-boot-common-openapi</module>
+        <module>sipa-boot-common-rest</module>
+        <module>sipa-boot-common-retry</module>
+        <module>sipa-boot-common-rocketmq</module>
+        <module>sipa-boot-common-seata</module>
+        <module>sipa-boot-common-secure</module>
+        <module>sipa-boot-common-secure-gateway</module>
+        <module>sipa-boot-common-secure-server</module>
+        <module>sipa-boot-common-secure-ssr</module>
+        <module>sipa-boot-common-state-machine</module>
+        <module>sipa-boot-common-storage</module>
+        <module>sipa-boot-common-test-container</module>
+        <module>sipa-boot-common-wx-ma</module>
+        <module>sipa-boot-common-wx-mp</module>
+        <module>sipa-boot-common-xxljob</module>
+    </modules>
+</project>

@@ -1,0 +1,27 @@
+#
+# -------------------------------------------
+# SERVER配置
+# -------------------------------------------
+#
+server:
+  tomcat:
+    connection-timeout: 60s
+    keep-alive-timeout: 60s
+#
+# -------------------------------------------
+# MANAGEMENT配置
+# -------------------------------------------
+#
+management:
+  health:
+    db:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true

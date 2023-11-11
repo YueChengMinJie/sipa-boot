@@ -1,0 +1,13 @@
+<code_scheme name="sipa" version="173">
+  <MySQLCodeStyleSettings version="6">
+    <option name="USE_GENERAL_STYLE" value="false" />
+    <option name="KEYWORD_CASE" value="2" />
+    <option name="QUERY_SECTION_1ST_WORD_ALIGN" value="8" />
+  </MySQLCodeStyleSettings>
+  <XML>
+    <option name="XML_KEEP_WHITESPACES" value="true" />
+  </XML>
+  <codeStyleSettings language="XML">
+    <option name="RIGHT_MARGIN" value="300" />
+  </codeStyleSettings>
+</code_scheme>
