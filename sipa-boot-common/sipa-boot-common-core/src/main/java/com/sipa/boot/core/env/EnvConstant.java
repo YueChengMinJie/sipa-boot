@@ -83,6 +83,11 @@ public interface EnvConstant {
     String ENV_FAT = "fat";
 
     /**
+     * 预发环境
+     */
+    String ENV_UAT = "uat";
+
+    /**
      * 生产环境
      */
     String ENV_PROD = "prod";

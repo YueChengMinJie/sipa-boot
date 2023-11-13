@@ -8,8 +8,10 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import com.sipa.boot.core.constant.SipaConstant;
+import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.secure.server.IdpUserHoldFilter;
 import com.sipa.boot.secure.server.IdpUserInterceptor;
 import com.sipa.boot.secure.server.SameTokenInterceptor;
@@ -41,9 +43,8 @@ public class SecureServerAutoConfiguration {
     public static class FeignSecureServerAutoConfiguration {
         private final SecureServerProperty secureServerProperty;
 
-        // todo by caszhou 暂时注释掉 等ifree重构时打开 需要向上升一个版本
-        // @Bean
-        // @Profile(EnvConstant.NOT_ENV_LOCAL)
+        @Bean
+        @Profile(EnvConstant.NOT_ENV_LOCAL)
         public SaServletFilter saServletFilter() {
             String authPattern = this.secureServerProperty.getAuthPattern();
             String[] springDocPattern = this.secureServerProperty.getSpringDocPattern();
@@ -66,9 +67,8 @@ public class SecureServerAutoConfiguration {
                 });
         }
 
-        // todo by caszhou 暂时注释掉 等ifree上线后打开
-        // @Bean
-        // @Profile(EnvConstant.NOT_ENV_LOCAL)
+        @Bean
+        @Profile(EnvConstant.NOT_ENV_LOCAL)
         public RequestInterceptor sameTokenInterceptor() {
             return new SameTokenInterceptor();
         }

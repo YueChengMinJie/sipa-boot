@@ -64,8 +64,8 @@ public class OpenApiAutoConfiguration {
             .info(new Info().title(this.name)
                 .description(this.openApiProperty.getDesc())
                 .version(this.openApiProperty.getVersion())
-                .license(new License().name("苏州恒美电子科技股份有限公司").url("https://www.sz-hm.cn/"))) // todo by caszhou
-                                                                                             // 业务配置应该与框架解耦
+                // todo by caszhou 业务配置应该与框架解耦
+                .license(new License().name("苏州恒美电子科技股份有限公司").url("https://www.sz-hm.cn/")))
             .externalDocs(new ExternalDocumentation()
                 .description(StringUtils.trimToEmpty(this.openApiProperty.getDesc()) + "接口文档")
                 .url(url + "/swagger-ui.html"))

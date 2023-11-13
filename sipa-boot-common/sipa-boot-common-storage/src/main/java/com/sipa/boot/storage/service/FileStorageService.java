@@ -150,15 +150,15 @@ public class FileStorageService implements DisposableBean {
         }
 
         // 处理切面
-        return new UploadAspectChain(this.aspectList, (chainFileInfo, chainPre, chainFileStorage, chainFileRecorder) -> {
-            if (chainFileStorage.save(chainFileInfo, chainPre)) {
-                // todo by caszhou 异步化
-                if (chainFileRecorder.record(chainFileInfo)) {
-                    return chainFileInfo;
+        return new UploadAspectChain(this.aspectList,
+            (chainFileInfo, chainPre, chainFileStorage, chainFileRecorder) -> {
+                if (chainFileStorage.save(chainFileInfo, chainPre)) {
+                    if (chainFileRecorder.record(chainFileInfo)) {
+                        return chainFileInfo;
+                    }
                 }
-            }
-            return null;
-        }).next(fileInfo, pre, fileStorage, this.fileRecorder);
+                return null;
+            }).next(fileInfo, pre, fileStorage, this.fileRecorder);
     }
 
     /**
@@ -220,7 +220,6 @@ public class FileStorageService implements DisposableBean {
 
         return new DeleteAspectChain(this.aspectList, (chainFileInfo, chainFileStorage, chainFileRecorder) -> {
             if (chainFileStorage.delete(chainFileInfo)) {
-                // todo by caszhou 异步化
                 return chainFileRecorder.delete(chainFileInfo.getUrl());
             }
             return false;
@@ -268,7 +267,8 @@ public class FileStorageService implements DisposableBean {
      * 获取缩略图文件下载器
      */
     public Downloader downloadTh(FileInfo fileInfo) {
-        return new Downloader(fileInfo, this.aspectList, this.getFileStorageVerify(fileInfo), Downloader.TARGET_TH_FILE);
+        return new Downloader(fileInfo, this.aspectList, this.getFileStorageVerify(fileInfo),
+            Downloader.TARGET_TH_FILE);
     }
 
     /**

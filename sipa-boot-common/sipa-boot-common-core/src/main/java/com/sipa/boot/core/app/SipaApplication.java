@@ -121,7 +121,8 @@ public class SipaApplication {
         setPropIfNotExist(props, SipaBootConstant.Core.ALLOW_CIRCULAR_REFERENCES_KEY,
             SipaBootConstant.Core.ALLOW_CIRCULAR_REFERENCES_VALUE);
         // springdoc
-        if (profile.equals(EnvConstant.ENV_FAT) || profile.equals(EnvConstant.ENV_PROD)) {
+        if (profile.equals(EnvConstant.ENV_FAT) || profile.equals(EnvConstant.ENV_UAT)
+            || profile.equals(EnvConstant.ENV_PROD)) {
             setPropIfNotExist(props, SipaBootConstant.Core.SPRINGDOC_KEY, SipaBootConstant.Core.SPRINGDOC_VALUE);
         }
         // custom
