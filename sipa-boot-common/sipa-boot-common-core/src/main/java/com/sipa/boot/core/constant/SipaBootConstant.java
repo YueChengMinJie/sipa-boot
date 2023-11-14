@@ -7,8 +7,6 @@ package com.sipa.boot.core.constant;
 public interface SipaBootConstant {
     String TCP_CLOUD_PREFIX = "sipa-boot.";
 
-    String BCP_PREFIX = "hm-bcp-";
-
     interface Cache {
         String PREFIX = TCP_CLOUD_PREFIX + "cache";
 
@@ -94,7 +92,7 @@ public interface SipaBootConstant {
     }
 
     interface Gateway {
-        String PREFIX = BCP_PREFIX + "gateway";
+        String PREFIX = "application-gateway";
 
         String SECURE = PREFIX + SipaConstant.Symbol.POINT + "secure";
 
