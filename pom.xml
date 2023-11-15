@@ -186,8 +186,7 @@
                             <removeUnusedImports/>
                             <eclipse>
                                 <version>4.13</version>
-                                <!-- todo -->
-                                <file>http://minio.sz-hm.cn:9001/api/v1/buckets/dev/objects/download?prefix=ZWNsaXBzZV9mb3JtYXR0ZXIueG1s</file>
+                                <file>http://minio.sz-hm.cn:9000/dev/eclipse_formatter.xml</file>
                             </eclipse>
                         </java>
                         <pom>
