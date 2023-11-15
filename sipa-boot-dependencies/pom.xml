@@ -1298,10 +1298,9 @@
                                     <maxMemorySize>${project.runtime.mem_max}</maxMemorySize>
                                     <extraArguments>
                                         <extraArgument>-server</extraArgument>
-                                        <extraArgument>-Dapplication.name=${project.artifactId}</extraArgument>
-                                        <extraArgument>-Dapplication.version=${project.version}</extraArgument>
-                                        <extraArgument>-Dfile.encoding=utf-8</extraArgument>
-                                        <extraArgument>-Duser.timezone=Aisa/Shanghai</extraArgument>
+                                        <extraArgument>-XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+SegmentedCodeCache -XX:+ExplicitGCInvokesConcurrent</extraArgument>
+                                        <extraArgument>-Djava.security.egd=file:/dev/./urandom -Dfile.encoding=utf-8 -Duser.timezone=GMT+08</extraArgument>
+                                        <extraArgument>-verbose:gc -XX:+PrintCommandLineFlags -Xlog:gc*,safepoint:/var/loggc.log:time,uptime:filecount=10,filesize=50M</extraArgument>
                                         <extraArgument>-Dspring.profiles.active=${SERVICE_ENV}</extraArgument>
                                         <extraArgument>-Denv=${SERVICE_ENV}</extraArgument>
                                     </extraArguments>
