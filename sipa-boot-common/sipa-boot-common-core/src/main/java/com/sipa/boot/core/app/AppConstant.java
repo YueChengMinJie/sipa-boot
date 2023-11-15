@@ -12,6 +12,10 @@ public interface AppConstant {
     interface BCP {
         String APPLICATION_GATEWAY_NAME = "application-gateway-server";
 
+        String IOT_NAME = "iot-service-server";
+
+        String IOT_GATEWAY_NAME = "iot-gateway-service-server";
+
         String SSO_IDP_NAME = "sso-idp-server";
     }
 
