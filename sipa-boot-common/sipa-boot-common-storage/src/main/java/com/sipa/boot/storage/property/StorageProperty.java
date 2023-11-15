@@ -21,12 +21,12 @@ public class StorageProperty {
     /**
      * 默认存储平台，默认为阿里云
      */
-    private String defaultPlatform = "minio";
+    private String defaultPlatform;
 
     /**
      * 默认存储桶，默认为dev
      */
-    private String defaultBucket = "dev";
+    private String defaultBucket;
 
     /**
      * 缩略图后缀，例如【.min.jpg】【.png】，默认为.min.jpg
