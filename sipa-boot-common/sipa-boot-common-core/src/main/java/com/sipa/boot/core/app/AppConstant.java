@@ -21,6 +21,8 @@ public interface AppConstant {
 
     interface TCP {
         String SIPA_BOOT_TEST_NAME = "sipa-boot-test";
+
+        String CREATOR_NAME = "creator";
     }
 
     interface DCP {
