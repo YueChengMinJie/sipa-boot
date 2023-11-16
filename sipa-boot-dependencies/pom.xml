@@ -818,6 +818,12 @@
 
             <dependency>
                 <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-iot</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-common-lb</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
@@ -1006,6 +1012,12 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-geetest-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-iot-starter</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 

@@ -30,6 +30,7 @@ git config --local core.hooksPath .githooks/
 - sipa-boot-starter
 - sipa-boot-state-machine-starter
 - sipa-boot-test-container-starter
+- sipa-boot-iot-starter
 
 ## 需要配置的启动器
 

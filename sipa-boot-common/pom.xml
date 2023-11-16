@@ -27,6 +27,7 @@
         <module>sipa-boot-common-flow</module>
         <module>sipa-boot-common-gateway</module>
         <module>sipa-boot-common-geetest</module>
+        <module>sipa-boot-common-iot</module>
         <module>sipa-boot-common-lb</module>
         <module>sipa-boot-common-lock</module>
         <module>sipa-boot-common-mvc</module>
