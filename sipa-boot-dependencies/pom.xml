@@ -1450,10 +1450,10 @@
                     <configuration>
                         <skip>${jib.skip.build}</skip>
                         <from>
-                            <image>registry://harbor.sz-hm.cn:8888/hmev/openjdk11:1.0.0</image>
+                            <image>registry://harbor.sz-hm.cn/hmev/openjdk11:1.0.0</image>
                         </from>
                         <to>
-                            <image>harbor.sz-hm.cn:8888/hmev/${project.artifactId}</image>
+                            <image>harbor.sz-hm.cn/hmev/${project.artifactId}</image>
                             <tags>
                                 <tag>v${project.version}</tag>
                             </tags>
