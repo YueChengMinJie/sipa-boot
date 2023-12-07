@@ -15,7 +15,7 @@
 
     <properties>
         <!-- 一方库 -->
-        <sipa-boot-dependencies.version>0.1.0-SNAPSHOT</sipa-boot-dependencies.version>
+        <sipa-boot-dependencies.version>1.0.0-SNAPSHOT</sipa-boot-dependencies.version>
         <!-- 二方库 -->
 
         <!-- 三方库 -->
