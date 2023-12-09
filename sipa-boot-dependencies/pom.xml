@@ -77,6 +77,7 @@
         <xxl-job-core.version>2.4.0</xxl-job-core.version>
         <groboutils-core.version>5</groboutils-core.version>
         <liteflow-spring-boot-starter.version>2.11.0</liteflow-spring-boot-starter.version>
+        <mssql-jdbc.version>8.2.2.jre11</mssql-jdbc.version>
         <mica-auto.version>2.3.2</mica-auto.version>
         <!-- plugin -->
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
