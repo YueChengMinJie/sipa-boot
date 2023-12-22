@@ -30,6 +30,8 @@ import com.sipa.boot.core.property.YamlPropertySourceFactory;
 import com.sipa.boot.mvc.log.LogInterceptor;
 import com.sipa.boot.mvc.response.NoPackage;
 
+import cn.hutool.system.SystemUtil;
+
 /**
  * @author caszhou
  * @date 2022/12/23
@@ -81,7 +83,8 @@ public class MvcAutoConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        if (StringUtils.equals(this.profile, EnvConstant.ENV_LOCAL)) {
+        if (StringUtils.equals(this.profile, EnvConstant.ENV_LOCAL)
+            && SystemUtil.getBoolean("SIPA_MVC_OPEN_CORS", true)) {
             registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedMethods("GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE")
