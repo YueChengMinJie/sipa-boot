@@ -1,5 +1,6 @@
 package com.sipa.boot.core.pojo.po;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import com.baomidou.mybatisplus.annotation.*;
@@ -13,7 +14,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BasePo {
+public class BasePo implements Serializable {
     @TableId
     private Long id;
 
