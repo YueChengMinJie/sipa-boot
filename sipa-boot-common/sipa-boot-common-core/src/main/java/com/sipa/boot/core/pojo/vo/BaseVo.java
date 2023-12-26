@@ -1,5 +1,6 @@
 package com.sipa.boot.core.pojo.vo;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,7 +13,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BaseVo {
+public class BaseVo implements Serializable {
     @Schema(example = "id")
     private Long id;
 
