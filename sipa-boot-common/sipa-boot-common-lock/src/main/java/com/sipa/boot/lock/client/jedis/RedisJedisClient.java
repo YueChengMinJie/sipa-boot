@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import org.springframework.util.DigestUtils;
 
 import com.sipa.boot.lock.property.LockProperty;
 
@@ -253,6 +252,6 @@ public class RedisJedisClient {
     }
 
     public static String getRealKey(String key) {
-        return key.length() > 32 ? DigestUtils.md5DigestAsHex(key.getBytes()) : key;
+        return key;
     }
 }
