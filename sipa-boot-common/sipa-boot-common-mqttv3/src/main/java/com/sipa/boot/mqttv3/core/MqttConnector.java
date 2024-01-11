@@ -111,8 +111,7 @@ public class MqttConnector implements DisposableBean {
                 IMqttAsyncClient client = adapter.postCreate(id, options);
                 if (client != null) {
                     MQTT_CLIENT_MAP.put(client.getClientId(), client);
-                    MQTT_DEFAULT_QOS_MAP.put(client.getClientId(),
-                        this.properties.getClients().get(client.getClientId()).getDefaultPublishQos());
+                    MQTT_DEFAULT_QOS_MAP.put(client.getClientId(), this.properties.getDefaultPublishQos());
                     if (!StringUtils.hasText(defaultClientId)) {
                         defaultClientId = client.getClientId();
                         defaultPublishQos = MQTT_DEFAULT_QOS_MAP.get(client.getClientId());

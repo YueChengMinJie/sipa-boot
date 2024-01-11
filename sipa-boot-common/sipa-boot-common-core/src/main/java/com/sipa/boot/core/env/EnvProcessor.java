@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -76,6 +78,21 @@ public abstract class EnvProcessor {
     public void processProperties(ConfigurableEnvironment environment, String path) throws IOException {
         Properties properties = this.processProperties(path);
         for (String key : properties.stringPropertyNames()) {
+            String newKey = null;
+            if (key.contains("${") && key.contains("}")) {
+                String regex = "\\$\\{(.*?)}";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(key);
+                StringBuilder result = new StringBuilder();
+                while (matcher.find()) {
+                    String placeholder = matcher.group(1);
+                    String replacement = environment.getProperty(placeholder);
+                    matcher.appendReplacement(result, replacement != null ? Matcher.quoteReplacement(replacement) : "");
+                }
+                matcher.appendTail(result);
+                newKey = result.toString();
+            }
+
             // 如果已经设置，则使用已经设置的值
             if (environment.getProperty(key) == null && System.getProperty(key) == null
                 && System.getenv(key.toUpperCase()) == null) {
@@ -93,7 +110,11 @@ public abstract class EnvProcessor {
                     // System Property配置值中的占位符被真实数据替换掉，保证某些中间件（例如，Apollo）通过System.getProperty拿到最终值
                     String environmentValue = environment.getProperty(key);
                     if (StringUtils.isNotBlank(environmentValue)) {
-                        System.setProperty(key, environmentValue);
+                        if (StringUtils.isNotBlank(newKey)) {
+                            System.setProperty(newKey, environmentValue);
+                        } else {
+                            System.setProperty(key, environmentValue);
+                        }
                     }
                 }
             }
