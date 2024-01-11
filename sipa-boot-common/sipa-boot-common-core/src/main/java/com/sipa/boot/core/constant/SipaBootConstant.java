@@ -75,6 +75,10 @@ public interface SipaBootConstant {
         String PREFIX = TCP_CLOUD_PREFIX + "lock";
     }
 
+    interface Mqttv3 {
+        String PREFIX = TCP_CLOUD_PREFIX + "mqtt";
+    }
+
     interface OpenApi {
         String PREFIX = TCP_CLOUD_PREFIX + "openapi";
     }

@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.sipa.boot.mqttv3.env.Mqttv3EnvProcessor

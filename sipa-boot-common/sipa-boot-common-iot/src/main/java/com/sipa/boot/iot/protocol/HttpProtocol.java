@@ -6,10 +6,10 @@ import java.util.Map;
  * @author caszhou
  * @date 2023/11/16
  */
-public interface HttpProtocol {
+public interface HttpProtocol<T> {
     Map<String, String> headers();
 
-    Object payload();
+    T payload();
 
     int crc();
 }

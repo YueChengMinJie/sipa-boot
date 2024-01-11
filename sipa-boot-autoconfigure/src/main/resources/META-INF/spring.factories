@@ -12,6 +12,7 @@ com.sipa.boot.gateway.GatewayAutoConfiguration,\
 com.sipa.boot.geetest.GeetestAutoConfiguration,\
 com.sipa.boot.lb.LoadBalancerAutoConfiguration,\
 com.sipa.boot.lock.LockAutoConfiguration,\
+com.sipa.boot.mqttv3.MqttAutoConfiguration,\
 com.sipa.boot.mvc.MvcAutoConfiguration,\
 com.sipa.boot.mybatis.MybatisAutoConfiguration,\
 com.sipa.boot.nacos.NacosAutoConfiguration,\

@@ -40,8 +40,8 @@ import com.sipa.boot.gateway.filter.RequestLogFilter;
  */
 @Configuration
 @ConditionalOnWebApplication
-@ConditionalOnClass(RequestLogFilter.class)
 @ComponentScan("com.sipa.boot.gateway.**")
+@ConditionalOnClass(RequestLogFilter.class)
 @AutoConfigureBefore(ErrorWebFluxAutoConfiguration.class)
 public class GatewayAutoConfiguration {
     public static final String PREFIX = "sipa-boot.openapi";

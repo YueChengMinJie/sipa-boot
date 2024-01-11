@@ -21,33 +21,33 @@ spring:
     port: 6379
     database: 0
     password: redis@admin
-  cloud:
-    stream:
-      rocketmq:
-        bindings:
-          input1:
-            consumer:
-              orderly: 'true'
-          input2:
-            consumer:
-              orderly: 'false'
-              tags: tagStr
-      bindings:
-        output:
-          destination: test-topic
-        input1:
-          destination: test-topic
-          group: test-group1
-        input2:
-          destination: test-topic
-          group: test-group2
-          consumer:
-            concurrency: '16'
-        input3:
-          destination: jiangsu_bank_trade_notify
-          group: GID_jiangsu_bank_trade_notify6
-          consumer:
-            concurrency: '1'
+#  cloud:
+#    stream:
+#      rocketmq:
+#        bindings:
+#          input1:
+#            consumer:
+#              orderly: 'true'
+#          input2:
+#            consumer:
+#              orderly: 'false'
+#              tags: tagStr
+#      bindings:
+#        output:
+#          destination: test-topic
+#        input1:
+#          destination: test-topic
+#          group: test-group1
+#        input2:
+#          destination: test-topic
+#          group: test-group2
+#          consumer:
+#            concurrency: '16'
+#        input3:
+#          destination: jiangsu_bank_trade_notify
+#          group: GID_jiangsu_bank_trade_notify6
+#          consumer:
+#            concurrency: '1'
 #
 # -------------------------------------------
 # SIPA-BOOT配置
@@ -65,11 +65,13 @@ sipa-boot:
     version: v1.0.0
   storage:
     minio:
-      - enable-storage: true
-        access-key: todo
-        secret-key: todo
-        endpoint: todo
-        bucket-name: dev
-        domain: todo
+      - access-key: r7SVSjmzBEghqK4g8iFZ
+        secret-key: YlhUl9PA6rxbwsqZWpkS81FhijhwZ4gQjDWpBgzE
+        endpoint: http://minio.sz-hm.cn:9000
+        bucket-name: ams-service
+        domain: http://minio.sz-hm.cn:9000/ams-service
+        enable-storage: true
+        platform: minio
+        base-path: dev
   xxljob:
-    admin-addresses: 'http://xxljob-dev.sz-hm.cn:8080/xxl-job-admin'
+    admin-addresses: http://xxljob-dev.sz-hm.cn/xxl-job-admin

@@ -110,6 +110,12 @@
 
         <dependency>
             <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-common-mqttv3</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
             <artifactId>sipa-boot-common-mvc</artifactId>
             <optional>true</optional>
         </dependency>

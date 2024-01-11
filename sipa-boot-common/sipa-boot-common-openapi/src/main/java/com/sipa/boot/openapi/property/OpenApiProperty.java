@@ -8,7 +8,7 @@ import lombok.Data;
 
 /**
  * @author caszhou
- * @date 2022/12/23
+ * @date 2022/6/23
  */
 @Data
 @ConfigurationProperties(prefix = SipaBootConstant.OpenApi.PREFIX)

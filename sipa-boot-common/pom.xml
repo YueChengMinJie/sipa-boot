@@ -32,6 +32,7 @@
         <module>sipa-boot-common-lock</module>
         <module>sipa-boot-common-mvc</module>
         <module>sipa-boot-common-mongodb</module>
+        <module>sipa-boot-common-mqttv3</module>
         <module>sipa-boot-common-mybatis</module>
         <module>sipa-boot-common-nacos</module>
         <module>sipa-boot-common-openapi</module>

@@ -78,6 +78,7 @@
         <groboutils-core.version>5</groboutils-core.version>
         <liteflow-spring-boot-starter.version>2.11.0</liteflow-spring-boot-starter.version>
         <mssql-jdbc.version>8.2.2.jre11</mssql-jdbc.version>
+        <mqttv3.version>1.2.2</mqttv3.version>
         <mica-auto.version>2.3.2</mica-auto.version>
         <!-- plugin -->
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
@@ -731,6 +732,13 @@
                 <version>${liteflow-spring-boot-starter.version}</version>
             </dependency>
 
+            <!-- mqttv3 -->
+            <dependency>
+                <groupId>org.eclipse.paho</groupId>
+                <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+                <version>${mqttv3.version}</version>
+            </dependency>
+
             <!-- mica -->
             <dependency>
                 <groupId>net.dreamlu</groupId>
@@ -838,6 +846,12 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-common-mongodb</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-mqttv3</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 
@@ -1037,6 +1051,12 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-mongodb-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-mqttv3-starter</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 

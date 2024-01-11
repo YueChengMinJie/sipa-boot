@@ -27,6 +27,7 @@
         <module>sipa-boot-lb-starter</module>
         <module>sipa-boot-lock-starter</module>
         <module>sipa-boot-mongodb-starter</module>
+        <module>sipa-boot-mqttv3-starter</module>
         <module>sipa-boot-mvc-starter</module>
         <module>sipa-boot-mybatis-starter</module>
         <module>sipa-boot-nacos-starter</module>

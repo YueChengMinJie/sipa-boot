@@ -16,6 +16,8 @@ public interface AppConstant {
 
         String IOT_GATEWAY_NAME = "iot-gateway-service-server";
 
+        String IOT_STATION_NAME = "iot-station-service-server";
+
         String SSO_IDP_NAME = "sso-idp-server";
     }
 

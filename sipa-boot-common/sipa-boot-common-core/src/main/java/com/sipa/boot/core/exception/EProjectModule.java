@@ -28,6 +28,11 @@ public enum EProjectModule implements IProjectModule {
     IOT_GATEWAY("02", "02", "业务中台", "物联网中台-边缘网关"),
 
     /**
+     * 物联网中台-站控
+     */
+    IOT_STATION("02", "03", "业务中台", "物联网中台-站控"),
+
+    /**
      * 用户中台
      */
     SSO_IDP("02", "03", "业务中台", "用户中台"),
