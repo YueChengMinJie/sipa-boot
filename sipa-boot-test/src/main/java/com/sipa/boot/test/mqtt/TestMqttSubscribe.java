@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 public class TestMqttSubscribe {
-    @MqttSubscribe(value = "1000201/{stationCode}/S2M/event")
+    @MqttSubscribe(value = "1000201/{stationCode}/S2M/event", shared = true, groups = "ams-service")
     public void test(@NamedValue(value = "stationCode") String stationCode,
         @Payload TestController.GlueAlert glueAlert) {
         log.info(stationCode);
