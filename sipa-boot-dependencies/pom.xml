@@ -79,6 +79,7 @@
         <liteflow-spring-boot-starter.version>2.11.0</liteflow-spring-boot-starter.version>
         <mssql-jdbc.version>8.2.2.jre11</mssql-jdbc.version>
         <mqttv3.version>1.2.2</mqttv3.version>
+        <artemis-http-client.version>1.1.3</artemis-http-client.version>
         <mica-auto.version>2.3.2</mica-auto.version>
         <!-- plugin -->
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
@@ -737,6 +738,13 @@
                 <groupId>org.eclipse.paho</groupId>
                 <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
                 <version>${mqttv3.version}</version>
+            </dependency>
+
+            <!-- hikvision -->
+            <dependency>
+                <groupId>com.hikvision.ga</groupId>
+                <artifactId>artemis-http-client</artifactId>
+                <version>${artemis-http-client.version}</version>
             </dependency>
 
             <!-- mica -->
