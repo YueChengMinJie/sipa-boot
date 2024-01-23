@@ -60,7 +60,7 @@ public class TestController {
     @SneakyThrows
     @GetMapping("/test/mqtt/producer")
     public void testMqttProducer() {
-        mqttPublisher.send("1000201/28-1-2/S2M/event", GlueAlert.of(1, Map.of("sn", UidUtil.nextSid())));
+        mqttPublisher.send("1000201/28-1-2/S2M/event", GlueAlert.of(1L, Map.of("sn", UidUtil.nextSid())));
     }
 
     @Data
