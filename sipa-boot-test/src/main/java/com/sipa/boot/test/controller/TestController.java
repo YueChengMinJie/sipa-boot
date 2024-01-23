@@ -71,7 +71,7 @@ public class TestController {
 
         public static GlueAlert of(Long index, Object dataBody) {
             GlueAlert glueAlert = new GlueAlert();
-            glueAlert.setHeader(getHeader(1L));
+            glueAlert.setHeader(getHeader(index));
             glueAlert.setDataBody(dataBody);
             return glueAlert;
         }
