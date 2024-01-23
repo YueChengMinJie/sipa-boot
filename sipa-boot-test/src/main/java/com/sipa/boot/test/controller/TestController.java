@@ -69,14 +69,14 @@ public class TestController {
 
         private Object dataBody;
 
-        public static GlueAlert of(Integer index, Object dataBody) {
+        public static GlueAlert of(Long index, Object dataBody) {
             GlueAlert glueAlert = new GlueAlert();
-            glueAlert.setHeader(getHeader(1));
+            glueAlert.setHeader(getHeader(1L));
             glueAlert.setDataBody(dataBody);
             return glueAlert;
         }
 
-        private static MqttHeader getHeader(Integer index) {
+        private static MqttHeader getHeader(Long index) {
             return MqttHeader.builder()
                 .version("1.0.0")
                 .timeStamp(String.valueOf(System.currentTimeMillis()))
