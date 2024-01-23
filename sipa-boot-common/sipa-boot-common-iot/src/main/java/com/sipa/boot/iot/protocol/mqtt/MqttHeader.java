@@ -16,7 +16,7 @@ public class MqttHeader {
 
     private String timeStamp;
 
-    private Integer index;
+    private Long index;
 
     private String function;
 
