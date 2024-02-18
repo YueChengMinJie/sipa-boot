@@ -86,7 +86,7 @@ public class EnvProvider {
             log.info("Initialize env failed, use env [{}] as default", EnvConstant.ENV_LOCAL);
         }
         if (StringUtils.isBlank(env)) {
-            // 通过三种方式之一未找到环境值，默认取dev
+            // 通过三种方式之一未找到环境值，默认取local
             env = EnvConstant.ENV_LOCAL;
         }
         // 设置到System Property，提供给注册中心元数据用

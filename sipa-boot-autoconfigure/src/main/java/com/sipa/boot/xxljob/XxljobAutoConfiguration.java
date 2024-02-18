@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.env.EnvConstant;
+import com.sipa.boot.core.env.EnvProvider;
 import com.sipa.boot.xxljob.property.XxljobProperty;
 import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 
@@ -43,16 +44,22 @@ public class XxljobAutoConfiguration {
         xxlJobSpringExecutor.setIp(inetUtils.findFirstNonLoopbackHostInfo().getIpAddress());
         xxlJobSpringExecutor.setPort(this.port + 1000);
         xxlJobSpringExecutor.setAccessToken(this.xxljobProperty.getAccessToken());
-        xxlJobSpringExecutor.setLogPath("/logs/" + this.name + "/xxl-job/jobhandler");
+        String env = EnvProvider.getEnv();
+        if (EnvConstant.ENV_LOCAL.equals(env)) {
+            xxlJobSpringExecutor.setLogPath("./logs/" + this.name + "/xxl-job/jobhandler");
+        } else {
+            xxlJobSpringExecutor.setLogPath("/logs/" + this.name + "/xxl-job/jobhandler");
+        }
         xxlJobSpringExecutor.setLogRetentionDays(this.xxljobProperty.getLogRetentionDays());
         return xxlJobSpringExecutor;
     }
 
     private String getAppName() {
-        if (EnvConstant.ENV_PROD.equals(this.profile)) {
+        String env = EnvProvider.getEnv();
+        if (EnvConstant.ENV_PROD.equals(env)) {
             return this.name;
         } else {
-            return this.name + SipaConstant.Symbol.ACROSS + this.profile;
+            return this.name + SipaConstant.Symbol.ACROSS + env;
         }
     }
 }
