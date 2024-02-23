@@ -1357,7 +1357,7 @@
                                             </property>
                                             <property>
                                                 <name>wrapper.pidfile</name>
-                                                <value>../..</value>
+                                                <value>../../${project.name}.pid</value>
                                             </property>
                                         </configuration>
                                     </generatorConfiguration>
@@ -1368,10 +1368,9 @@
                                     <extraArguments>
                                         <extraArgument>-server</extraArgument>
                                         <extraArgument>-XX:+UseG1GC -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+SegmentedCodeCache -XX:+ExplicitGCInvokesConcurrent</extraArgument>
-                                        <extraArgument>-Djava.security.egd=file:/dev/./urandom -Dfile.encoding=utf-8 -Duser.timezone=GMT+08</extraArgument>
-                                        <extraArgument>-verbose:gc -XX:+PrintCommandLineFlags -Xlog:gc*,safepoint:/var/loggc.log:time,uptime:filecount=10,filesize=50M</extraArgument>
-                                        <extraArgument>-Dspring.profiles.active=${SERVICE_ENV}</extraArgument>
-                                        <extraArgument>-Denv=${SERVICE_ENV}</extraArgument>
+                                        <extraArgument>-Dfile.encoding=utf-8 -Duser.timezone=GMT+08</extraArgument>
+                                        <extraArgument>-verbose:gc -XX:+PrintCommandLineFlags -Xlog:gc*,safepoint:./loggc.log:time,uptime:filecount=10,filesize=50M</extraArgument>
+                                        <extraArgument>-Dspring.profiles.active=${SERVICE_ENV} -Denv=${SERVICE_ENV}</extraArgument>
                                     </extraArguments>
                                 </jvmSettings>
                             </daemon>
