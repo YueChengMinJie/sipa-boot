@@ -1357,7 +1357,7 @@
                                             </property>
                                             <property>
                                                 <name>wrapper.pidfile</name>
-                                                <value>../../${project.name}.pid</value>
+                                                <value>./${project.name}.pid</value>
                                             </property>
                                         </configuration>
                                     </generatorConfiguration>
