@@ -1355,6 +1355,7 @@
                                                 <name>wrapper.logfile.maxfiles</name>
                                                 <value>10</value>
                                             </property>
+                                            <!-- 专为windows设计 -->
                                             <property>
                                                 <name>wrapper.pidfile</name>
                                                 <value>./${project.name}.pid</value>
