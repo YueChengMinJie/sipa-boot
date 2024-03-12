@@ -23,7 +23,8 @@ import com.sipa.boot.mybatis.handler.CommonMetaObjectHandler;
 @ComponentScan("com.sipa.boot.mybatis.**")
 @ConditionalOnClass({CommonMetaObjectHandler.class})
 @PropertySource(value = "classpath:mybatis.yml", factory = YamlPropertySourceFactory.class)
-@MapperScan(basePackages = {"com.hm.**.mapper", "com.hmev.**.mapper"}) // todo by caszhou 业务配置应该与框架解耦
+@MapperScan(basePackages = {"com.hm.**.mapper", "com.hmev.**.mapper", "com.sipa.**.mapper"}) // todo by caszhou
+                                                                                             // 业务配置应该与框架解耦
 public class MybatisAutoConfiguration {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
