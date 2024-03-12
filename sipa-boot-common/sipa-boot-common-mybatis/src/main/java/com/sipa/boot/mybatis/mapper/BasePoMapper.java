@@ -5,7 +5,7 @@ import com.sipa.boot.core.pojo.po.BasePo;
 
 /**
  * 在使用存在父类的泛型的Lambda表达式时会报错：
- * {@code MybatisPlusException: can not find lambda cache for this entity [com.copm.ifm.base.basic.pojo.BaseTreePO]}
+ * {@code MybatisPlusException: can not find lambda cache for this entity [com.sipa.boot.core.pojo.po.BasePo]}
  * <p>
  * 原因是在执行{@link com.baomidou.mybatisplus.core.toolkit.LambdaUtils#getColumnMap(Class)}时
  * {@code COLUMN_CACHE_MAP}中没有{@link BasePo}的信息
