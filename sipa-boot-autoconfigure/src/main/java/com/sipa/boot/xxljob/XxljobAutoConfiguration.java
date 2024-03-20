@@ -22,8 +22,6 @@ import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 @Configuration
 @ConditionalOnClass(XxljobProperty.class)
 @EnableConfigurationProperties(XxljobProperty.class)
-@ConditionalOnProperty(prefix = SipaBootConstant.Xxljob.PREFIX, value = SipaBootConstant.Xxljob.ENABLED_KEY,
-    havingValue = SipaBootConstant.Xxljob.ENABLED_VALUE)
 public class XxljobAutoConfiguration {
     @Value("${spring.application.name}")
     private String name;
@@ -41,6 +39,8 @@ public class XxljobAutoConfiguration {
     }
 
     @Bean
+    @ConditionalOnProperty(prefix = SipaBootConstant.Xxljob.PREFIX, value = SipaBootConstant.Xxljob.ENABLED_KEY,
+        havingValue = SipaBootConstant.Xxljob.ENABLED_VALUE, matchIfMissing = true)
     public XxlJobSpringExecutor xxlJobExecutor(InetUtils inetUtils) {
         XxlJobSpringExecutor xxlJobSpringExecutor = new XxlJobSpringExecutor();
         xxlJobSpringExecutor.setAdminAddresses(this.xxljobProperty.getAdminAddresses());
