@@ -2,11 +2,13 @@ package com.sipa.boot.xxljob;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.commons.util.InetUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.core.env.EnvProvider;
@@ -20,6 +22,8 @@ import com.xxl.job.core.executor.impl.XxlJobSpringExecutor;
 @Configuration
 @ConditionalOnClass(XxljobProperty.class)
 @EnableConfigurationProperties(XxljobProperty.class)
+@ConditionalOnProperty(prefix = SipaBootConstant.Xxljob.PREFIX, value = SipaBootConstant.Xxljob.ENABLED_KEY,
+    havingValue = SipaBootConstant.Xxljob.ENABLED_VALUE)
 public class XxljobAutoConfiguration {
     @Value("${spring.application.name}")
     private String name;

@@ -14,6 +14,11 @@ import lombok.Data;
 @ConfigurationProperties(prefix = SipaBootConstant.Xxljob.PREFIX)
 public class XxljobProperty {
     /**
+     * 是否开启
+     */
+    private String enabled = "true";
+
+    /**
      * admin集群地址
      */
     private String adminAddresses;

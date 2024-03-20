@@ -93,6 +93,10 @@ public interface SipaBootConstant {
 
     interface Xxljob {
         String PREFIX = TCP_CLOUD_PREFIX + "xxljob";
+
+        String ENABLED_KEY = "enabled";
+
+        String ENABLED_VALUE = "true";
     }
 
     interface Gateway {
