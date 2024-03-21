@@ -46,6 +46,9 @@ public interface AppConstant {
 
         // 后台
         String BP_AMS = "1000201";
+
+        // 后台-移动断
+        String BP_AMS_MOBILE = "1000202";
     }
 
     interface APPLICATION_ID_LONG {
@@ -57,5 +60,8 @@ public interface AppConstant {
 
         // 后台
         long BP_AMS = 1000201L;
+
+        // 后台-移动断
+        long BP_AMS_MOBILE = 1000202L;
     }
 }
