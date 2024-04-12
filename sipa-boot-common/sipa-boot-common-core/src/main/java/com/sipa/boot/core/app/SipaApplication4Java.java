@@ -1,5 +1,7 @@
 package com.sipa.boot.core.app;
 
+import java.util.TimeZone;
+
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.sipa.boot.core.constant.SipaBootConstant;
@@ -15,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SipaApplication4Java extends SipaApplication {
     public static ConfigurableApplicationContext run(String appName, Class<?> source, String... args) {
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
         setJavaProperty();
         return SipaApplication.run(appName, source, args);
     }
