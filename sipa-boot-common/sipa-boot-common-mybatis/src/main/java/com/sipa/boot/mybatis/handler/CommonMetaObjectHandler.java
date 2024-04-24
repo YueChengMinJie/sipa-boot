@@ -16,7 +16,11 @@ import com.sipa.boot.core.secure.IdpUserUtil;
 public class CommonMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
-        this.setFieldValByName("createTime", LocalDateTime.now(), metaObject);
+        if (metaObject.hasGetter("createTime")) {
+            if (metaObject.getValue("createTime") == null) {
+                this.setFieldValByName("createTime", LocalDateTime.now(), metaObject);
+            }
+        }
         this.setFieldValByName("createBy", IdpUserUtil.getId(), metaObject);
         this.setFieldValByName("createName", IdpUserUtil.getName(), metaObject);
         this.setFieldValByName("createCompanyId", IdpUserUtil.getCompanyId(), metaObject);
