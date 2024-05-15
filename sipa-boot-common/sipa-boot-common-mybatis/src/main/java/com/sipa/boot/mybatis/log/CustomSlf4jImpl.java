@@ -4,6 +4,10 @@ import org.apache.ibatis.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.sipa.boot.core.env.EnvConstant;
+import com.sipa.boot.core.env.EnvProvider;
+
+import cn.hutool.core.util.StrUtil;
 import lombok.NoArgsConstructor;
 
 /**
@@ -30,26 +34,47 @@ public class CustomSlf4jImpl implements Log {
 
     @Override
     public void error(String s, Throwable throwable) {
-        log.error(s, throwable);
+        if (StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            log.error(s, throwable);
+        } else {
+            System.err.println(s);
+            throwable.printStackTrace(System.err);
+        }
     }
 
     @Override
     public void error(String s) {
-        log.error(s);
+        if (StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            System.err.println(s);
+        } else {
+            log.error(s);
+        }
     }
 
     @Override
     public void debug(String s) {
-        log.info(s);
+        if (StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            System.out.println(s);
+        } else {
+            log.info(s);
+        }
     }
 
     @Override
     public void trace(String s) {
-        log.info(s);
+        if (StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            System.out.println(s);
+        } else {
+            log.info(s);
+        }
     }
 
     @Override
     public void warn(String s) {
-        log.warn(s);
+        if (StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            System.out.println(s);
+        } else {
+            log.warn(s);
+        }
     }
 }
