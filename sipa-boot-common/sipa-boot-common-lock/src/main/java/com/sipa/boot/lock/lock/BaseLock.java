@@ -122,7 +122,7 @@ public abstract class BaseLock implements Lock {
     }
 
     private static long getSleepInterval(double interval) {
-        return interval == 0 ? DEFAULT_SLEEP_MILL : (long)interval * 1000;
+        return interval == 0 ? DEFAULT_SLEEP_MILL : (long)(interval * 1000);
     }
 
     @Override
