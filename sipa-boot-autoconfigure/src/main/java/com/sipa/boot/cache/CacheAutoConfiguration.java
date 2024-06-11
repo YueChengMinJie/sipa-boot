@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import com.google.common.base.Charsets;
 import com.sipa.boot.cache.property.CacheProperty;
+import com.sipa.boot.cache.serde.SipaJdkSerializationRedisSerializer;
 import com.sipa.boot.core.property.YamlPropertySourceFactory;
 
 import lombok.AllArgsConstructor;
@@ -42,8 +42,8 @@ public class CacheAutoConfiguration {
             .computePrefixWith(cacheName -> "sipa_cache_" + cacheName + ":")
             .serializeKeysWith(
                 RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer(Charsets.UTF_8)))
-            .serializeValuesWith(RedisSerializationContext.SerializationPair
-                .fromSerializer(new JdkSerializationRedisSerializer(CacheAutoConfiguration.class.getClassLoader())));
+            .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(
+                new SipaJdkSerializationRedisSerializer(CacheAutoConfiguration.class.getClassLoader())));
         if (this.cacheProperty.getTimeToLive() != null) {
             config = config.entryTtl(this.cacheProperty.getTimeToLive());
         }
