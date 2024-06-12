@@ -16,6 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.exception.system.ESystemErrorCode;
 import com.sipa.boot.core.exception.system.SystemExceptionFactory;
 import com.sipa.boot.core.secure.IdpUserUtil;
@@ -118,7 +119,7 @@ public class FileStorageService implements DisposableBean {
         fileInfo.setApplicationId(pre.applicationId());
         fileInfo.setCompanyId(pre.companyId());
         fileInfo.setFileName((StrUtil.isNotBlank(pre.saveFileName()) ? pre.saveFileName() : IdUtil.objectId())
-            + (StrUtil.isEmpty(fileInfo.getExt()) ? StrUtil.EMPTY : "." + fileInfo.getExt()));
+            + (StrUtil.isEmpty(fileInfo.getExt()) ? StrUtil.EMPTY : SipaConstant.Symbol.POINT + fileInfo.getExt()));
 
         if (pre.contentType() != null) {
             fileInfo.setContentType(pre.contentType());
