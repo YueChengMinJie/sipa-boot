@@ -119,7 +119,7 @@ public class FileStorageService implements DisposableBean {
         fileInfo.setCompanyId(pre.companyId());
 
         if (StrUtil.isNotBlank(pre.saveFileName())) {
-            fileInfo.setFileName(pre.saveThFileName());
+            fileInfo.setFileName(pre.saveFileName() + "." + fileInfo.getExt());
         } else {
             fileInfo.setFileName(
                 IdUtil.objectId() + (StrUtil.isEmpty(fileInfo.getExt()) ? StrUtil.EMPTY : "." + fileInfo.getExt()));
