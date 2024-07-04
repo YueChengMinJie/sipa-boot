@@ -65,7 +65,15 @@ public class SipaUtil {
      * @return long
      */
     public static Long longValueOf(Object obj) {
-        return obj == null || StringUtils.isBlank(stringValueOf(obj)) ? null : Long.valueOf(stringValueOf(obj));
+        return obj == null || StringUtils.isBlank(stringValueOf(obj)) ? null : doLongValueOf(obj);
+    }
+
+    private static Long doLongValueOf(Object obj) {
+        try {
+            return Long.valueOf(stringValueOf(obj));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
     /**
