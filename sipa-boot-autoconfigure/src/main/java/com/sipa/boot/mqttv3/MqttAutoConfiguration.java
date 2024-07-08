@@ -28,7 +28,6 @@ import lombok.extern.slf4j.Slf4j;
 @ConditionalOnClass(MqttAsyncClient.class)
 @ComponentScan(value = {"com.sipa.boot.mqttv3.**"})
 @EnableConfigurationProperties(value = MqttProperty.class)
-
 public class MqttAutoConfiguration {
     public MqttAutoConfiguration(ListableBeanFactory beanFactory, ObjectMapper objectMapper) {
         MqttConversionService.addBeans(MqttConversionService.getSharedInstance(), beanFactory);

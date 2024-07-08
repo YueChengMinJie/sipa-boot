@@ -10,6 +10,12 @@ import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import com.sipa.boot.core.constant.SipaConstant;
+import com.sipa.boot.core.env.EnvConstant;
+import com.sipa.boot.core.env.EnvProvider;
+
+import cn.hutool.core.lang.UUID;
+import cn.hutool.core.util.StrUtil;
 import lombok.Getter;
 
 /**
@@ -59,7 +65,12 @@ public class TopicPair {
         MqttTopic.validate(topicPair.topic, true);
         topicPair.qos = qos;
         topicPair.shared = shared;
-        topicPair.group = group;
+        if (StrUtil.isNotBlank(group) && StrUtil.equals(EnvProvider.getEnv(), EnvConstant.ENV_LOCAL)) {
+            topicPair.group = group + SipaConstant.Symbol.ACROSS
+                + UUID.randomUUID().toString().replace(SipaConstant.Symbol.ACROSS, SipaConstant.Symbol.BLANK);
+        } else {
+            topicPair.group = group;
+        }
         return topicPair;
     }
 
