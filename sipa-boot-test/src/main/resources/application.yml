@@ -13,11 +13,11 @@ server:
 spring:
   datasource:
     url: >-
-      jdbc:mysql://mysql-dev.sz-hm.cn:3306/sipa_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useInformationSchema=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
+      jdbc:mysql://mysql-dev.sipa.com:3306/sipa_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useInformationSchema=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
     password: mysql@admin
   redis:
-    host: redis-dev.sz-hm.cn
+    host: redis-dev.sipa.com
     port: 6379
     database: 0
     password: redis@admin
@@ -56,7 +56,7 @@ spring:
 sipa-boot:
   lock:
     redis:
-      host: redis-dev.sz-hm.cn
+      host: redis-dev.sipa.com
       port: 6379
       database: 0
       password: redis@admin
@@ -67,11 +67,11 @@ sipa-boot:
     minio:
       - access-key: r7SVSjmzBEghqK4g8iFZ
         secret-key: YlhUl9PA6rxbwsqZWpkS81FhijhwZ4gQjDWpBgzE
-        endpoint: http://minio.sz-hm.cn:9000
+        endpoint: http://minio.sipa.com:9000
         bucket-name: ams-service
-        domain: http://minio.sz-hm.cn:9000/ams-service
+        domain: http://minio.sipa.com:9000/ams-service
         enable-storage: true
         platform: minio
         base-path: dev
   xxljob:
-    admin-addresses: http://xxljob-dev.sz-hm.cn/xxl-job-admin
+    admin-addresses: http://xxljob-dev.sipa.com/xxl-job-admin

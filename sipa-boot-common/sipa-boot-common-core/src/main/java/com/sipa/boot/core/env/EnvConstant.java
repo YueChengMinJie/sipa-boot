@@ -17,13 +17,13 @@ public interface EnvConstant {
 
     /**
      * 根域名相关定义。包含三种传值方式，优先级至上而下。使用者需要把根域值改掉 <br/>
-     * 1. 通过-Ddomain=sz-hm.cn或者System.setProperty("domain", "sz-hm.cn")方式进行传入 <br/>
-     * 2. 通过大写的DOMAIN，其值为sz-hm.cn的System ENV方式进行传入 <br/>
-     * 3. 通过gitops在server.properties定义domain=sz-hm.cn方式进行传入 <br/>
+     * 1. 通过-Ddomain=sipa.com或者System.setProperty("domain", "sipa.com")方式进行传入 <br/>
+     * 2. 通过大写的DOMAIN，其值为sipa.com的System ENV方式进行传入 <br/>
+     * 3. 通过gitops在server.properties定义domain=sipa.com方式进行传入 <br/>
      */
     String DOMAIN_NAME = "domain";
 
-    String DOMAIN_VALUE = "sz-hm.cn";
+    String DOMAIN_VALUE = "sipa.com";
 
     /**
      * 区域名相关定义。包含三种传值方式，优先级至上而下 <br/>
@@ -36,12 +36,12 @@ public interface EnvConstant {
      * REGION_SEPARATE_PREFIX表示区域在域名中的分隔符是否在前面还是后面 <br/>
      * 包含两种表现形式。特别注意：region占位符前后切记不要出现分隔符，因为框架会自动去适配 <br/>
      * 1. 例如，原始格式为nacos-pro${region}.${domain} <br/>
-     * 1.1 在region存在的情况下，会解析成nacos-prod-sh-pd.sz-hm.cn <br/>
-     * 1.2 在region缺失的情况下，会解析成nacos-prod.sz-hm.cn <br/>
+     * 1.1 在region存在的情况下，会解析成nacos-prod-sh-pd.sipa.com <br/>
+     * 1.2 在region缺失的情况下，会解析成nacos-prod.sipa.com <br/>
      * <br />
      * 2. 例如，原始格式为${region}prod-nacos.${domain} <br/>
-     * 2.1 在region存在的情况下，会解析成sh-pd-prod-nacos.sz-hm.cn <br/>
-     * 2.2 在region缺失的情况下，会解析成pro-nacos.sz-hm.cn <br/>
+     * 2.1 在region存在的情况下，会解析成sh-pd-prod-nacos.sipa.com <br/>
+     * 2.2 在region缺失的情况下，会解析成pro-nacos.sipa.com <br/>
      */
     String REGION_NAME = "region";
 

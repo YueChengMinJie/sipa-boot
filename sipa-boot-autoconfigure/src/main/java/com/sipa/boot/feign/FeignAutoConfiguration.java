@@ -50,9 +50,9 @@ import lombok.extern.slf4j.Slf4j;
 @EnableConfigurationProperties(FeignProperty.class)
 @AutoConfigureBefore(FeignClientsConfiguration.class)
 @ComponentScan(value = {"com.sipa.boot.feign.**"})
+@EnableFeignClients(basePackages = {"com.sipa", "com.ycmj"}) // todo by caszhou 业务配置应该与框架解耦
 @ConditionalOnClass({FeignProperty.class, UnwrapDecoder.class})
 @PropertySource(value = "classpath:feign.yml", factory = YamlPropertySourceFactory.class)
-@EnableFeignClients(basePackages = {"com.sipa", "com.hm", "com.hmev"}) // todo by caszhou 业务配置应该与框架解耦
 public class FeignAutoConfiguration {
     @Autowired
     private ObjectMapper objectMapper;

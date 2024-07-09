@@ -65,7 +65,7 @@ public class OpenApiAutoConfiguration {
                 .description(this.openApiProperty.getDesc())
                 .version(this.openApiProperty.getVersion())
                 // todo by caszhou 业务配置应该与框架解耦
-                .license(new License().name("苏州恒美电子科技股份有限公司").url("https://www.sz-hm.cn/")))
+                .license(new License().name("苏州玥呈敏洁网络科技有限公司").url("https://www.sipa.com/")))
             .externalDocs(new ExternalDocumentation()
                 .description(StringUtils.trimToEmpty(this.openApiProperty.getDesc()) + "接口文档")
                 .url(url + "/swagger-ui.html"))
@@ -78,11 +78,11 @@ public class OpenApiAutoConfiguration {
         } else {
             return List.of(
                 // dev todo by caszhou 业务配置应该与框架解耦
-                new Server().url("http://gateway-dev.sz-hm.cn/" + this.name + this.contextPath),
+                new Server().url("http://gateway-dev.sipa.com/" + this.name + this.contextPath),
                 // fat todo by caszhou 业务配置应该与框架解耦
-                new Server().url("http://gateway-fat.sz-hm.cn/" + this.name + this.contextPath),
+                new Server().url("http://gateway-fat.sipa.com/" + this.name + this.contextPath),
                 // prod todo by caszhou 业务配置应该与框架解耦
-                new Server().url("http://gateway.sz-hm.cn/" + this.name + this.contextPath));
+                new Server().url("http://gateway.sipa.com/" + this.name + this.contextPath));
         }
     }
 }

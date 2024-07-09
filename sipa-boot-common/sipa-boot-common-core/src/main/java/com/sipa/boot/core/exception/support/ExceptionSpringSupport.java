@@ -18,7 +18,7 @@ import com.sipa.boot.core.exception.api.IErrorCode;
 @Component
 public class ExceptionSpringSupport implements CommandLineRunner {
     // todo by caszhou 业务配置应该与中台框架解耦
-    private static final String[] PACKAGES = {"com.sipa", "com.hm", "com.hmev"};
+    private static final String[] PACKAGES = {"com.sipa", "com.ycmj"};
 
     @Override
     public void run(String... args) throws Exception {

@@ -35,12 +35,12 @@
     <distributionManagement>
         <repository>
             <id>deployRelease</id>
-            <url>http://nexus.sz-hm.cn/repository/maven-releases/</url>
+            <url>http://nexus.sipa.com/repository/maven-releases/</url>
         </repository>
 
         <snapshotRepository>
             <id>deploySnapshot</id>
-            <url>http://nexus.sz-hm.cn/repository/maven-snapshots/</url>
+            <url>http://nexus.sipa.com/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -58,9 +58,9 @@
             git@192.168.0.62:platform/tcp/sipa/sipa-boot.git
         </project.scm.path>
 
-        <distribution.public>http://nexus.sz-hm.cn/repository/maven-public/</distribution.public>
-        <distribution.release>http://nexus.sz-hm.cn/repository/maven-releases/</distribution.release>
-        <distribution.snapshot>http://nexus.sz-hm.cn/repository/maven-snapshots/</distribution.snapshot>
+        <distribution.public>http://nexus.sipa.com/repository/maven-public/</distribution.public>
+        <distribution.release>http://nexus.sipa.com/repository/maven-releases/</distribution.release>
+        <distribution.snapshot>http://nexus.sipa.com/repository/maven-snapshots/</distribution.snapshot>
     </properties>
 
     <repositories>
@@ -186,7 +186,7 @@
                             <removeUnusedImports/>
                             <eclipse>
                                 <version>4.13</version>
-                                <file>http://minio.sz-hm.cn:9000/dev/eclipse_formatter.xml</file>
+                                <file>http://minio.sipa.com:9000/dev/eclipse_formatter.xml</file>
                             </eclipse>
                         </java>
                         <pom>

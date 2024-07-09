@@ -13,4 +13,4 @@ set -ex
 
 pnpm version $1
 cd dist
-pnpm publish --no-git-checks --registry http://nexus.sz-hm.cn/repository/npm
+pnpm publish --no-git-checks --registry http://nexus.sipa.com/repository/npm

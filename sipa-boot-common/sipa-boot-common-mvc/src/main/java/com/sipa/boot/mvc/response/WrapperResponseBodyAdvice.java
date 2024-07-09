@@ -19,7 +19,7 @@ import cn.hutool.json.JSONUtil;
  * @author caszhou
  * @date 2022/12/23
  */
-@RestControllerAdvice(basePackages = {"com.sipa", "com.hm", "com.hmev"}) // todo by caszhou 业务配置应该与中台框架解耦
+@RestControllerAdvice(basePackages = {"com.sipa", "com.ycmj"}) // todo by caszhou 业务配置应该与中台框架解耦
 public class WrapperResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> clazz) {

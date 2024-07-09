@@ -75,9 +75,9 @@ class SipaJS {
 
     static Logan = Logan
 
-    static GATEWAY_DEV_URL = "http://gateway-dev.sz-hm.cn"
-    static GATEWAY_FAT_URL = "http://gateway-fat.sz-hm.cn"
-    static GATEWAY_PROD_URL = "http://gateway.sz-hm.cn"
+    static GATEWAY_DEV_URL = "http://gateway-dev.sipa.com"
+    static GATEWAY_FAT_URL = "http://gateway-fat.sipa.com"
+    static GATEWAY_PROD_URL = "http://gateway.sipa.com"
 
     static BASE_DEV_URL = `${SipaJS.GATEWAY_DEV_URL}/base-service-server/logan/web`
     static BASE_FAT_URL = `${SipaJS.GATEWAY_FAT_URL}/base-service-server/logan/web`

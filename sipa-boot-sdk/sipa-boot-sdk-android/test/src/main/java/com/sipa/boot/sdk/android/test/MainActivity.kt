@@ -189,7 +189,7 @@ fun input(ip: String) {
 
 fun defaultInput() {
     // 地址写的网关地址，这个是dev的地址
-    val url = "http://gateway-dev.sz-hm.cn/base-service-server/logan/write"
+    val url = "http://gateway-dev.sipa.com/base-service-server/logan/write"
     // 当天的日志
     val dataFormat = SimpleDateFormat("yyyy-MM-dd")
     val date = dataFormat.format(Date(System.currentTimeMillis()))
