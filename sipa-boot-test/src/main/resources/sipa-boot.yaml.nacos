@@ -1,0 +1,26 @@
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  datasource:
+    username: root
+    password: mysql@admin
+  redis:
+    host: redis-dev.sz-hm.cn
+    port: 6379
+    database: 0
+    password: redis@admin
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+#
+# -------------------------------------------
+# SERVER配置
+# -------------------------------------------
+#
+server:
+  tomcat:
+    max-http-form-post-size: 50MB

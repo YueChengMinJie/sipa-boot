@@ -18,6 +18,9 @@ public class SipaTestContainer {
         TestContainer.start();
     }
 
+    /**
+     * 没有nacos
+     */
     @Configuration
     @ComponentScan
     @PropertySource(value = "classpath:application.yml", factory = YamlPropertySourceFactory.class)

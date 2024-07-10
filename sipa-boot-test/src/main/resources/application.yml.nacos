@@ -1,0 +1,43 @@
+#
+# -------------------------------------------
+# SERVER配置
+# -------------------------------------------
+#
+server:
+  port: 8900
+#
+# -------------------------------------------
+# SPRING配置
+# -------------------------------------------
+#
+spring:
+  datasource:
+    url: >-
+      jdbc:mysql://mysql-dev.sipa.com:3306/sipa_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useInformationSchema=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8
+#
+# -------------------------------------------
+# SIPA-BOOT配置
+# -------------------------------------------
+#
+sipa-boot:
+  lock:
+    redis:
+      host: 127.0.0.1
+      port: 6380
+      database: 0
+      password: zhou7890-=
+  openapi:
+    desc: SIPA测试工程
+    version: v1.0.0
+  storage:
+    minio:
+      - access-key: YMbVaeYz87hkh5GjCSgw
+        secret-key: I8e6dNUWxQgHrwBpWV6oRfSudRDlSDvdFtgLB7yA
+        endpoint: http://127.0.0.1:9000
+        bucket-name: ycmj-bcp-base
+        domain: http://127.0.0.1:9000/ams-service
+        enable-storage: true
+        platform: minio
+        base-path: dev
+  xxljob:
+    admin-addresses: http://127.0.0.1:8088/xxl-job-admin
