@@ -8,7 +8,7 @@ spring:
     username: root
     password: mysql@admin
   redis:
-    host: redis-dev.sz-hm.cn
+    host: 127.0.0.1
     port: 6379
     database: 0
     password: redis@admin
