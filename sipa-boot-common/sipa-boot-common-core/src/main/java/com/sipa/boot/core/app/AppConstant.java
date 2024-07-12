@@ -10,7 +10,7 @@ public interface AppConstant {
     String APP_SEATA = "seata";
 
     interface BCP {
-        String APPLICATION_GATEWAY_NAME = "application-gateway-server";
+        String GATEWAY_APPLICATION_NAME = "gateway-application-server";
 
         String IOT_NAME = "iot-service-server";
 
@@ -19,6 +19,8 @@ public interface AppConstant {
         String IOT_STATION_NAME = "iot-station-service-server";
 
         String SSO_IDP_NAME = "sso-idp-server";
+
+        String BASE_NAME = "base-service-server";
     }
 
     interface TCP {

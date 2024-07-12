@@ -34,8 +34,8 @@ sipa-boot:
       - access-key: YMbVaeYz87hkh5GjCSgw
         secret-key: I8e6dNUWxQgHrwBpWV6oRfSudRDlSDvdFtgLB7yA
         endpoint: http://127.0.0.1:9000
-        bucket-name: ycmj-bcp-base
-        domain: http://127.0.0.1:9000/ams-service
+        bucket-name: base-service
+        domain: http://127.0.0.1:9000/base-service
         enable-storage: true
         platform: minio
         base-path: dev
