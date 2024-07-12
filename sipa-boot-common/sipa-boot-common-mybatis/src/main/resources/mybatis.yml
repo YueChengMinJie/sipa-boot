@@ -30,7 +30,7 @@ spring:
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   # todo by caszhou 业务配置应该与中台框架解耦
-  type-aliases-package: com.ycmj.**.po.**
+  type-aliases-package: com.sipa.**.po.**,com.ycmj.**.po.**
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
