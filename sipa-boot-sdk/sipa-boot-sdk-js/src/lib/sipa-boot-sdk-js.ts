@@ -9,6 +9,8 @@ class SipaJS {
     // 中台
     static APPLICATION_ID_CP_SSO: number = 1000101
 
+    static APPLICATION_ID_CP_BASE: number = 1000102
+
     // 后台
     static APPLICATION_ID_BP_AMS: number = 1000201
 

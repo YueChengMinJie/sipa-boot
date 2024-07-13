@@ -46,6 +46,8 @@ public interface AppConstant {
         // 中台
         String CP_SSO = "1000101";
 
+        String CP_BASE = "1000102";
+
         // 后台
         String BP_AMS = "1000201";
 
@@ -59,6 +61,8 @@ public interface AppConstant {
 
         // 中台
         long CP_SSO = 1000101L;
+
+        long CP_BASE = 1000102L;
 
         // 后台
         long BP_AMS = 1000201L;
