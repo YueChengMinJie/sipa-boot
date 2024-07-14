@@ -42,7 +42,7 @@ public interface AppConstant {
     interface BP {
         String AMS_NAME = "ams-service-server";
 
-        String AMS_PROCESS_NAME = "ams-process-server";
+        String AMS_PROCESS_NAME = "ams-process-biz";
     }
 
     interface APPLICATION_ID {
