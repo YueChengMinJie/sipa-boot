@@ -41,6 +41,8 @@ public interface AppConstant {
 
     interface BP {
         String AMS_NAME = "ams-service-server";
+
+        String AMS_PROCESS_NAME = "ams-process-server";
     }
 
     interface APPLICATION_ID {
@@ -56,6 +58,8 @@ public interface AppConstant {
 
         // 后台
         String BP_AMS = "1000201";
+
+        String BP_AMS_PROCESS = "1000202";
 
         // 后台-移动断
         String BP_AMS_MOBILE = "1000202";
@@ -74,6 +78,8 @@ public interface AppConstant {
 
         // 后台
         long BP_AMS = 1000201L;
+
+        long BP_AMS_PROCESS = 1000202L;
 
         // 后台-移动断
         long BP_AMS_MOBILE = 1000202L;

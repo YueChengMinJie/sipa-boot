@@ -52,6 +52,8 @@ public enum EProjectModule implements IProjectModule {
      */
     AMS("03", "01", "后台", "大后台"),
 
+    AMS_PROCESS("03", "02", "后台", "大后台流程扩展点"),
+
     /**
      * 示例业务 示例实例
      */

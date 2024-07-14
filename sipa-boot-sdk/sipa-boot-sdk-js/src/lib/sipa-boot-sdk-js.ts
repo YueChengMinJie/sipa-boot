@@ -16,6 +16,8 @@ class SipaJS {
     // 后台
     static APPLICATION_ID_BP_AMS: number = 1000201
 
+    static APPLICATION_ID_BP_AMS_PROCESS: number = 1000202
+
     // 后台-移动断
     static APPLICATION_ID_BP_AMS_MOBILE: number = 1000202
 
