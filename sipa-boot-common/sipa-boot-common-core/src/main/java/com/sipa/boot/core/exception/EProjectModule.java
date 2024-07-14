@@ -43,6 +43,11 @@ public enum EProjectModule implements IProjectModule {
     BASE("02", "04", "业务中台", "基础中台"),
 
     /**
+     * 基础中台
+     */
+    PROCESS("02", "05", "业务中台", "流程中台"),
+
+    /**
      * 管理后台
      */
     AMS("03", "01", "后台", "大后台"),

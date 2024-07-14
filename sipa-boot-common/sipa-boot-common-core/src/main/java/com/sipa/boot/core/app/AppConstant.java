@@ -21,6 +21,8 @@ public interface AppConstant {
         String SSO_IDP_NAME = "sso-idp-server";
 
         String BASE_NAME = "base-service-server";
+
+        String PROCESS_NAME = "process-service-server";
     }
 
     interface TCP {
@@ -33,7 +35,9 @@ public interface AppConstant {
         String LIQUIBASE_NAME = "liquibase-web-server";
     }
 
-    interface FP {}
+    interface FP {
+        //
+    }
 
     interface BP {
         String AMS_NAME = "ams-service-server";
@@ -47,6 +51,8 @@ public interface AppConstant {
         String CP_SSO = "1000101";
 
         String CP_BASE = "1000102";
+
+        String CP_PROCESS = "1000103";
 
         // 后台
         String BP_AMS = "1000201";
@@ -63,6 +69,8 @@ public interface AppConstant {
         long CP_SSO = 1000101L;
 
         long CP_BASE = 1000102L;
+
+        long CP_PROCESS = 1000103L;
 
         // 后台
         long BP_AMS = 1000201L;

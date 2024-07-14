@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -35,12 +36,12 @@
     <distributionManagement>
         <repository>
             <id>deployRelease</id>
-            <url>http://nexus.sipa.com/repository/maven-releases/</url>
+            <url>http://127.0.0.1:8081/repository/maven-releases/</url>
         </repository>
 
         <snapshotRepository>
             <id>deploySnapshot</id>
-            <url>http://nexus.sipa.com/repository/maven-snapshots/</url>
+            <url>http://127.0.0.1:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -58,9 +59,9 @@
             git@192.168.0.62:platform/tcp/sipa/sipa-boot.git
         </project.scm.path>
 
-        <distribution.public>http://nexus.sipa.com/repository/maven-public/</distribution.public>
-        <distribution.release>http://nexus.sipa.com/repository/maven-releases/</distribution.release>
-        <distribution.snapshot>http://nexus.sipa.com/repository/maven-snapshots/</distribution.snapshot>
+        <distribution.public>http://127.0.0.1:8081/repository/maven-public/</distribution.public>
+        <distribution.release>http://127.0.0.1:8081/repository/maven-releases/</distribution.release>
+        <distribution.snapshot>http://127.0.0.1:8081/repository/maven-snapshots/</distribution.snapshot>
     </properties>
 
     <repositories>

@@ -11,6 +11,8 @@ class SipaJS {
 
     static APPLICATION_ID_CP_BASE: number = 1000102
 
+    static APPLICATION_ID_CP_PROCESS: number = 1000103
+
     // 后台
     static APPLICATION_ID_BP_AMS: number = 1000201
 

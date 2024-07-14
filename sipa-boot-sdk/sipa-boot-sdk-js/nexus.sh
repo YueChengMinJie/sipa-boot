@@ -13,4 +13,4 @@ set -ex
 
 pnpm version $1
 cd dist
-pnpm publish --no-git-checks --registry http://127.0.0.1:8081/repository/sipa
+pnpm publish --no-git-checks --registry http://127.0.0.1:8081/repository/npm-sipa
