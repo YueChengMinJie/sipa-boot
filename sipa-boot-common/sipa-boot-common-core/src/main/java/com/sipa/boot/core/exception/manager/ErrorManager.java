@@ -7,12 +7,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-import com.sipa.boot.core.exception.api.IErrorCode;
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.HashBiMap;
+import com.sipa.boot.core.exception.api.IErrorCode;
 import com.sipa.boot.core.exception.api.IProjectModule;
 
 import lombok.extern.slf4j.Slf4j;
@@ -52,7 +50,7 @@ public class ErrorManager {
         try {
             Preconditions.checkArgument(!GLOBAL_ERROR_CODE_MAP.containsKey(allCode), "错误码重复: " + allCode);
         } catch (Exception e) {
-            log.error(StringUtils.EMPTY, e);
+            log.error(e.getMessage());
             // 合并部署的时候需要忽略，如果没有注册上，使用就会报错
             return;
         }
