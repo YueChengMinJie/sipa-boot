@@ -116,8 +116,4 @@ public interface SipaBootConstant {
     interface Rest {
         String KEY = TCP_CLOUD_PREFIX + "rest";
     }
-
-    interface SMS {
-        String PREFIX = TCP_CLOUD_PREFIX + "huawei.sms";
-    }
 }
