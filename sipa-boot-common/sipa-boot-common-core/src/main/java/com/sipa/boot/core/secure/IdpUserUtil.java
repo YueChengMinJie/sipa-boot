@@ -74,4 +74,18 @@ public class IdpUserUtil {
     public static IdpUser get() {
         return IdpUserHolder.get();
     }
+
+    /**
+     * IdpUser
+     */
+    public static void set(IdpUser user) {
+        IdpUserHolder.set(user);
+    }
+
+    /**
+     * IdpUser
+     */
+    public static void remove() {
+        IdpUserHolder.remove();
+    }
 }

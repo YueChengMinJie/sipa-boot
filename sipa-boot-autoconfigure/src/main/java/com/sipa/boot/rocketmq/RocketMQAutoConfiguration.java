@@ -1,9 +1,9 @@
 package com.sipa.boot.rocketmq;
 
-import com.sipa.boot.rocketmq.env.RocketMQEnvProcessor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.messaging.converter.CompositeMessageConverter;
@@ -13,6 +13,7 @@ import org.springframework.messaging.converter.MessageConverter;
 import com.alibaba.cloud.stream.binder.rocketmq.autoconfigurate.ExtendedBindingHandlerMappingsProviderConfiguration;
 import com.alibaba.cloud.stream.binder.rocketmq.convert.RocketMQMessageConverter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sipa.boot.rocketmq.env.RocketMQEnvProcessor;
 
 import lombok.AllArgsConstructor;
 
@@ -22,6 +23,7 @@ import lombok.AllArgsConstructor;
  */
 @Configuration
 @AllArgsConstructor
+@ComponentScan("com.sipa.boot.rocketmq.**")
 @ConditionalOnClass(RocketMQEnvProcessor.class)
 @AutoConfigureAfter(ExtendedBindingHandlerMappingsProviderConfiguration.class)
 public class RocketMQAutoConfiguration {
