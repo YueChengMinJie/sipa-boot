@@ -8,13 +8,16 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
 
+import com.sipa.boot.core.allinone.SipaRequest;
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.secure.server.IdpUserHoldFilter;
 import com.sipa.boot.secure.server.IdpUserInterceptor;
 import com.sipa.boot.secure.server.SameTokenInterceptor;
+import com.sipa.boot.secure.server.payload.UserInfoInjectorAspect;
 import com.sipa.boot.secure.server.property.SecureServerProperty;
 
 import cn.dev33.satoken.context.SaHolder;
@@ -30,6 +33,7 @@ import lombok.RequiredArgsConstructor;
  * @date 2022/12/23
  */
 @Configuration
+@EnableAspectJAutoProxy(exposeProxy = true)
 @ConditionalOnClass(SameTokenInterceptor.class)
 public class SecureServerAutoConfiguration {
     @Bean
@@ -76,6 +80,12 @@ public class SecureServerAutoConfiguration {
         @Bean
         public RequestInterceptor idpUserInterceptor() {
             return new IdpUserInterceptor();
+        }
+
+        @Bean
+        @ConditionalOnClass(SipaRequest.class)
+        public UserInfoInjectorAspect userInfoInjectorAspect() {
+            return new UserInfoInjectorAspect();
         }
     }
 }
