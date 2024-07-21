@@ -1,7 +1,7 @@
 const path = require("path")
 const typescript = require("@rollup/plugin-typescript")
 const { defineConfig } = require("vite")
-import copyPlugin from "rollup-plugin-copy"
+const copyPlugin = require("rollup-plugin-copy")
 
 const libName = "sipa-boot-sdk-js"
 const bundlePrefix = "index"
