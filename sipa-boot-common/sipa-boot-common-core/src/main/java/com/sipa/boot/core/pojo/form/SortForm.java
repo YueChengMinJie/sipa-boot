@@ -10,7 +10,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BaseForm extends PageForm {
+public class SortForm extends PageForm {
     @Schema(example = "排序：默认降序：desc 升序：asc", hidden = true)
     private String sort;
 }

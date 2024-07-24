@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2023/4/19
  */
 @Data
-public class BaseQueryForm {
+public class QueryForm {
     private Long createBy;
 
     private String createName;
