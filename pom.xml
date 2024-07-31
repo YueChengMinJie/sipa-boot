@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <name>Scale :: Industry :: Platform :: Architecture :: Boot</name>
-    <description>基于spring boot、spring cloud和sofa boot的研发框架，实践简洁架构和方便集成SIPA中间件</description>
+    <description>基于spring boot、spring cloud和sofa boot的java框架</description>
 
     <modules>
         <module>sipa-boot-autoconfigure</module>
