@@ -55,7 +55,7 @@
         <protostuff.version>1.8.0</protostuff.version>
         <guava.version>31.1-jre</guava.version>
         <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
-        <redisson.version>3.22.8</redisson.version>
+        <redisson.version>3.22.1</redisson.version>
         <activiti-spring.version>6.0.0</activiti-spring.version>
         <orika-core.verson>1.5.4</orika-core.verson>
         <weixin-java.version>4.5.0</weixin-java.version>
