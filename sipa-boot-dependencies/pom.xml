@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.sipa.boot</groupId>
@@ -54,7 +55,7 @@
         <protostuff.version>1.8.0</protostuff.version>
         <guava.version>31.1-jre</guava.version>
         <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
-        <redisson.version>3.16.8</redisson.version>
+        <redisson.version>3.22.8</redisson.version>
         <activiti-spring.version>6.0.0</activiti-spring.version>
         <orika-core.verson>1.5.4</orika-core.verson>
         <weixin-java.version>4.5.0</weixin-java.version>
