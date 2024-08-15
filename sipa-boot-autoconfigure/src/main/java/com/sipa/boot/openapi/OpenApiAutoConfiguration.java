@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import com.google.common.collect.Lists;
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.core.property.YamlPropertySourceFactory;
@@ -74,7 +73,8 @@ public class OpenApiAutoConfiguration {
 
     private List<Server> getServers(String url) {
         if (StringUtils.equals(this.profile, EnvConstant.ENV_LOCAL)) {
-            return Lists.newArrayList(new Server().url(url));
+            return List.of(new Server().url(url),
+                new Server().url("http://localhost:8000/" + this.name + this.contextPath));
         } else {
             return List.of(
                 // dev todo by caszhou 业务配置应该与框架解耦
