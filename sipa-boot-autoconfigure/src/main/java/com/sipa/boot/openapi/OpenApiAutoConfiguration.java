@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.commons.util.InetUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,7 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import lombok.SneakyThrows;
 
 /**
  * @author caszhou
@@ -50,8 +52,11 @@ public class OpenApiAutoConfiguration {
 
     private final OpenApiProperty openApiProperty;
 
-    public OpenApiAutoConfiguration(OpenApiProperty openApiProperty) {
+    private final InetUtils inetUtils;
+
+    public OpenApiAutoConfiguration(OpenApiProperty openApiProperty, InetUtils inetUtils) {
         this.openApiProperty = openApiProperty;
+        this.inetUtils = inetUtils;
     }
 
     @Bean
@@ -71,10 +76,17 @@ public class OpenApiAutoConfiguration {
             .servers(this.getServers(url));
     }
 
+    @SneakyThrows
     private List<Server> getServers(String url) {
         if (StringUtils.equals(this.profile, EnvConstant.ENV_LOCAL)) {
-            return List.of(new Server().url(url),
-                new Server().url("http://localhost:8000/" + this.name + this.contextPath));
+            return List.of(
+                // localhost
+                new Server().url(url),
+                // 本地网关
+                new Server().url("http://localhost:8000/" + this.name + this.contextPath),
+                // 内网网关
+                new Server().url("http://" + inetUtils.findFirstNonLoopbackHostInfo().getIpAddress() + ":8000/"
+                    + this.name + this.contextPath));
         } else {
             return List.of(
                 // dev todo by caszhou 业务配置应该与框架解耦
