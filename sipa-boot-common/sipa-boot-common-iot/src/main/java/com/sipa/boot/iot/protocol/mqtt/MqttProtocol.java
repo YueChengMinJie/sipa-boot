@@ -1,12 +1,14 @@
 package com.sipa.boot.iot.protocol.mqtt;
 
+import cn.hutool.core.date.DatePattern;
+
 /**
  * @author caszhou
  * @date 2022/7/16
  */
 public interface MqttProtocol {
 
-    public static String DATA_FORMAT = "yyyy-MM-dd hh:mm:ss";
+    public static String DATA_FORMAT = DatePattern.NORM_DATETIME_PATTERN;
     MqttHeader getHeader();
 
     Object getDataBody();
