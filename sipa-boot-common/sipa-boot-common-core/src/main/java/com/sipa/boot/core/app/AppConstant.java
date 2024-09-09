@@ -23,6 +23,8 @@ public interface AppConstant {
         String BASE_NAME = "base-service-server";
 
         String PROCESS_NAME = "process-service-server";
+
+        String MESSAGE_NAME = "message-service-server";
     }
 
     interface TCP {

@@ -48,6 +48,11 @@ public enum EProjectModule implements IProjectModule {
     PROCESS("02", "05", "业务中台", "流程中台"),
 
     /**
+     * 消息中台
+     */
+    MESSAGE("02", "06", "业务中台", "消息中台"),
+
+    /**
      * 管理后台
      */
     AMS("03", "01", "后台", "大后台"),
