@@ -988,6 +988,12 @@
 
             <dependency>
                 <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-ws</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-common-wx-ma</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
@@ -1202,6 +1208,12 @@
                 <artifactId>sipa-boot-test-container-starter</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-ws-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 
             <dependency>

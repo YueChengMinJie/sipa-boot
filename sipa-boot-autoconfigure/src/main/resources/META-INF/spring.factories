@@ -25,6 +25,7 @@ com.sipa.boot.secure.SecureServerAutoConfiguration,\
 com.sipa.boot.secure.SecureSsrAutoConfiguration,\
 com.sipa.boot.storage.StorageAutoConfiguration,\
 com.sipa.boot.testcontainer.TestContainerAutoConfiguration,\
+com.sipa.boot.ws.WsAutoConfiguration,\
 com.sipa.boot.wxma.WxMaAutoConfiguration,\
 com.sipa.boot.wxmp.WxMpAutoConfiguration,\
 com.sipa.boot.xxljob.XxljobAutoConfiguration
