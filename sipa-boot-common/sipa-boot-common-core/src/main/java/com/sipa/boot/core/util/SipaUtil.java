@@ -19,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 
 import com.alibaba.ttl.threadpool.TtlExecutors;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.env.EnvConstant;
@@ -282,5 +283,12 @@ public class SipaUtil {
 
     public static String getHostInContainer() {
         return SystemUtil.get(EnvConstant.HOSTNAME_NAME.toUpperCase(), SipaBootConstant.Core.UNKNOWN);
+    }
+
+    public static <T> Optional<T> first(List<T> list) {
+        if (CollectionUtils.isNotEmpty(list)) {
+            return Optional.ofNullable(list.get(0));
+        }
+        return Optional.empty();
     }
 }

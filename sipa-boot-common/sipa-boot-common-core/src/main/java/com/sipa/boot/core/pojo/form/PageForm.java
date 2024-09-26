@@ -17,13 +17,13 @@ public class PageForm {
      * 当前页
      */
     @Schema(example = "当前页")
-    private Integer pageNum;
+    private Integer pageNum = 1;
 
     /**
      * 页大小
      */
     @Schema(example = "页大小")
-    private Integer pageSize;
+    private Integer pageSize = 10;
 
     /**
      * 获取查询表起始 默认是0
