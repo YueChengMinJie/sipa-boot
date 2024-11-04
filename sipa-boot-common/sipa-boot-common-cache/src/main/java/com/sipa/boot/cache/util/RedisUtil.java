@@ -7,10 +7,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.ReturnType;
-import org.springframework.data.redis.core.Cursor;
-import org.springframework.data.redis.core.ScanOptions;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
@@ -359,7 +356,7 @@ public class RedisUtil {
         return hash;
     }
 
-    private static void closeQuietly(Cursor<Map.Entry<Object, Object>> cursor) {
+    private static void closeQuietly(Cursor<?> cursor) {
         if (cursor != null) {
             cursor.close();
         }
@@ -413,6 +410,26 @@ public class RedisUtil {
             return stringRedisTemplate.opsForValue().multiGet(keys);
         }
         return null;
+    }
+
+    public static void scanAndDeleteAll(String pattern) {
+        RedisUtil.deleteKeys(scanKeys(pattern));
+    }
+
+    public static Set<String> scanKeys(String pattern) {
+        return stringRedisTemplate.execute((RedisCallback<Set<String>>)connection -> {
+            Set<String> keysTmp = new HashSet<>();
+            Cursor<byte[]> cursor = null;
+            try {
+                cursor = connection.scan(ScanOptions.scanOptions().match(pattern).count(100).build());
+                while (cursor.hasNext()) {
+                    keysTmp.add(new String(cursor.next()));
+                }
+            } finally {
+                closeQuietly(cursor);
+            }
+            return keysTmp;
+        });
     }
 
     /**
