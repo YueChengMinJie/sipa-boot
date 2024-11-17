@@ -99,6 +99,8 @@ public interface SipaConstant {
         String JOIN = ", ";
 
         String BEACON = "!";
+
+        String PLUS = "+";
     }
 
     interface StringValue {
