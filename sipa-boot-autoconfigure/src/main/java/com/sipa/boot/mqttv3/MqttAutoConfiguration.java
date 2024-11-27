@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @ComponentScan(value = {"com.sipa.boot.mqttv3.**"})
 @EnableConfigurationProperties(value = MqttProperty.class)
 @ConditionalOnProperty(prefix = SipaBootConstant.Mqttv3.PREFIX, value = SipaBootConstant.Mqttv3.ENABLED_KEY,
-    havingValue = SipaBootConstant.Mqttv3.ENABLED_VALUE)
+    havingValue = SipaBootConstant.Mqttv3.ENABLED_VALUE, matchIfMissing = true)
 public class MqttAutoConfiguration {
     public MqttAutoConfiguration(ListableBeanFactory beanFactory, ObjectMapper objectMapper) {
         MqttConversionService.addBeans(MqttConversionService.getSharedInstance(), beanFactory);
