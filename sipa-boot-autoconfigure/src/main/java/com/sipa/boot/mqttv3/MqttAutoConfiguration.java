@@ -4,12 +4,14 @@ import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sipa.boot.core.constant.SipaBootConstant;
 import com.sipa.boot.mqttv3.core.MqttAdapter;
 import com.sipa.boot.mqttv3.core.MqttConnector;
 import com.sipa.boot.mqttv3.core.MqttConversionService;
@@ -28,6 +30,8 @@ import lombok.extern.slf4j.Slf4j;
 @ConditionalOnClass(MqttAsyncClient.class)
 @ComponentScan(value = {"com.sipa.boot.mqttv3.**"})
 @EnableConfigurationProperties(value = MqttProperty.class)
+@ConditionalOnProperty(prefix = SipaBootConstant.Mqttv3.PREFIX, value = SipaBootConstant.Mqttv3.ENABLED_KEY,
+    havingValue = SipaBootConstant.Mqttv3.ENABLED_VALUE)
 public class MqttAutoConfiguration {
     public MqttAutoConfiguration(ListableBeanFactory beanFactory, ObjectMapper objectMapper) {
         MqttConversionService.addBeans(MqttConversionService.getSharedInstance(), beanFactory);
