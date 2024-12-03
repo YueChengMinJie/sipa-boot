@@ -291,4 +291,8 @@ public class SipaUtil {
         }
         return Optional.empty();
     }
+
+    public static long number2longWithDefault(Number number) {
+        return Optional.ofNullable(number).orElse(0).longValue();
+    }
 }
