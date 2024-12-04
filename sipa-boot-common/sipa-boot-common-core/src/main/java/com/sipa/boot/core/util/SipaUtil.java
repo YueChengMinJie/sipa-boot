@@ -292,7 +292,11 @@ public class SipaUtil {
         return Optional.empty();
     }
 
-    public static long number2longWithDefault(Number number) {
-        return Optional.ofNullable(number).orElse(0).longValue();
+    public static long number2longWithZeroDefault(Number number) {
+        return number2longWithDefault(number, 0L);
+    }
+
+    public static long number2longWithDefault(Number number, Number defaultNumber) {
+        return Optional.ofNullable(number).orElse(defaultNumber).longValue();
     }
 }
