@@ -12,6 +12,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ConnectionProperty {
+    private String enabled = "true";
+
     /**
      * MQTT服务器地址, 必填, 可以配置多个. -- GETTER -- MQTT服务器地址, 必填, 可以配置多个.
      */

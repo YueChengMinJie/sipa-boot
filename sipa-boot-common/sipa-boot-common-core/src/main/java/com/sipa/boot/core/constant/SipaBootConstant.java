@@ -77,6 +77,10 @@ public interface SipaBootConstant {
 
     interface Mqttv3 {
         String PREFIX = TCP_CLOUD_PREFIX + "mqtt";
+
+        String ENABLED_KEY = "enabled";
+
+        String ENABLED_VALUE = "true";
     }
 
     interface OpenApi {
