@@ -189,6 +189,24 @@
 
         <dependency>
             <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-common-sentinel</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-common-sentinel-gateway</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-common-sentinel-server</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
             <artifactId>sipa-boot-common-state-machine</artifactId>
             <optional>true</optional>
         </dependency>

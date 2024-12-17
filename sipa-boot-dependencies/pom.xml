@@ -970,6 +970,24 @@
 
             <dependency>
                 <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-sentinel</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-sentinel-gateway</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-sentinel-server</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-common-state-machine</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
@@ -1170,6 +1188,18 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-secure-ssr-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sentinel-gateway-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-sentinel-server-starter</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 

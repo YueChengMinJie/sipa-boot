@@ -45,6 +45,9 @@
         <module>sipa-boot-common-secure-gateway</module>
         <module>sipa-boot-common-secure-server</module>
         <module>sipa-boot-common-secure-ssr</module>
+        <module>sipa-boot-common-sentinel</module>
+        <module>sipa-boot-common-sentinel-gateway</module>
+        <module>sipa-boot-common-sentinel-server</module>
         <module>sipa-boot-common-state-machine</module>
         <module>sipa-boot-common-storage</module>
         <module>sipa-boot-common-test-container</module>

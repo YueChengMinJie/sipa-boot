@@ -40,6 +40,8 @@
         <module>sipa-boot-secure-gateway-starter</module>
         <module>sipa-boot-secure-server-starter</module>
         <module>sipa-boot-secure-ssr-starter</module>
+        <module>sipa-boot-sentinel-gateway-starter</module>
+        <module>sipa-boot-sentinel-server-starter</module>
         <module>sipa-boot-sofa-biz-starter</module>
         <module>sipa-boot-sofa-host-starter</module>
         <module>sipa-boot-sofa-plugin-starter</module>

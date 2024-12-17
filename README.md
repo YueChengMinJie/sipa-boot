@@ -25,6 +25,8 @@ git config --local core.hooksPath .githooks/
 - sipa-boot-secure-gateway-starter
 - sipa-boot-secure-server-starter
 - sipa-boot-secure-ssr-starter
+- sipa-boot-sentinel-gateway-starter
+- sipa-boot-sentinel-server-starter
 - sipa-boot-sofa-biz-starter
 - sipa-boot-sofa-plugin-starter
 - sipa-boot-starter
