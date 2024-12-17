@@ -23,6 +23,7 @@
         <module>sipa-boot-dependencies</module>
         <module>sipa-boot-parent</module>
         <module>sipa-boot-sdk</module>
+        <module>sipa-boot-secondary-development</module>
         <module>sipa-boot-starters</module>
         <module>sipa-boot-test</module>
     </modules>
