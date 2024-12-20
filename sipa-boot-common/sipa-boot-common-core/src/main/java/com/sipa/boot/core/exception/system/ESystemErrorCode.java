@@ -42,6 +42,8 @@ public enum ESystemErrorCode implements IErrorCode {
 
     UNAVAILABLE("0b", "服务不可用"),
 
+    TOO_MANY_REQUEST("0c", "请求过于频繁"),
+
     // extension
     EXTENSION_INTERFACE_NAME_ILLEGAL("10", "{0} The name of the extension point interface is invalid, have to {1} end"),
 
