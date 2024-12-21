@@ -1,4 +1,4 @@
-package com.alibaba.csp.sentinel.dashboard.util;
+package com.sipa.boot.sentinel.server;
 
 /**
  * @author caszhou
