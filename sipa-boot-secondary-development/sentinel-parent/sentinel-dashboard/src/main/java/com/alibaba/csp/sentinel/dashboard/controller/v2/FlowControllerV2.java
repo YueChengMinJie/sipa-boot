@@ -77,6 +77,29 @@ public class FlowControllerV2 {
         }
     }
 
+    @PostMapping("/rule")
+    @AuthAction(value = AuthService.PrivilegeType.WRITE_RULE)
+    public Result<FlowRuleEntity> apiAddFlowRule(@RequestBody FlowRuleEntity entity) {
+        Result<FlowRuleEntity> checkResult = checkEntityInternal(entity);
+        if (checkResult != null) {
+            return checkResult;
+        }
+        entity.setId(null);
+        Date date = new Date();
+        entity.setGmtCreate(date);
+        entity.setGmtModified(date);
+        entity.setLimitApp(entity.getLimitApp().trim());
+        entity.setResource(entity.getResource().trim());
+        try {
+            entity = repository.save(entity);
+            publishRules(entity.getApp());
+        } catch (Throwable throwable) {
+            logger.error("Failed to add flow rule", throwable);
+            return Result.ofThrowable(-1, throwable);
+        }
+        return Result.ofSuccess(entity);
+    }
+
     private <R> Result<R> checkEntityInternal(FlowRuleEntity entity) {
         if (entity == null) {
             return Result.ofFail(-1, "invalid body");
@@ -119,29 +142,6 @@ public class FlowControllerV2 {
             return Result.ofFail(-1, "cluster config should be valid");
         }
         return null;
-    }
-
-    @PostMapping("/rule")
-    @AuthAction(value = AuthService.PrivilegeType.WRITE_RULE)
-    public Result<FlowRuleEntity> apiAddFlowRule(@RequestBody FlowRuleEntity entity) {
-        Result<FlowRuleEntity> checkResult = checkEntityInternal(entity);
-        if (checkResult != null) {
-            return checkResult;
-        }
-        entity.setId(null);
-        Date date = new Date();
-        entity.setGmtCreate(date);
-        entity.setGmtModified(date);
-        entity.setLimitApp(entity.getLimitApp().trim());
-        entity.setResource(entity.getResource().trim());
-        try {
-            entity = repository.save(entity);
-            publishRules(entity.getApp());
-        } catch (Throwable throwable) {
-            logger.error("Failed to add flow rule", throwable);
-            return Result.ofThrowable(-1, throwable);
-        }
-        return Result.ofSuccess(entity);
     }
 
     @PutMapping("/rule/{id}")
