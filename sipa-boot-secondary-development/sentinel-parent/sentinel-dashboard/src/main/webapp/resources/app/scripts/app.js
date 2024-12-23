@@ -110,23 +110,23 @@ angular
         }
       })
 
-      .state('dashboard.flowV1', {
-        templateUrl: 'app/views/flow_v1.html',
+      .state('dashboard.flow', {
+        templateUrl: 'app/views/flow.html',
         url: '/flow/:app',
-        controller: 'FlowControllerV1',
+        controller: 'FlowController',
         resolve: {
           loadMyFiles: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load({
               name: 'sentinelDashboardApp',
               files: [
-                'app/scripts/controllers/flow_v1.js',
+                'app/scripts/controllers/flow.js',
               ]
             });
           }]
         }
       })
 
-      .state('dashboard.flow', {
+      .state('dashboard.flowV2', {
           templateUrl: 'app/views/flow_v2.html',
           url: '/v2/flow/:app',
           controller: 'FlowControllerV2',

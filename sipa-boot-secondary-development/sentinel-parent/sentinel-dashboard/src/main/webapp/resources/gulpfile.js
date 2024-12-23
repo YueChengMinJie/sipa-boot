@@ -46,7 +46,7 @@ const JS_APP = [
   'app/scripts/services/version_service.js',
   'app/scripts/services/auth_service.js',
   'app/scripts/services/appservice.js',
-  'app/scripts/services/flow_service_v1.js',
+  'app/scripts/services/flow_service.js',
   'app/scripts/services/flow_service_v2.js',
   'app/scripts/services/degrade_service.js',
   'app/scripts/services/systemservice.js',
@@ -71,7 +71,7 @@ gulp.task('lib', function () {
 
 /*
 * css任务
-* 在src下创建style文件夹，里面存放less文件。 
+* 在src下创建style文件夹，里面存放less文件。
 */
 gulp.task('css', function () {
   gulp.src(CSS_APP)
@@ -112,7 +112,7 @@ gulp.task('clean', function () {
 });
 
 // 总任务
-gulp.task('build', ['clean', 'jshint', 'lib', 'js', 'css']);
+gulp.task('build', ['clean', 'lib', 'js', 'css']);
 
 // 服务
 gulp.task('serve', ['build'], function () {
@@ -123,7 +123,7 @@ gulp.task('serve', ['build'], function () {
   });
   // 打开浏览器
   setTimeout(() => {
-    open('http://localhost:8080/index_dev.htm')
+    open('http://localhost:8188/index_dev.htm')
   }, 200);
   // 监听
   gulp.watch(app.srcPath + '**/*.js', ['js']);

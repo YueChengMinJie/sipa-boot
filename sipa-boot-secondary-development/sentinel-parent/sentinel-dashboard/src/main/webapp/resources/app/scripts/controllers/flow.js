@@ -1,6 +1,6 @@
 var app = angular.module('sentinelDashboardApp');
 
-app.controller('FlowControllerV1', ['$scope', '$stateParams', 'FlowServiceV1', 'ngDialog',
+app.controller('FlowController', ['$scope', '$stateParams', 'FlowService', 'ngDialog',
   'MachineService',
   function ($scope, $stateParams, FlowService, ngDialog,
     MachineService) {

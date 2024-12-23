@@ -40,7 +40,7 @@ import com.alibaba.csp.sentinel.util.StringUtil;
  * @author Eric Zhao
  */
 @RestController
-@RequestMapping(value = "/v1/flow")
+@RequestMapping(value = "/flow")
 public class FlowController {
     private final Logger logger = LoggerFactory.getLogger(FlowController.class);
 
