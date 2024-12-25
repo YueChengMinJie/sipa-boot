@@ -63,8 +63,8 @@ public class GlobalExceptionAdvice {
      * @return ResponseWrapper
      */
     @ResponseBody
-    @ExceptionHandler(FeignException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(FeignException.class)
     public ResponseWrapper<Object> feignException(FeignException e, HttpServletRequest request) {
         log.error("[feign异常]: [{}]", request.getRequestURI(), e);
         if (e.responseBody().isPresent()) {

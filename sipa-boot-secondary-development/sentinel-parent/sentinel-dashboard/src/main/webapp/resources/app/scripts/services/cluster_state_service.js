@@ -12,7 +12,7 @@ angular.module('sentinelDashboardApp').service('ClusterStateService', ['$http', 
             port: port
         };
         return $http({
-            url: '/cluster/state_single',
+            url: 'cluster/state_single',
             params: param,
             method: 'GET'
         });
@@ -20,28 +20,28 @@ angular.module('sentinelDashboardApp').service('ClusterStateService', ['$http', 
 
     this.fetchClusterUniversalStateOfApp = function(app) {
         return $http({
-            url: '/cluster/state/' + app,
+            url: 'cluster/state/' + app,
             method: 'GET'
         });
     };
 
     this.fetchClusterServerStateOfApp = function(app) {
         return $http({
-            url: '/cluster/server_state/' + app,
+            url: 'cluster/server_state/' + app,
             method: 'GET'
         });
     };
 
     this.fetchClusterClientStateOfApp = function(app) {
         return $http({
-            url: '/cluster/client_state/' + app,
+            url: 'cluster/client_state/' + app,
             method: 'GET'
         });
     };
 
     this.modifyClusterConfig = function(config) {
         return $http({
-            url: '/cluster/config/modify_single',
+            url: 'cluster/config/modify_single',
             data: config,
             method: 'POST'
         });
@@ -49,7 +49,7 @@ angular.module('sentinelDashboardApp').service('ClusterStateService', ['$http', 
 
     this.applyClusterFullAssignOfApp = function(app, clusterMap) {
         return $http({
-            url: '/cluster/assign/all_server/' + app,
+            url: 'cluster/assign/all_server/' + app,
             data: clusterMap,
             method: 'POST'
         });
@@ -57,7 +57,7 @@ angular.module('sentinelDashboardApp').service('ClusterStateService', ['$http', 
 
     this.applyClusterSingleServerAssignOfApp = function(app, request) {
         return $http({
-            url: '/cluster/assign/single_server/' + app,
+            url: 'cluster/assign/single_server/' + app,
             data: request,
             method: 'POST'
         });
@@ -65,7 +65,7 @@ angular.module('sentinelDashboardApp').service('ClusterStateService', ['$http', 
 
     this.applyClusterServerBatchUnbind = function(app, machineSet) {
         return $http({
-            url: '/cluster/assign/unbind_server/' + app,
+            url: 'cluster/assign/unbind_server/' + app,
             data: machineSet,
             method: 'POST'
         });

@@ -8,7 +8,7 @@ app.service('FlowService', ['$http', function ($http) {
             port: port
         };
         return $http({
-            url: '/flow/rules',
+            url: 'flow/rules',
             params: param,
             method: 'GET'
         });
@@ -31,7 +31,7 @@ app.service('FlowService', ['$http', function ($http) {
         };
 
         return $http({
-            url: '/flow/rule',
+            url: 'flow/rule',
             data: rule,
             method: 'POST'
         });
@@ -52,7 +52,7 @@ app.service('FlowService', ['$http', function ($http) {
         };
 
         return $http({
-            url: '/flow/save.json',
+            url: 'flow/save.json',
             params: param,
             method: 'PUT'
         });
@@ -65,7 +65,7 @@ app.service('FlowService', ['$http', function ($http) {
         };
 
         return $http({
-            url: '/flow/delete.json',
+            url: 'flow/delete.json',
             params: param,
             method: 'DELETE'
         });

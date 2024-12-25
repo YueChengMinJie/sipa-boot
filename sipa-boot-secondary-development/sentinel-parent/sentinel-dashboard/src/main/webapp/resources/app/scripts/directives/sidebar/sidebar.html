@@ -12,14 +12,14 @@
       <li ui-sref-active="active">
         <a ui-sref="dashboard.home" style="font-size:16px;">
           <span class="glyphicon glyphicon-dashboard"></span>
-          &nbsp;&nbsp;首页</a>
+          &nbsp;&nbsp;首页
+        </a>
       </li>
 
       <li ng-class="{active: true}" ng-repeat="entry in apps | filter: { app: searchApp }">{{dropDown}}
         <a href="javascript:void(0);" ng-click="click($event)" collapse="{{collpaseall == 1}}" style="font-size: 16px;word-break: break-word;">
-          &nbsp;{{entry.app}}
+          &nbsp;{{entry.app}}({{entry.healthyCount}}/{{entry.machines.length}})
           <span class="fa arrow"></span>
-          <span class="arrow">({{entry.healthyCount}}/{{entry.machines.length}})</span>
         </a>
 
         <ul class="nav nav-second-level" ng-show="entry.active">
@@ -53,7 +53,7 @@
           </li>
 
           <li ui-sref-active="active">
-            <a ui-sref="dashboard.degrade({app: entry.app})">
+            <a ui-sref="dashboard.degradeV2({app: entry.app})">
               <i class="glyphicon glyphicon-flash"></i>&nbsp;&nbsp;熔断规则</a>
           </li>
           <li ui-sref-active="active" ng-if="!entry.isGateway">

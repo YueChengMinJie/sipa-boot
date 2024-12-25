@@ -39,7 +39,7 @@ import com.alibaba.csp.sentinel.util.StringUtil;
  * @author Eric Zhao
  */
 @RestController
-@RequestMapping("/2/degrade")
+@RequestMapping("/v2/degrade")
 public class DegradeControllerV2 {
     private final Logger logger = LoggerFactory.getLogger(DegradeControllerV2.class);
 

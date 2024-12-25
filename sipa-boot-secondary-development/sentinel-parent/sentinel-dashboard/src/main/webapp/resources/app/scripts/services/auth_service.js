@@ -3,14 +3,14 @@ var app = angular.module('sentinelDashboardApp');
 app.service('AuthService', ['$http', function ($http) {
   this.check = function () {
     return $http({
-      url: '/auth/check',
+      url: 'auth/check',
       method: 'POST'
     });
   };
 
   this.login = function (param) {
     return $http({
-      url: '/auth/login',
+      url: 'auth/login',
       params: param,
       method: 'POST'
     });
@@ -18,7 +18,7 @@ app.service('AuthService', ['$http', function ($http) {
 
   this.logout = function () {
     return $http({
-      url: '/auth/logout',
+      url: 'auth/logout',
       method: 'POST'
     });
   };

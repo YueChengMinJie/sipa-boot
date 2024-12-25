@@ -4,7 +4,7 @@ app.service('MetricService', ['$http', function ($http) {
 
   this.queryAppSortedIdentities = function (params) {
     return $http({
-      url: '/metric/queryTopResourceMetric.json',
+      url: 'metric/queryTopResourceMetric.json',
       params: params,
       method: 'GET'
     });
@@ -12,7 +12,7 @@ app.service('MetricService', ['$http', function ($http) {
 
   this.queryByAppAndIdentity = function (params) {
     return $http({
-      url: '/metric/queryByAppAndResource.json',
+      url: 'metric/queryByAppAndResource.json',
       params: params,
       method: 'GET'
     });
@@ -28,7 +28,7 @@ app.service('MetricService', ['$http', function ($http) {
     };
 
     return $http({
-      url: '/metric/queryByAppAndResource.json',
+      url: 'metric/queryByAppAndResource.json',
       params: param,
       method: 'GET'
     });

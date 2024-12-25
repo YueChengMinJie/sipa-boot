@@ -8,7 +8,7 @@ app.service('GatewayApiService', ['$http', function ($http) {
       port: port
     };
     return $http({
-      url: '/gateway/api/list.json',
+      url: 'gateway/api/list.json',
       params: param,
       method: 'GET'
     });
@@ -16,7 +16,7 @@ app.service('GatewayApiService', ['$http', function ($http) {
 
   this.newApi = function (api) {
     return $http({
-      url: '/gateway/api/new.json',
+      url: 'gateway/api/new.json',
       data: api,
       method: 'POST'
     });
@@ -24,7 +24,7 @@ app.service('GatewayApiService', ['$http', function ($http) {
 
   this.saveApi = function (api) {
     return $http({
-      url: '/gateway/api/save.json',
+      url: 'gateway/api/save.json',
       data: api,
       method: 'POST'
     });
@@ -36,7 +36,7 @@ app.service('GatewayApiService', ['$http', function ($http) {
       app: api.app
     };
     return $http({
-      url: '/gateway/api/delete.json',
+      url: 'gateway/api/delete.json',
       params: param,
       method: 'POST'
     });

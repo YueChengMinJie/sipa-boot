@@ -9,7 +9,7 @@ app.service('GatewayFlowService', ['$http', function ($http) {
     };
 
     return $http({
-      url: '/gateway/flow/list.json',
+      url: 'gateway/flow/list.json',
       params: param,
       method: 'GET'
     });
@@ -17,7 +17,7 @@ app.service('GatewayFlowService', ['$http', function ($http) {
 
   this.newRule = function (rule) {
     return $http({
-      url: '/gateway/flow/new.json',
+      url: 'gateway/flow/new.json',
       data: rule,
       method: 'POST'
     });
@@ -25,7 +25,7 @@ app.service('GatewayFlowService', ['$http', function ($http) {
 
   this.saveRule = function (rule) {
     return $http({
-      url: '/gateway/flow/save.json',
+      url: 'gateway/flow/save.json',
       data: rule,
       method: 'POST'
     });
@@ -38,7 +38,7 @@ app.service('GatewayFlowService', ['$http', function ($http) {
     };
 
     return $http({
-      url: '/gateway/flow/delete.json',
+      url: 'gateway/flow/delete.json',
       params: param,
       method: 'POST'
     });

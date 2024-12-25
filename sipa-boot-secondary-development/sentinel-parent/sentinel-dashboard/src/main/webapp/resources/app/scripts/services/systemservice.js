@@ -33,7 +33,7 @@ app.service('SystemService', ['$http', function ($http) {
     }
 
     return $http({
-      url: '/system/new.json',
+      url: 'system/new.json',
       params: param,
       method: 'GET'
     });
@@ -56,7 +56,7 @@ app.service('SystemService', ['$http', function ($http) {
     }
 
     return $http({
-      url: '/system/save.json',
+      url: 'system/save.json',
       params: param,
       method: 'GET'
     });
@@ -69,7 +69,7 @@ app.service('SystemService', ['$http', function ($http) {
     };
 
     return $http({
-      url: '/system/delete.json',
+      url: 'system/delete.json',
       params: param,
       method: 'GET'
     });
