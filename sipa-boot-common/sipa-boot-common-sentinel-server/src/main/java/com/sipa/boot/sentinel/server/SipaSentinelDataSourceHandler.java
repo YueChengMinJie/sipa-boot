@@ -11,6 +11,7 @@ import com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler;
 import com.alibaba.cloud.sentinel.datasource.config.AbstractDataSourceProperties;
 import com.alibaba.cloud.sentinel.datasource.config.NacosDataSourceProperties;
 import com.alibaba.csp.sentinel.cluster.flow.rule.ClusterFlowRuleManager;
+import com.alibaba.csp.sentinel.cluster.flow.rule.ClusterParamFlowRuleManager;
 import com.alibaba.csp.sentinel.datasource.AbstractDataSource;
 
 import lombok.extern.slf4j.Slf4j;
@@ -68,15 +69,15 @@ public class SipaSentinelDataSourceHandler extends SentinelDataSourceHandler {
         // register property in RuleManager
         dataSourceProperties.postRegister(newDataSource);
 
-        ClusterFlowRuleManager.setPropertySupplier(namespace -> {
-            if (dataSourceProperties instanceof NacosDataSourceProperties) {
-                NacosDataSourceProperties nacosDataSourceProperties = (NacosDataSourceProperties)dataSourceProperties;
-                if (nacosDataSourceProperties.getDataId().equals(namespace + NacosUtils.FLOW_DATA_ID_POSTFIX)
-                    || nacosDataSourceProperties.getDataId().equals(namespace + NacosUtils.PARAM_FLOW_POSTFIX)) {
-                    return newDataSource.getProperty();
-                }
+        if (dataSourceProperties instanceof NacosDataSourceProperties) {
+            NacosDataSourceProperties nacosDataSourceProperties = (NacosDataSourceProperties)dataSourceProperties;
+            if (nacosDataSourceProperties.getDataId().endsWith(NacosUtils.PARAM_FLOW_DATA_ID_POSTFIX)
+                || nacosDataSourceProperties.getDataId().endsWith(NacosUtils.PARAM_FLOW_DATA_ID_POSTFIX)) {
+                ClusterParamFlowRuleManager.setPropertySupplier(namespace -> newDataSource.getProperty());
+            } else if (nacosDataSourceProperties.getDataId().endsWith(NacosUtils.FLOW_DATA_ID_POSTFIX)
+                || nacosDataSourceProperties.getDataId().endsWith(NacosUtils.PARAM_FLOW_DATA_ID_POSTFIX)) {
+                ClusterFlowRuleManager.setPropertySupplier(namespace -> newDataSource.getProperty());
             }
-            return null;
-        });
+        }
     }
 }

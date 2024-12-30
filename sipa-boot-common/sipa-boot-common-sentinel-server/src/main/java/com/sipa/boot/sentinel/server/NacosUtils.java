@@ -9,5 +9,5 @@ public class NacosUtils {
 
     public static final String FLOW_DATA_ID_POSTFIX = "-flow-rules";
 
-    public static final String PARAM_FLOW_POSTFIX = "-param-rules";
+    public static final String PARAM_FLOW_DATA_ID_POSTFIX = "-param-flow-rules";
 }

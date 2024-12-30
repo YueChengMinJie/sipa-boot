@@ -25,7 +25,7 @@
             ng-if="!isExpand && isTreeView">展开</button>
           <button class="btn btn-danger" style="float: right;margin-right: 10px;height: 30px;font-size: 12px;" ng-click="collapseAll()"
             ng-if="isExpand && isTreeView">折叠</button> -->
-          <input class="form-control witdh-200" placeholder="关键字" ng-model="searchKey" ng-change="searchChange(searchKey)">
+          <input class="form-control width-200" placeholder="关键字" ng-model="searchKey" ng-change="searchChange(searchKey)">
           <div class="control-group" style="float:right;margin-right: 10px;margin-bottom: -10px;">
             <selectize id="gsInput" class="selectize-input-200" config="macsInputConfig" options="macsInputOptions" ng-model="macInputModel"
               placeholder="机器"></selectize>
