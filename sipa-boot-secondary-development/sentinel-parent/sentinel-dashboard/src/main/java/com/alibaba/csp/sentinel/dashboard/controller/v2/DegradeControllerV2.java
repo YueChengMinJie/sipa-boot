@@ -56,7 +56,7 @@ public class DegradeControllerV2 {
 
     @GetMapping("/rules.json")
     @AuthAction(PrivilegeType.READ_RULE)
-    public Result<List<DegradeRuleEntity>> apiQueryMachineRules(String app, String ip, Integer port) {
+    public Result<List<DegradeRuleEntity>> apiQueryMachineRules(String app) {
         if (StringUtil.isEmpty(app)) {
             return Result.ofFail(-1, "app can't be null or empty");
         }
@@ -84,7 +84,7 @@ public class DegradeControllerV2 {
             entity = repository.save(entity);
             publishRules(entity.getApp());
         } catch (Throwable t) {
-            logger.error("Failed to add new degrade rule, app={}, ip={}", entity.getApp(), entity.getIp(), t);
+            logger.error("Failed to add new degrade rule, app={}", entity.getApp(), t);
             return Result.ofThrowable(-1, t);
         }
         return Result.ofSuccess(entity);
@@ -148,8 +148,6 @@ public class DegradeControllerV2 {
             return Result.ofFail(-1, "Degrade rule does not exist, id=" + id);
         }
         entity.setApp(oldEntity.getApp());
-        entity.setIp(oldEntity.getIp());
-        entity.setPort(oldEntity.getPort());
         entity.setId(oldEntity.getId());
         Result<DegradeRuleEntity> checkResult = checkEntityInternal(entity);
         if (checkResult != null) {

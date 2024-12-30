@@ -159,8 +159,6 @@ public class FlowControllerV2 {
         }
 
         entity.setApp(oldEntity.getApp());
-        entity.setIp(oldEntity.getIp());
-        entity.setPort(oldEntity.getPort());
         Result<FlowRuleEntity> checkResult = checkEntityInternal(entity);
         if (checkResult != null) {
             return checkResult;
