@@ -302,6 +302,22 @@ angular
           }
         })
 
+        .state('dashboard.systemV2', {
+          templateUrl: 'app/views/system_v2.html',
+          url: '/v2/system/:app',
+          controller: 'SystemCtlV2',
+          resolve: {
+            loadMyFiles: ['$ocLazyLoad', function ($ocLazyLoad) {
+              return $ocLazyLoad.load({
+                name: 'sentinelDashboardApp',
+                files: [
+                  'app/scripts/controllers/system_v2.js',
+                ]
+              });
+            }]
+          }
+        })
+
         .state('dashboard.machine', {
           templateUrl: 'app/views/machine.html',
           url: '/app/:app',

@@ -6,32 +6,25 @@ app.service('FlowServiceV2', ['$http', function ($http) {
       app: app
     };
     return $http({
-      url: 'v2/flow/rules',
-      params: param,
-      method: 'GET'
+      url: 'v2/flow/rules', params: param, method: 'GET'
     });
   };
 
   this.newRule = function (rule) {
     return $http({
-      url: 'v2/flow/rule',
-      data: rule,
-      method: 'POST'
+      url: 'v2/flow/rule', data: rule, method: 'POST'
     });
   };
 
   this.saveRule = function (rule) {
     return $http({
-      url: 'v2/flow/rule/' + rule.id,
-      data: rule,
-      method: 'PUT'
+      url: 'v2/flow/rule/' + rule.id, data: rule, method: 'PUT'
     });
   };
 
   this.deleteRule = function (rule) {
     return $http({
-      url: 'v2/flow/rule/' + rule.id,
-      method: 'DELETE'
+      url: 'v2/flow/rule/' + rule.id, method: 'DELETE'
     });
   };
 

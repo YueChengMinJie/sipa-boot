@@ -6,17 +6,13 @@ app.service('DegradeServiceV2', ['$http', function ($http) {
       app: app
     };
     return $http({
-      url: 'v2/degrade/rules.json',
-      params: param,
-      method: 'GET'
+      url: 'v2/degrade/rules.json', params: param, method: 'GET'
     });
   };
 
   this.newRule = function (rule) {
     return $http({
-      url: 'v2/degrade/rule',
-      data: rule,
-      method: 'POST'
+      url: 'v2/degrade/rule', data: rule, method: 'POST'
     });
   };
 
@@ -33,16 +29,13 @@ app.service('DegradeServiceV2', ['$http', function ($http) {
       slowRatioThreshold: rule.slowRatioThreshold,
     };
     return $http({
-      url: 'v2/degrade/rule/' + rule.id,
-      data: param,
-      method: 'PUT'
+      url: 'v2/degrade/rule/' + rule.id, data: param, method: 'PUT'
     });
   };
 
   this.deleteRule = function (rule) {
     return $http({
-      url: 'v2/degrade/rule/' + rule.id,
-      method: 'DELETE'
+      url: 'v2/degrade/rule/' + rule.id, method: 'DELETE'
     });
   };
 

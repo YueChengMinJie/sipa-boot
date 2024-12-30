@@ -9,38 +9,30 @@ angular.module('sentinelDashboardApp').service('ParamFlowServiceV2', ['$http', f
       app: app
     };
     return $http({
-      url: 'v2/paramFlow/rules',
-      params: param,
-      method: 'GET'
+      url: 'v2/paramFlow/rules', params: param, method: 'GET'
     });
   };
 
   this.addNewRule = function (rule) {
     return $http({
-      url: 'v2/paramFlow/rule',
-      data: rule,
-      method: 'POST'
+      url: 'v2/paramFlow/rule', data: rule, method: 'POST'
     });
   };
 
   this.saveRule = function (entity) {
     return $http({
-      url: 'v2/paramFlow/rule/' + entity.id,
-      data: entity,
-      method: 'PUT'
+      url: 'v2/paramFlow/rule/' + entity.id, data: entity, method: 'PUT'
     });
   };
 
   this.deleteRule = function (entity) {
     return $http({
-      url: 'v2/paramFlow/rule/' + entity.id,
-      method: 'DELETE'
+      url: 'v2/paramFlow/rule/' + entity.id, method: 'DELETE'
     });
   };
 
   function isNumberClass(classType) {
-    return classType === 'int' || classType === 'double' ||
-      classType === 'float' || classType === 'long' || classType === 'short';
+    return classType === 'int' || classType === 'double' || classType === 'float' || classType === 'long' || classType === 'short';
   }
 
   function isByteClass(classType) {
@@ -66,8 +58,7 @@ angular.module('sentinelDashboardApp').service('ParamFlowServiceV2', ['$http', f
     if (isByteClass(curExItem.classType) && notGoodNumberBetweenExclusive(curExItem.object, -128, 127)) {
       return true;
     }
-    return curExItem.object === undefined || curExItem.classType === undefined ||
-      notNumberAtLeastZero(curExItem.count);
+    return curExItem.object === undefined || curExItem.classType === undefined || notNumberAtLeastZero(curExItem.count);
   }
 
   this.checkRuleValid = function (rule) {
@@ -91,8 +82,7 @@ angular.module('sentinelDashboardApp').service('ParamFlowServiceV2', ['$http', f
       for (var i = 0; i < rule.paramFlowItemList.length; i++) {
         var item = rule.paramFlowItemList[i];
         if (notValidParamItem(item)) {
-          alert('热点参数例外项不合法，请检查值和类型是否正确：参数为 ' + item.object + ', 类型为 ' +
-            item.classType + ', 限流阈值为 ' + item.count);
+          alert('热点参数例外项不合法，请检查值和类型是否正确：参数为 ' + item.object + ', 类型为 ' + item.classType + ', 限流阈值为 ' + item.count);
           return false;
         }
       }
