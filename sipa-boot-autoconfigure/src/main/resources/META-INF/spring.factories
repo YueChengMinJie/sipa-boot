@@ -23,6 +23,7 @@ com.sipa.boot.secure.SecureAutoConfiguration,\
 com.sipa.boot.secure.SecureGatewayAutoConfiguration,\
 com.sipa.boot.secure.SecureServerAutoConfiguration,\
 com.sipa.boot.secure.SecureSsrAutoConfiguration,\
+com.sipa.boot.sentinel.SentinelGatewayAutoConfiguration,\
 com.sipa.boot.sentinel.SentinelServerAutoConfiguration,\
 com.sipa.boot.storage.StorageAutoConfiguration,\
 com.sipa.boot.testcontainer.TestContainerAutoConfiguration,\
