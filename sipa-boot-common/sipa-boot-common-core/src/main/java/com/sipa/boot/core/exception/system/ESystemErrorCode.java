@@ -44,6 +44,10 @@ public enum ESystemErrorCode implements IErrorCode {
 
     TOO_MANY_REQUEST("0c", "请求过于频繁"),
 
+    DEGRADE("0d", "请求熔断降级"),
+
+    AUTHORITY("0e", "拒绝访问"),
+
     // extension
     EXTENSION_INTERFACE_NAME_ILLEGAL("10", "{0} The name of the extension point interface is invalid, have to {1} end"),
 

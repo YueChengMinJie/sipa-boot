@@ -1,4 +1,4 @@
-package com.sipa.boot.feign.util;
+package com.sipa.boot.core.util;
 
 import java.util.Objects;
 
@@ -11,7 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author caszhou
  * @date 2023/8/16
  */
-public class FeignUtil {
+public class SipaHttpUtil {
     public static String getHeader(String key) {
         ServletRequestAttributes requestAttributes =
             (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();

@@ -39,7 +39,7 @@ public class NacosParamFlowRuleApiProvider implements DynamicRuleProvider<List<P
         List<ParamFlowRule> paramFlowRules =
             this.objectMapper.readValue(config, new TypeReference<List<ParamFlowRule>>() {});
         return paramFlowRules.stream()
-            .map(rule -> ParamFlowRuleEntity.fromParamFlowRule(rule.getLimitApp(), "", 0, rule))
+            .map(rule -> ParamFlowRuleEntity.fromParamFlowRule(appName, "", 0, rule))
             .collect(Collectors.toList());
     }
 }

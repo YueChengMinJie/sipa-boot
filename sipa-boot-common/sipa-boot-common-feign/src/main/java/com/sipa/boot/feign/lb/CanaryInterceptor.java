@@ -3,7 +3,7 @@ package com.sipa.boot.feign.lb;
 import org.apache.commons.lang3.StringUtils;
 
 import com.sipa.boot.core.constant.SipaConstant;
-import com.sipa.boot.feign.util.FeignUtil;
+import com.sipa.boot.core.util.SipaHttpUtil;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -15,7 +15,7 @@ import feign.RequestTemplate;
 public class CanaryInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate template) {
-        String canaryHeader = FeignUtil.getHeader(SipaConstant.CANARY_HEADER);
+        String canaryHeader = SipaHttpUtil.getHeader(SipaConstant.CANARY_HEADER);
         if (StringUtils.isNotBlank(canaryHeader)) {
             template.header(SipaConstant.CANARY_HEADER, canaryHeader);
         }

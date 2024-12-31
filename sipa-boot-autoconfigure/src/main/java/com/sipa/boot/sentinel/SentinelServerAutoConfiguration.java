@@ -11,21 +11,28 @@ import com.alibaba.cloud.sentinel.SentinelProperties;
 import com.alibaba.cloud.sentinel.SentinelWebAutoConfiguration;
 import com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.BlockExceptionHandler;
+import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.RequestOriginParser;
 import com.sipa.boot.sentinel.server.SentinelServerEnvProcessor;
 import com.sipa.boot.sentinel.server.SipaBlockExceptionHandler;
+import com.sipa.boot.sentinel.server.SipaRequestOriginParser;
 import com.sipa.boot.sentinel.server.SipaSentinelDataSourceHandler;
 
 /**
  * @author caszhou
  * @date 2024/12/20
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 @ConditionalOnClass(SentinelServerEnvProcessor.class)
 @AutoConfigureBefore(value = {SentinelWebAutoConfiguration.class})
 public class SentinelServerAutoConfiguration {
     @Bean
     public BlockExceptionHandler blockExceptionHandler() {
         return new SipaBlockExceptionHandler();
+    }
+
+    @Bean
+    public RequestOriginParser requestOriginParser() {
+        return new SipaRequestOriginParser();
     }
 
     @Bean

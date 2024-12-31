@@ -2,12 +2,14 @@ package com.alibaba.csp.sentinel.dashboard.rule.nacos;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
 import com.alibaba.csp.sentinel.dashboard.common.SentinelNacosConstants;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.AuthorityRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.rule.DynamicRuleProvider;
+import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRule;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,6 +36,10 @@ public class NacosAuthorityRuleApiProvider implements DynamicRuleProvider<List<A
         if (config == null) {
             return Collections.emptyList();
         }
-        return this.objectMapper.readValue(config, new TypeReference<List<AuthorityRuleEntity>>() {});
+        List<AuthorityRule> authorityRuleEntities =
+            this.objectMapper.readValue(config, new TypeReference<List<AuthorityRule>>() {});
+        return authorityRuleEntities.stream()
+            .map(authorityRule -> AuthorityRuleEntity.fromAuthorityRule(appName, "", 0, authorityRule))
+            .collect(Collectors.toList());
     }
 }
