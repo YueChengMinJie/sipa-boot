@@ -16,4 +16,8 @@ public interface SentinelNacosConstants {
     String SYSTEM_DATA_ID_POSTFIX = "-system-rules";
 
     String AUTHORITY_FLOW_POSTFIX = "-authority-rules";
+
+    String GW_FLOW_POSTFIX = "-gw-flow-rules";
+
+    String GW_API_GROUP_POSTFIX = "-gw-api-group-rules";
 }
