@@ -1,6 +1,6 @@
 var app = angular.module('sentinelDashboardApp');
 
-app.controller('GatewayFlowCtlV2', ['$scope', '$stateParams', 'GatewayFlowService', 'GatewayApiService', 'ngDialog', function ($scope, $stateParams, GatewayFlowService, GatewayApiService, ngDialog) {
+app.controller('GatewayFlowCtlV2', ['$scope', '$stateParams', 'GatewayFlowServiceV2', 'GatewayApiServiceV2', 'ngDialog', function ($scope, $stateParams, GatewayFlowService, GatewayApiService, ngDialog) {
   $scope.app = $stateParams.app;
 
   $scope.rulesPageConfig = {

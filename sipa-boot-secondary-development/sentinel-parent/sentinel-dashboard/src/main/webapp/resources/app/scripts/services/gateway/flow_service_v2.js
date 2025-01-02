@@ -1,6 +1,6 @@
 var app = angular.module('sentinelDashboardApp');
 
-app.service('GatewayFlowService', ['$http', function ($http) {
+app.service('GatewayFlowServiceV2', ['$http', function ($http) {
   this.queryRules = function (app) {
     var param = {
       app: app

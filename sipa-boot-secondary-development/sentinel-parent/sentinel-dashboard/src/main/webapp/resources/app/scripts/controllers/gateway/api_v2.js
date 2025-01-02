@@ -1,6 +1,6 @@
 var app = angular.module('sentinelDashboardApp');
 
-app.controller('GatewayApiCtlV2', ['$scope', '$stateParams', 'GatewayApiService', 'ngDialog', function ($scope, $stateParams, GatewayApiService, ngDialog) {
+app.controller('GatewayApiCtlV2', ['$scope', '$stateParams', 'GatewayApiServiceV2', 'ngDialog', function ($scope, $stateParams, GatewayApiService, ngDialog) {
   $scope.app = $stateParams.app;
 
   $scope.apisPageConfig = {
