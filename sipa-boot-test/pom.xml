@@ -39,10 +39,10 @@
             <artifactId>sipa-boot-xxljob-starter</artifactId>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.sipa.boot</groupId>-->
-        <!--            <artifactId>sipa-boot-rocketmq-starter</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-rocketmq-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.sipa.boot</groupId>

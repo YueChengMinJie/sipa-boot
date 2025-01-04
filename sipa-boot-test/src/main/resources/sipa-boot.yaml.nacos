@@ -6,12 +6,12 @@
 spring:
   datasource:
     username: root
-    password: mysql@admin
+    password: zhou7890-=
   redis:
     host: 127.0.0.1
-    port: 6379
+    port: 6380
     database: 0
-    password: redis@admin
+    password: zhou7890-=
   servlet:
     multipart:
       max-file-size: 50MB
@@ -24,3 +24,11 @@ spring:
 server:
   tomcat:
     max-http-form-post-size: 50MB
+#
+# -------------------------------------------
+# FEIGN配置
+# -------------------------------------------
+#
+feign:
+  sentinel:
+    enabled: true

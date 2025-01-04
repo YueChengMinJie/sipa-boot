@@ -10,6 +10,7 @@ com.sipa.boot.feign.FeignAllAutoConfiguration,\
 com.sipa.boot.feign.FeignAutoConfiguration,\
 com.sipa.boot.gateway.GatewayAutoConfiguration,\
 com.sipa.boot.geetest.GeetestAutoConfiguration,\
+com.sipa.boot.influxdb.SipaInfluxdbAutoConfiguration,\
 com.sipa.boot.lb.LoadBalancerAutoConfiguration,\
 com.sipa.boot.lock.LockAutoConfiguration,\
 com.sipa.boot.mqttv3.MqttAutoConfiguration,\
