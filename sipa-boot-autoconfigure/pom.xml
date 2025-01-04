@@ -87,6 +87,12 @@
 
         <dependency>
             <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-common-influxdb</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
             <artifactId>sipa-boot-common-iot</artifactId>
             <optional>true</optional>
         </dependency>

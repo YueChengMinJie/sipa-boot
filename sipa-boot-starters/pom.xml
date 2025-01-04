@@ -24,6 +24,7 @@
         <module>sipa-boot-flow-starter</module>
         <module>sipa-boot-gateway-starter</module>
         <module>sipa-boot-geetest-starter</module>
+        <module>sipa-boot-influxdb-starter</module>
         <module>sipa-boot-iot-starter</module>
         <module>sipa-boot-lb-starter</module>
         <module>sipa-boot-lock-starter</module>

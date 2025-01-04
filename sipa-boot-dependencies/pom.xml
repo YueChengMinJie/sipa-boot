@@ -86,6 +86,7 @@
         <jamod.version>1.2</jamod.version>
         <caffeine.version>2.9.3</caffeine.version>
         <rxtx.version>2.1.7</rxtx.version>
+        <influxdb-spring.version>7.2.0</influxdb-spring.version>
         <mica-auto.version>2.3.2</mica-auto.version>
         <!-- plugin -->
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
@@ -873,6 +874,14 @@
                 <artifactId>caffeine</artifactId>
                 <version>${caffeine.version}</version>
             </dependency>
+
+            <!-- influxdb -->
+            <dependency>
+                <groupId>com.influxdb</groupId>
+                <artifactId>influxdb-spring</artifactId>
+                <version>${influxdb-spring.version}</version>
+            </dependency>
+
             <!-- mica -->
             <dependency>
                 <groupId>net.dreamlu</groupId>
@@ -956,6 +965,12 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-common-geetest</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-common-influxdb</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 
@@ -1185,6 +1200,12 @@
             <dependency>
                 <groupId>com.sipa.boot</groupId>
                 <artifactId>sipa-boot-geetest-starter</artifactId>
+                <version>${sipa-boot-dependencies.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sipa.boot</groupId>
+                <artifactId>sipa-boot-influxdb-starter</artifactId>
                 <version>${sipa-boot-dependencies.version}</version>
             </dependency>
 
