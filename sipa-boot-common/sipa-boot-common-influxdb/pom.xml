@@ -21,5 +21,10 @@
             <groupId>com.influxdb</groupId>
             <artifactId>influxdb-spring</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.influxdb</groupId>
+            <artifactId>influxdb-client-flux</artifactId>
+        </dependency>
     </dependencies>
 </project>

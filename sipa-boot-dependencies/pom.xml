@@ -86,7 +86,7 @@
         <jamod.version>1.2</jamod.version>
         <caffeine.version>2.9.3</caffeine.version>
         <rxtx.version>2.1.7</rxtx.version>
-        <influxdb-spring.version>6.12.0</influxdb-spring.version>
+        <influxdb.version>6.12.0</influxdb.version>
         <mica-auto.version>2.3.2</mica-auto.version>
         <!-- plugin -->
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
@@ -879,7 +879,13 @@
             <dependency>
                 <groupId>com.influxdb</groupId>
                 <artifactId>influxdb-spring</artifactId>
-                <version>${influxdb-spring.version}</version>
+                <version>${influxdb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.influxdb</groupId>
+                <artifactId>influxdb-client-flux</artifactId>
+                <version>${influxdb.version}</version>
             </dependency>
 
             <!-- mica -->
