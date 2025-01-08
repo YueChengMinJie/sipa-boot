@@ -18,7 +18,7 @@ import com.sipa.boot.cache.util.RedisUtil;
  */
 @Configuration
 @ConditionalOnClass(RedisUtil.class)
-@ComponentScan(value = {"com.sipa.boot.cache.**"})
+@ComponentScan("com.sipa.boot.cache.**")
 public class RedisAutoConfiguration {
     @Bean
     public StringRedisSerializer stringRedisSerializer() {

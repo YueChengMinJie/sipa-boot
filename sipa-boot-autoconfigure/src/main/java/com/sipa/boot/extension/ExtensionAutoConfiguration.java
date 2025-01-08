@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnClass({Extension.class})
-@ComponentScan(value = {"com.sipa.boot.extension"})
+@ComponentScan("com.sipa.boot.extension")
 public class ExtensionAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean(ExtensionRegister.class)

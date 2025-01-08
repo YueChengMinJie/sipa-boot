@@ -39,7 +39,7 @@ import cn.hutool.system.SystemUtil;
 @Configuration
 @ConditionalOnWebApplication
 @ConditionalOnClass(NoPackage.class)
-@ComponentScan(value = {"com.sipa.boot.mvc.**"})
+@ComponentScan("com.sipa.boot.mvc.**")
 @PropertySource(value = "classpath:mvc.yml", factory = YamlPropertySourceFactory.class)
 public class MvcAutoConfiguration implements WebMvcConfigurer {
     @Value("${spring.profiles.active:local}")

@@ -17,7 +17,7 @@ import com.sipa.boot.extension.ExtensionBootstrap;
 @Configuration
 @ConditionalOnClass({ArkExtensionBootstrap.class})
 @AutoConfigureBefore(ExtensionAutoConfiguration.class)
-@ComponentScan(value = {"com.sipa.boot.extension.ark"})
+@ComponentScan("com.sipa.boot.extension.ark")
 public class ArkExtensionAutoConfiguration {
     @Bean(initMethod = "init")
     @ConditionalOnMissingBean(ExtensionBootstrap.class)

@@ -47,9 +47,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Configuration
+@ComponentScan("com.sipa.boot.feign.**")
 @EnableConfigurationProperties(FeignProperty.class)
 @AutoConfigureBefore(FeignClientsConfiguration.class)
-@ComponentScan(value = {"com.sipa.boot.feign.**"})
 @EnableFeignClients(basePackages = {"com.sipa", "com.ycmj"}) // todo by caszhou 业务配置应该与框架解耦
 @ConditionalOnClass({FeignProperty.class, UnwrapDecoder.class})
 @PropertySource(value = "classpath:feign.yml", factory = YamlPropertySourceFactory.class)

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnClass({TestContainer.class})
-@ComponentScan(value = {"com.sipa.boot.testcontainer.**"})
+@ComponentScan("com.sipa.boot.testcontainer.**")
 public class TestContainerAutoConfiguration {
 
 }
