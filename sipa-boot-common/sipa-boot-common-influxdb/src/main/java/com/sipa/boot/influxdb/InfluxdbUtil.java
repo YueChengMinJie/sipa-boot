@@ -1,4 +1,4 @@
-package com.sipa.boot.influxdb.env;
+package com.sipa.boot.influxdb;
 
 import java.util.HashMap;
 import java.util.Map;

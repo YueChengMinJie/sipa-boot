@@ -1,2 +1,2 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-com.sipa.boot.influxdb.InfluxdbEnvProcessor
+com.sipa.boot.es.ElasticsearchEnvProcessor

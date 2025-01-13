@@ -73,7 +73,9 @@ function itemUnwrapper(item: ItemInTable) {
   } else if (item.expireTime > 0 && item.expireTime < Date.now()) {
     return null
   } else {
+    // @ts-ignore
     delete item.updateTime
+    // @ts-ignore
     delete item.expireTime
     return item
   }
@@ -298,6 +300,7 @@ async function deleteItemsFromDB(db: any, tableIndexRanges: TableIndexRange[]) {
               .index(indexRange.indexName)
               .iterateCursor(indexRange2DBKey(indexRange), (cursor: any) => {
                 if (!cursor) {
+                  // @ts-ignore
                   resolve()
                   return
                 }
@@ -392,6 +395,7 @@ export async function getItemsInRange(
                 .index(indexRange.indexName)
                 .iterateCursor(indexRange2DBKey(indexRange), (cursor: any) => {
                   if (!cursor) {
+                    // @ts-ignore
                     resolve()
                     return
                   }

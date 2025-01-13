@@ -1,7 +1,5 @@
 package com.sipa.boot.es;
 
-import com.sipa.boot.es.client.ElasticRestClient;
-import com.sipa.boot.es.property.ElasticSearchProperty;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;

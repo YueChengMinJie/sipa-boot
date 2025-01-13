@@ -29,10 +29,10 @@
             <artifactId>sipa-boot-sdk-server</artifactId>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.sipa.boot</groupId>-->
-        <!--            <artifactId>sipa-boot-es-starter</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.sipa.boot</groupId>
+            <artifactId>sipa-boot-es-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.sipa.boot</groupId>

@@ -1,4 +1,4 @@
-package com.sipa.boot.influxdb.env;
+package com.sipa.boot.es;
 
 import com.sipa.boot.core.env.EnvPostProcessor;
 
@@ -6,9 +6,9 @@ import com.sipa.boot.core.env.EnvPostProcessor;
  * @author caszhou
  * @date 2022-09-14
  */
-public class InfluxdbEnvProcessor extends EnvPostProcessor {
+public class ElasticsearchEnvProcessor extends EnvPostProcessor {
     @Override
     public String getName() {
-        return "sipa-influxdb";
+        return "sipa-elasticsearch";
     }
 }

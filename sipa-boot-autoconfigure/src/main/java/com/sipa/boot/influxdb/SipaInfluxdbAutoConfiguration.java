@@ -16,7 +16,6 @@ import com.influxdb.client.flux.FluxConnectionOptions;
 import com.influxdb.spring.health.InfluxDB2HealthIndicatorAutoConfiguration;
 import com.influxdb.spring.influx.InfluxDB2AutoConfiguration;
 import com.influxdb.spring.influx.InfluxDB2Properties;
-import com.sipa.boot.influxdb.env.InfluxdbEnvProcessor;
 
 import lombok.RequiredArgsConstructor;
 import okhttp3.OkHttpClient;

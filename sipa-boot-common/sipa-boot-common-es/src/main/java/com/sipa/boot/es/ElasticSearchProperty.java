@@ -1,4 +1,4 @@
-package com.sipa.boot.es.property;
+package com.sipa.boot.es;
 
 import java.util.List;
 
@@ -21,9 +21,9 @@ import lombok.Data;
 public class ElasticSearchProperty {
     private List<String> uris;
 
-    private String host = "172.19.65.94";
+    private String host;
 
-    private int port = 9200;
+    private int port;
 
     private int connectionRequestTimeout = 5000;
 
