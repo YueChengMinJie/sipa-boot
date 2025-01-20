@@ -11,13 +11,7 @@
 
 set -ex
 
-export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
-export SDK_HOME=/opt/cmdline-tools/latest
-export PATH=/opt/cmdline-tools/bin:$PATH
-export PATH=${SDK_HOME}/platform-tools:$PATH
-export ANDROID_HOME=/opt/cmdline-tools/latest
-
-cp -f /mnt/gitops-component/.android/local.properties ./
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk17
 
 ./gradlew assemble
 ./gradlew publish
