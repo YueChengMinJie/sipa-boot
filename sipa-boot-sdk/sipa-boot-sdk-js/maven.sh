@@ -11,8 +11,6 @@
 
 set -ex
 
-source ~/.nvm/nvm.sh
-
 nvm use 16
 pnpm install
 pnpm build
