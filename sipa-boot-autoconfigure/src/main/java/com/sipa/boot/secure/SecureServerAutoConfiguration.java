@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
 
 import com.sipa.boot.core.allinone.SipaRequest;
@@ -33,7 +32,6 @@ import lombok.RequiredArgsConstructor;
  * @date 2022/12/23
  */
 @Configuration
-@EnableAspectJAutoProxy(exposeProxy = true)
 @ConditionalOnClass(SameTokenInterceptor.class)
 public class SecureServerAutoConfiguration {
     @Bean

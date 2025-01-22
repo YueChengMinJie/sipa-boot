@@ -10,10 +10,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -48,6 +45,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 @Slf4j
 @Configuration(proxyBeanMethods = false)
 @ComponentScan("com.sipa.boot.core.**")
+@EnableAspectJAutoProxy(exposeProxy = true)
 @ConditionalOnClass(Jackson2ObjectMapperBuilder.class)
 @PropertySource(value = "classpath:core.yml", factory = YamlPropertySourceFactory.class)
 public class CoreAutoConfiguration {
