@@ -8,6 +8,7 @@ import com.sipa.boot.core.exception.api.IErrorCode;
  */
 public class SystemExceptionFactory {
     private SystemExceptionFactory() {
+        //
     }
 
     public static SystemRuntimeException bizException(String errorMessage) {

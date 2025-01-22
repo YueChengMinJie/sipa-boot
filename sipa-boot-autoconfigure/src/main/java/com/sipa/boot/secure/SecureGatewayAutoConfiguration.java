@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.server.ServerWebExchange;
 
+import com.sipa.boot.core.exception.system.ESystemErrorCode;
 import com.sipa.boot.core.secure.IdpUser;
 import com.sipa.boot.core.secure.IdpUserHolder;
 import com.sipa.boot.secure.gateway.ForwardAuthFilter;
@@ -21,6 +22,7 @@ import com.sipa.boot.secure.gateway.util.SipaStpUtil;
 
 import cn.dev33.satoken.error.SaErrorCode;
 import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.SaTokenException;
 import cn.dev33.satoken.reactor.context.SaReactorSyncHolder;
 import cn.dev33.satoken.reactor.filter.SaReactorFilter;
 import cn.dev33.satoken.router.SaHttpMethod;
@@ -28,6 +30,7 @@ import cn.dev33.satoken.router.SaRouter;
 import cn.dev33.satoken.router.SaRouterStaff;
 import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.json.JSONUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -64,8 +67,10 @@ public class SecureGatewayAutoConfiguration {
             .addExclude(springDocPattern)
 
             // 鉴权
-            .setAuth(
-                obj -> SaRouter.match(authPattern).notMatch(authExcludePattern).notMatch(springDocPattern).check(r -> {
+            .setAuth(obj -> SaRouter.match(SpringUtil.getBean(GatewayPatternProperty.class).getAuthPattern())
+                .notMatch(SpringUtil.getBean(GatewayPatternProperty.class).getAuthExcludePattern())
+                .notMatch(SpringUtil.getBean(GatewayPatternProperty.class).getSpringDocPattern())
+                .check(r -> {
                     // 登陆校验
                     StpUtil.checkLogin();
 
@@ -109,7 +114,11 @@ public class SecureGatewayAutoConfiguration {
                 return JSONUtil.toJsonStr(SipaSecureUtil.handlerException(e));
             })
 
-            .setBeforeAuth(obj -> SaRouter.match(SaHttpMethod.OPTIONS).free(r -> log.info("OPTIONS预检请求，不做处理")).back());
+            .setBeforeAuth(obj -> {
+                SaRouter.match(SpringUtil.getBean(GatewayPatternProperty.class).getBackListPattern())
+                    .check(r -> SaTokenException.throwBy(true, ESystemErrorCode.AUTHORITY.getMsg(), 401));
+                SaRouter.match(SaHttpMethod.OPTIONS).free(r -> log.info("OPTIONS预检请求，不做处理")).back();
+            });
     }
 
     @Bean

@@ -47,6 +47,8 @@ public interface SipaConstant {
 
     String[] FILTER_HEADER_KEYS = {AUTH_KEY, IdpUser.REST_WEB_KEY, SA_KEY};
 
+    String API_KEY = "X-Api-Key";
+
     interface Env {
         String DEFAULT_PROPERTY_SOURCE = "sipaPropertySource";
 

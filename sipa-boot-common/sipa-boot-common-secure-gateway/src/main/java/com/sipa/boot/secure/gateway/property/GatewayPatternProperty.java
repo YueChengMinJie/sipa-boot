@@ -20,4 +20,6 @@ public class GatewayPatternProperty {
     private String[] springDocPattern = {};
 
     private String[] authExcludePattern = {};
+
+    private String[] backListPattern = {};
 }

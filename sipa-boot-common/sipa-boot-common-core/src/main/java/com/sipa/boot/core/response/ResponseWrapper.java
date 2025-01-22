@@ -28,6 +28,8 @@ public class ResponseWrapper<T> {
 
     private T data;
 
+    private String key;
+
     public static <T> ResponseWrapper<T> success(T t) {
         ResponseWrapper<T> rw = new ResponseWrapper<>();
         rw.setCode(SUCCESS);
@@ -58,9 +60,5 @@ public class ResponseWrapper<T> {
         rw.setErrorCode(ESystemErrorCode.DEFAULT_ERROR.getAllCode());
         rw.setMsg(StringUtils.isBlank(msg) ? GLOBAL_MSG : msg);
         return rw;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
     }
 }

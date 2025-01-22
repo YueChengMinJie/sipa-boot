@@ -145,6 +145,8 @@ public enum ESystemErrorCode implements IErrorCode {
 
     UNABLE_TO_DELETE_FILE("5j", "没有权限删除文件"),
 
+    JSON_ERROR("5k", "JSON转换异常, json = [{0}]"),
+
     // creator
     FILE_TYPE_CANNOT_BE_EMPTY("70", "fileType不能为空"),
 
@@ -184,8 +186,16 @@ public enum ESystemErrorCode implements IErrorCode {
 
     CANNOT_WRITE_EMPTY_USER_CONFIG("7j", "不能写入空的用户配置"),
 
+    TABLE_NEED_COMMENT("7k", "表需要有注释"),
+
     // geetest
     GEETEST_VALIDATION_FAILED("90", "验证失败"),
+
+    // aop
+    NOT_SAME_USER("a0", "不是同一用户"),
+
+    // api
+    CANNOT_FIND_KEY("b0", "未找到key"),
 
     // default
     DEFAULT_ERROR("ZZ", SipaConstant.GLOBAL_MSG);

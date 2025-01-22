@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sipa.boot.core.exception.system.ESystemErrorCode;
 import com.sipa.boot.core.exception.system.SystemExceptionFactory;
 import com.sipa.boot.storage.AliyunOssEventForm;
 import com.sipa.boot.storage.FileEventForm;
@@ -38,7 +39,7 @@ public class AliyunOssFileEventConverter implements OssFileEventConverter {
             AliyunOssEventForm aliyunOssEventForms = objectMapper.readValue(decodeStr, new TypeReference<>() {});
             events = aliyunOssEventForms.getEvents();
         } catch (JsonProcessingException e) {
-            throw SystemExceptionFactory.bizException("JSON转换异常,JSON:" + decodeStr);
+            throw SystemExceptionFactory.bizException(ESystemErrorCode.JSON_ERROR, decodeStr);
         }
         return events.stream().map(this::covert).collect(Collectors.toList());
     }

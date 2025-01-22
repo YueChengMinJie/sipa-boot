@@ -7,3 +7,45 @@ spring:
   mvc:
     throw-exception-if-no-handler-found: true
     static-path-pattern: /statics/**
+#
+# -------------------------------------------
+# SIPA配置
+# -------------------------------------------
+#
+sipa:
+  #
+  # -------------------------------------------
+  # API CONFIGURATION
+  # -------------------------------------------
+  #
+  api:
+    rsa-public-key: |
+      -----BEGIN PUBLIC KEY-----
+      MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDFAhSydM5R/Y1QkepVCI2jQsI4
+      /MBbXV8/ah9z1elZgVTOjLTs1gy7HsSYKkI21th92I+VYWxF8ydbjVXhpcPPZJtE
+      lx6LzeOifupkwNZ8DqA9w+s1lYUsllsTILTJPbV5LoCi7eDaX4WA8LPbnGFVLLyU
+      mLDkYy989Q/6OUs7qwIDAQAB
+      -----END PUBLIC KEY-----
+    rsa-private-key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIICXQIBAAKBgQDFAhSydM5R/Y1QkepVCI2jQsI4/MBbXV8/ah9z1elZgVTOjLTs
+      1gy7HsSYKkI21th92I+VYWxF8ydbjVXhpcPPZJtElx6LzeOifupkwNZ8DqA9w+s1
+      lYUsllsTILTJPbV5LoCi7eDaX4WA8LPbnGFVLLyUmLDkYy989Q/6OUs7qwIDAQAB
+      AoGAXCzAEEr0aYovPx42PHjXBCbtBorDWTwTn3EArErOdjE7w7QzxofTxwz7QJKt
+      DklxW1giveqqJQRCSuSS5ROQzDl/EEeAiMtVQw54SOA3aS9wissnhZkJ+14BeXNG
+      V4AsWHuIYiB6mpzCU83mO5S2Ft3d7p80udYvA52Ij79LOYECQQD9czT6SpBnJrcO
+      GzCPUCmhch74YylSPaNI4c8oINcMZ2pAXigGKkLs6Aw3prnRPHTAi63dYqW3bFyO
+      jpDuOuBBAkEAxv2AJEXISnoK18OlbscSdYO6KS109fKiPZy8YT2SLUPvH0kL0Rtc
+      c68out776laH14q44xoBf/cswImqe2dg6wJBAIMumzAlYeKSDlN1zUeQRUvz5oXH
+      xX50uswhXHi3rrcT29HfKjYur58xaAlx+WGMOh3i7iXVRlLO+oUq02cLAEECQEtI
+      /6E5kZSz5cRKLh3iTVaOlvEbVKP0v3MmCJOVsudTS3X/sevUOT8/Zt6EnLTFNjHT
+      Ny4c2bJrdtAFha2YqC8CQQCopy+x55VCwhHiXsbZZF7YzglJid2bJ8NuQiXe7BP7
+      +OXkJFYc5w8Vu5kuyMRGTQiSPXGWLqvPH/B8WIp0jcII
+      -----END RSA PRIVATE KEY-----
+    front-rsa-public-key: |
+      -----BEGIN PUBLIC KEY-----
+      MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCuKG5JTy4fa0hSIZ38Qf/eELDH
+      urTFcrIhTz9eLxXRt1cFkjstpqT3VcUc2loGkNDhzpcjvims2/Bst4dRiAGjYgbY
+      JYmk0+8ALT3VuHcDJiBbDvrut8FrstJpdDe7eRY2FnOOxZ5XQsimo0U3EUqYIFUc
+      2TmiqIiPR5Yr8dIsBwIDAQAB
+      -----END PUBLIC KEY-----

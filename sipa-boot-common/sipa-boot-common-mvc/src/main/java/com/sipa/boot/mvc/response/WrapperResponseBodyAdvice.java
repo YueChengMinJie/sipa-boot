@@ -3,6 +3,8 @@ package com.sipa.boot.mvc.response;
 import java.util.Objects;
 
 import org.springframework.core.MethodParameter;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -19,6 +21,7 @@ import cn.hutool.json.JSONUtil;
  * @author caszhou
  * @date 2022/12/23
  */
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @RestControllerAdvice(basePackages = {"com.sipa", "com.ycmj"}) // todo by caszhou 业务配置应该与中台框架解耦
 public class WrapperResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     @Override

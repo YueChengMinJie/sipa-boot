@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import com.sipa.boot.core.aop.annotation.SameUser;
 import com.sipa.boot.core.aop.service.SameUserService;
+import com.sipa.boot.core.exception.system.ESystemErrorCode;
 import com.sipa.boot.core.exception.system.SystemExceptionFactory;
 
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +57,7 @@ public class SameUserAspect {
             if (moduleId instanceof String) {
                 if (Objects.nonNull(sameUser)) {
                     if (!sameUser.checkAuth(module, (String)moduleId)) {
-                        throw SystemExceptionFactory.bizException("不是同一用户");
+                        throw SystemExceptionFactory.bizException(ESystemErrorCode.NOT_SAME_USER);
                     }
                 } else {
                     log.info("系统无SameUserService实现类, 无法判断是否是同一用户.");

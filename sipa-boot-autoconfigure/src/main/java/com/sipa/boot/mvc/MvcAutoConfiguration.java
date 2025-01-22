@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,7 @@ import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.enumeration.formatter.IEnumConverterFactory;
 import com.sipa.boot.core.env.EnvConstant;
 import com.sipa.boot.core.property.YamlPropertySourceFactory;
+import com.sipa.boot.mvc.codec.property.ApiProperty;
 import com.sipa.boot.mvc.log.LogInterceptor;
 import com.sipa.boot.mvc.response.NoPackage;
 
@@ -40,6 +42,7 @@ import cn.hutool.system.SystemUtil;
 @ConditionalOnWebApplication
 @ConditionalOnClass(NoPackage.class)
 @ComponentScan("com.sipa.boot.mvc.**")
+@EnableConfigurationProperties({ApiProperty.class})
 @PropertySource(value = "classpath:mvc.yml", factory = YamlPropertySourceFactory.class)
 public class MvcAutoConfiguration implements WebMvcConfigurer {
     @Value("${spring.profiles.active:local}")

@@ -58,7 +58,7 @@ public interface SipaBootConstant {
 
         String SIPA_ENV_KEY = "sipa.env";
 
-        String SENTINEL_APP_NAME_KEY = "project.name";
+        String SIPA_API_KEY = "sipa.api";
     }
 
     interface Feign {
