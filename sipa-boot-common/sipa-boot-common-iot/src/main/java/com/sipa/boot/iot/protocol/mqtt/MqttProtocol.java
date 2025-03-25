@@ -7,8 +7,8 @@ import cn.hutool.core.date.DatePattern;
  * @date 2022/7/16
  */
 public interface MqttProtocol {
+    String DATA_FORMAT = DatePattern.NORM_DATETIME_PATTERN;
 
-    public static String DATA_FORMAT = DatePattern.NORM_DATETIME_PATTERN;
     MqttHeader getHeader();
 
     Object getDataBody();
