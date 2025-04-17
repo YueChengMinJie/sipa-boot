@@ -19,7 +19,7 @@
         <module>sipa-boot-sdk-api</module>
         <module>sipa-boot-sdk-cp</module>
         <module>sipa-boot-sdk-gateway</module>
-        <!--        <module>sipa-boot-sdk-js</module>-->
+        <module>sipa-boot-sdk-js</module>
         <module>sipa-boot-sdk-server</module>
     </modules>
 </project>

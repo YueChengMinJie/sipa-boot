@@ -1,0 +1,3 @@
+[submodule "sipa-boot-sdk/sipa-boot-sdk-js"]
+	path = sipa-boot-sdk/sipa-boot-sdk-js
+	url = https://github.com/YueChengMinJie/sipa-boot-sdk-js.git
