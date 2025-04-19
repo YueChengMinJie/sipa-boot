@@ -25,13 +25,21 @@ public class GatewaySecureProperty {
     private Map<String, Long> loginAuthentication = Maps.newHashMap();
 
     /**
-     * 外部用户认证,只允许外部用户类型访问符合这些规则的接口
+     * 外部用户认证, 只允许外部用户类型访问符合这些规则的接口
      */
     private String[] externalAccountAllowedPathPattern = {};
 
     /**
      * 角色认证，只针对中台
      */
+    // # application-authentication:
+    // # xx-service: [1000101, 1000201]
+    // # xx-service: [1000101, 1000201]
+    // # role-authentication:
+    // # xx-base: ['role::base']
+    // # xx-message: ['role::message']
+    // # xx-idp: ['role::idp']
+    // # xx-process: ['role::process']
     private Map<String, List<String>> roleAuthentication = Maps.newHashMap();
 
     /**

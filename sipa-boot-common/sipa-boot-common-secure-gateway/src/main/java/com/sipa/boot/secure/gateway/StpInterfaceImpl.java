@@ -1,8 +1,6 @@
 package com.sipa.boot.secure.gateway;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
@@ -11,6 +9,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.compress.utils.Lists;
 
+import com.google.common.collect.Sets;
 import com.sipa.boot.core.constant.SipaConstant;
 import com.sipa.boot.core.secure.IdpAuth;
 import com.sipa.boot.core.secure.IdpUser;
@@ -68,7 +67,7 @@ public class StpInterfaceImpl implements StpInterface {
     }
 
     private List<String> addRoles(List<IdpAuth> auths) {
-        List<String> roles = Lists.newArrayList();
+        Set<String> roles = Sets.newHashSet();
         if (CollectionUtils.isNotEmpty(auths)) {
             Map<String, List<String>> roleAuthentication =
                 SpringUtil.getBean(GatewaySecureProperty.class).getRoleAuthentication();
@@ -81,6 +80,6 @@ public class StpInterfaceImpl implements StpInterface {
                 }
             }
         }
-        return roles;
+        return new ArrayList<>(roles);
     }
 }
