@@ -53,20 +53,20 @@ public class SecureServerAutoConfiguration {
 
             return new SaServletFilter()
 
-                .addInclude(authPattern)
-                .addExclude(springDocPattern)
+                    .addInclude(authPattern)
+                    .addExclude(springDocPattern)
 
-                .setAuth(obj -> {
-                    String token = SaHolder.getRequest().getHeader(SaSameUtil.SAME_TOKEN);
-                    SaSameUtil.checkToken(token);
-                })
+                    .setAuth(obj -> {
+                        String token = SaHolder.getRequest().getHeader(SaSameUtil.SAME_TOKEN);
+                        SaSameUtil.checkToken(token);
+                    })
 
-                .setError(e -> {
-                    HttpServletResponse response = SpringMVCUtil.getResponse();
-                    response.setStatus(SipaSecureUtil.getStatusCode(e));
-                    response.setHeader(HttpHeaders.CONTENT_TYPE, SipaConstant.HttpHeaderValue.JSON_UTF8);
-                    return JSONUtil.toJsonStr(SipaSecureUtil.handlerException(e));
-                });
+                    .setError(e -> {
+                        HttpServletResponse response = SpringMVCUtil.getResponse();
+                        response.setStatus(SipaSecureUtil.getStatusCode(e));
+                        response.setHeader(HttpHeaders.CONTENT_TYPE, SipaConstant.HttpHeaderValue.JSON_UTF8);
+                        return JSONUtil.toJsonStr(SipaSecureUtil.handlerException(e));
+                    });
         }
 
         @Bean
